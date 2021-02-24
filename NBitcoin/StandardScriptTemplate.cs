@@ -26,13 +26,8 @@ namespace NBitcoin
 			MaxScriptSizeLimit = maxScriptSize;
 		}
 		private static readonly TxNullDataTemplate _Instance = new TxNullDataTemplate(MAX_OP_RETURN_RELAY);
-		public static TxNullDataTemplate Instance
-		{
-			get
-			{
-				return _Instance;
-			}
-		}
+		public static TxNullDataTemplate Instance => _Instance;
+
 		public int MaxScriptSizeLimit
 		{
 			get;
@@ -88,13 +83,7 @@ namespace NBitcoin
 			return script;
 		}
 
-		public override TxOutType Type
-		{
-			get
-			{
-				return TxOutType.TX_NULL_DATA;
-			}
-		}
+		public override TxOutType Type => TxOutType.TX_NULL_DATA;
 	}
 
 	public class PayToMultiSigTemplateParameters
@@ -119,13 +108,7 @@ namespace NBitcoin
 	public class PayToMultiSigTemplate : ScriptTemplate
 	{
 		private static readonly PayToMultiSigTemplate _Instance = new PayToMultiSigTemplate();
-		public static PayToMultiSigTemplate Instance
-		{
-			get
-			{
-				return _Instance;
-			}
-		}
+		public static PayToMultiSigTemplate Instance => _Instance;
 
 		public Script GenerateScriptPubKey(int sigCount, params PubKey[] keys)
 		{
@@ -273,13 +256,7 @@ namespace NBitcoin
 			}
 		}
 
-		public override TxOutType Type
-		{
-			get
-			{
-				return TxOutType.TX_MULTISIG;
-			}
-		}
+		public override TxOutType Type => TxOutType.TX_MULTISIG;
 
 		public Script GenerateScriptSig(TransactionSignature[] signatures)
 		{
@@ -327,13 +304,8 @@ namespace NBitcoin
 	public class PayToScriptHashTemplate : ScriptTemplate
 	{
 		private static readonly PayToScriptHashTemplate _Instance = new PayToScriptHashTemplate();
-		public static PayToScriptHashTemplate Instance
-		{
-			get
-			{
-				return _Instance;
-			}
-		}
+		public static PayToScriptHashTemplate Instance => _Instance;
+
 		public Script GenerateScriptPubKey(ScriptId scriptId)
 		{
 			return new Script(
@@ -439,13 +411,7 @@ namespace NBitcoin
 
 
 
-		public override TxOutType Type
-		{
-			get
-			{
-				return TxOutType.TX_SCRIPTHASH;
-			}
-		}
+		public override TxOutType Type => TxOutType.TX_SCRIPTHASH;
 
 		public ScriptId ExtractScriptPubKeyParameters(Script scriptPubKey)
 		{
@@ -463,13 +429,8 @@ namespace NBitcoin
 	public class PayToPubkeyTemplate : ScriptTemplate
 	{
 		private static readonly PayToPubkeyTemplate _Instance = new PayToPubkeyTemplate();
-		public static PayToPubkeyTemplate Instance
-		{
-			get
-			{
-				return _Instance;
-			}
-		}
+		public static PayToPubkeyTemplate Instance => _Instance;
+
 		public Script GenerateScriptPubKey(PubKey pubkey)
 		{
 			return GenerateScriptPubKey(pubkey.ToBytes(true));
@@ -540,13 +501,7 @@ namespace NBitcoin
 			return ops[0].PushData != null && TransactionSignature.IsValid(ops[0].PushData);
 		}
 
-		public override TxOutType Type
-		{
-			get
-			{
-				return TxOutType.TX_PUBKEY;
-			}
-		}
+		public override TxOutType Type => TxOutType.TX_PUBKEY;
 
 		/// <summary>
 		/// Extract the public key or null from the script, perform quick check on pubkey
@@ -586,13 +541,7 @@ namespace NBitcoin
 
 	public class PayToWitPubkeyHashScriptSigParameters : PayToPubkeyHashScriptSigParameters
 	{
-		public override TxDestination Hash
-		{
-			get
-			{
-				return PublicKey.WitHash;
-			}
-		}
+		public override TxDestination Hash => PublicKey.WitHash;
 	}
 	public class PayToPubkeyHashScriptSigParameters : IDestination
 	{
@@ -607,35 +556,19 @@ namespace NBitcoin
 			set;
 		}
 
-		public virtual TxDestination Hash
-		{
-			get
-			{
-				return PublicKey.Hash;
-			}
-		}
+		public virtual TxDestination Hash => PublicKey.Hash;
+
 		#region IDestination Members
 
-		public Script ScriptPubKey
-		{
-			get
-			{
-				return Hash.ScriptPubKey;
-			}
-		}
+		public Script ScriptPubKey => Hash.ScriptPubKey;
 
 		#endregion
 	}
 	public class PayToPubkeyHashTemplate : ScriptTemplate
 	{
 		private static readonly PayToPubkeyHashTemplate _Instance = new PayToPubkeyHashTemplate();
-		public static PayToPubkeyHashTemplate Instance
-		{
-			get
-			{
-				return _Instance;
-			}
-		}
+		public static PayToPubkeyHashTemplate Instance => _Instance;
+
 		public Script GenerateScriptPubKey(BitcoinPubKeyAddress address)
 		{
 			if (address == null)
@@ -732,14 +665,7 @@ namespace NBitcoin
 			return GenerateScriptSig(parameters.TransactionSignature, parameters.PublicKey);
 		}
 
-		public override TxOutType Type
-		{
-			get
-			{
-				return TxOutType.TX_PUBKEYHASH;
-			}
-		}
-
+		public override TxOutType Type => TxOutType.TX_PUBKEYHASH;
 	}
 	public abstract class ScriptTemplate
 	{
@@ -1065,13 +991,7 @@ namespace NBitcoin
 			};
 		}
 
-		public override TxOutType Type
-		{
-			get
-			{
-				return TxOutType.TX_SEGWIT;
-			}
-		}
+		public override TxOutType Type => TxOutType.TX_SEGWIT;
 
 		protected override bool CheckScriptPubKeyCore(Script scriptPubKey, Op[] scriptPubKeyOps)
 		{

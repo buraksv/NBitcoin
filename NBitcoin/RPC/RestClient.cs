@@ -34,13 +34,7 @@ namespace NBitcoin.RPC
 		/// <summary>
 		/// Gets the <see cref="Network"/> instance for the client.
 		/// </summary>
-		public Network Network
-		{
-			get
-			{
-				return _network;
-			}
-		}
+		public Network Network => _network;
 
 		/// <summary>
 		/// Initializes a new instance of the <see cref="RestClient"/> class.

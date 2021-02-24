@@ -157,21 +157,10 @@ namespace NBitcoin.Payment
 		}
 
 		readonly X509VerificationFlags _VerificationFlags;
-		public X509VerificationFlags VerificationFlags
-		{
-			get
-			{
-				return _VerificationFlags;
-			}
-		}
+		public X509VerificationFlags VerificationFlags => _VerificationFlags;
 		private readonly X509RevocationMode _RevocationMode;
-		public X509RevocationMode RevocationMode
-		{
-			get
-			{
-				return _RevocationMode;
-			}
-		}
+		public X509RevocationMode RevocationMode => _RevocationMode;
+
 		public WindowsCertificateServiceProvider(X509VerificationFlags verificationFlags = X509VerificationFlags.NoFlag,
 												 X509RevocationMode revocationMode = X509RevocationMode.Online)
 		{

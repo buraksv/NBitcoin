@@ -18,13 +18,7 @@ namespace NBitcoin
 			_MaxItems = maxItems;
 		}
 
-		public int Count
-		{
-			get
-			{
-				return _Dictionnary.Count;
-			}
-		}
+		public int Count => _Dictionnary.Count;
 
 		public TValue AddOrUpdate(TKey key, TValue value, Func<TKey, TValue, TValue> update)
 		{

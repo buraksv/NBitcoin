@@ -66,29 +66,11 @@ namespace NBitcoin.Tests
 			get; set;
 		}
 
-		public IEnumerable<Node> ConnectedNodes
-		{
-			get
-			{
-				return Server1.ConnectedNodes.Concat(Server2.ConnectedNodes);
-			}
-		}
+		public IEnumerable<Node> ConnectedNodes => Server1.ConnectedNodes.Concat(Server2.ConnectedNodes);
 		private readonly NodeServer _Server1;
-		public NodeServer Server1
-		{
-			get
-			{
-				return _Server1;
-			}
-		}
+		public NodeServer Server1 => _Server1;
 		private readonly NodeServer _Server2;
-		public NodeServer Server2
-		{
-			get
-			{
-				return _Server2;
-			}
-		}
+		public NodeServer Server2 => _Server2;
 
 		Node _Node1;
 		public Node Node1

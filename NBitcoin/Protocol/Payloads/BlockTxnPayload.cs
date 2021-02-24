@@ -13,25 +13,13 @@ namespace NBitcoin.Protocol
 		uint256 _BlockId;
 		public uint256 BlockId
 		{
-			get
-			{
-				return _BlockId;
-			}
-			set
-			{
-				_BlockId = value;
-			}
+			get => _BlockId;
+			set => _BlockId = value;
 		}
 
 
 		private List<Transaction> _Transactions = new List<Transaction>();
-		public List<Transaction> Transactions
-		{
-			get
-			{
-				return _Transactions;
-			}
-		}
+		public List<Transaction> Transactions => _Transactions;
 
 		public override void ReadWriteCore(BitcoinStream stream)
 		{

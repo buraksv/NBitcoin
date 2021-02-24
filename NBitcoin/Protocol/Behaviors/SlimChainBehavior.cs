@@ -14,13 +14,8 @@ namespace NBitcoin.Protocol.Behaviors
 	{
 
 		private readonly SlimChain _Chain;
-		public SlimChain Chain
-		{
-			get
-			{
-				return _Chain;
-			}
-		}
+		public SlimChain Chain => _Chain;
+
 		public SlimChainBehavior(SlimChain chain)
 		{
 			if (chain == null)

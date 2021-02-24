@@ -34,13 +34,7 @@ namespace NBitcoin.BouncyCastle.Asn1
 		}
 
 		// TODO Change to ID?
-		public string Id
-		{
-			get
-			{
-				return identifier;
-			}
-		}
+		public string Id => identifier;
 
 		public virtual DerObjectIdentifier Branch(string branchID)
 		{

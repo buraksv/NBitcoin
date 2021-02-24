@@ -21,44 +21,20 @@ namespace NBitcoin
 			Parent = parent;
 		}
 
-		public SortedDictionary<byte[], byte[]> Unknown
-		{
-			get
-			{
-				return unknown;
-			}
-		}
+		public SortedDictionary<byte[], byte[]> Unknown => unknown;
 
-		public HDKeyPathKVMap HDKeyPaths
-		{
-			get
-			{
-				return hd_keypaths;
-			}
-		}
+		public HDKeyPathKVMap HDKeyPaths => hd_keypaths;
 
 		public Script RedeemScript
 		{
-			get
-			{
-				return redeem_script;
-			}
-			set
-			{
-				redeem_script = value;
-			}
+			get => redeem_script;
+			set => redeem_script = value;
 		}
 
 		public Script WitnessScript
 		{
-			get
-			{
-				return witness_script;
-			}
-			set
-			{
-				witness_script = value;
-			}
+			get => witness_script;
+			set => witness_script = value;
 		}
 
 		public virtual void AddKeyPath(PubKey pubKey, RootedKeyPath rootedKeyPath)

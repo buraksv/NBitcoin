@@ -8,13 +8,8 @@ namespace NBitcoin
 	{
 
 		private static readonly BytesComparer _Instance = new BytesComparer();
-		public static BytesComparer Instance
-		{
-			get
-			{
-				return _Instance;
-			}
-		}
+		public static BytesComparer Instance => _Instance;
+
 		private BytesComparer()
 		{
 

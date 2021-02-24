@@ -78,118 +78,64 @@ namespace NBitcoin.Protocol
 
 		public uint Version
 		{
-			get
-			{
-				return version;
-			}
-			set
-			{
-				version = value;
-			}
+			get => version;
+			set => version = value;
 		}
 		ulong services;
 
 		public NodeServices Services
 		{
-			get
-			{
-				return (NodeServices)services;
-			}
-			set
-			{
-				services = (ulong)value;
-			}
+			get => (NodeServices)services;
+			set => services = (ulong)value;
 		}
 
 		long timestamp;
 
 		public DateTimeOffset Timestamp
 		{
-			get
-			{
-				return Utils.UnixTimeToDateTime((uint)timestamp);
-			}
-			set
-			{
-				timestamp = Utils.DateTimeToUnixTime(value);
-			}
+			get => Utils.UnixTimeToDateTime((uint)timestamp);
+			set => timestamp = Utils.DateTimeToUnixTime(value);
 		}
 
 		NetworkAddress addr_recv = new NetworkAddress();
 		public IPEndPoint AddressReceiver
 		{
-			get
-			{
-				return addr_recv.Endpoint;
-			}
-			set
-			{
-				addr_recv.Endpoint = value;
-			}
+			get => addr_recv.Endpoint;
+			set => addr_recv.Endpoint = value;
 		}
 		NetworkAddress addr_from = new NetworkAddress();
 		public IPEndPoint AddressFrom
 		{
-			get
-			{
-				return addr_from.Endpoint;
-			}
-			set
-			{
-				addr_from.Endpoint = value;
-			}
+			get => addr_from.Endpoint;
+			set => addr_from.Endpoint = value;
 		}
 
 		ulong nonce;
 		public ulong Nonce
 		{
-			get
-			{
-				return nonce;
-			}
-			set
-			{
-				nonce = value;
-			}
+			get => nonce;
+			set => nonce = value;
 		}
 		int start_height;
 
 		public int StartHeight
 		{
-			get
-			{
-				return start_height;
-			}
-			set
-			{
-				start_height = value;
-			}
+			get => start_height;
+			set => start_height = value;
 		}
 
 		bool relay;
 		public bool Relay
 		{
-			get
-			{
-				return relay;
-			}
-			set
-			{
-				relay = value;
-			}
+			get => relay;
+			set => relay = value;
 		}
 
 		VarString user_agent;
 		public string UserAgent
 		{
-			get
-			{
-				return Encoders.ASCII.EncodeData(user_agent.GetString());
-			}
-			set
-			{
-				user_agent = new VarString(Encoders.ASCII.DecodeData(value));
-			}
+			get => Encoders.ASCII.EncodeData(user_agent.GetString());
+			set => user_agent = new VarString(Encoders.ASCII.DecodeData(value));
 		}
 
 		#region IBitcoinSerializable Members

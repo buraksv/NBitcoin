@@ -34,13 +34,7 @@ namespace NBitcoin.BouncyCastle.Crypto.Digests
 		{
 		}
 
-		public override string AlgorithmName
-		{
-			get
-			{
-				return "SHA-384";
-			}
-		}
+		public override string AlgorithmName => "SHA-384";
 
 		public override int GetDigestSize()
 		{

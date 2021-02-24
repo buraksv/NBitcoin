@@ -10,21 +10,9 @@ namespace NBitcoin
 	}
 	public struct Sequence
 	{
-		public static Sequence Final
-		{
-			get
-			{
-				return new Sequence(SEQUENCE_FINAL);
-			}
-		}
+		public static Sequence Final => new Sequence(SEQUENCE_FINAL);
 
-		public static Sequence OptInRBF
-		{
-			get
-			{
-				return new Sequence(MAX_BIP125_RBF_SEQUENCE);
-			}
-		}
+		public static Sequence OptInRBF => new Sequence(MAX_BIP125_RBF_SEQUENCE);
 
 		/// <summary>
 		/// If this flag set, CTxIn::nSequence is NOT interpreted as a
@@ -75,13 +63,8 @@ namespace NBitcoin
 
 
 		uint _ValueInv;
-		public uint Value
-		{
-			get
-			{
-				return 0xFFFFFFFF - _ValueInv;
-			}
-		}
+		public uint Value => 0xFFFFFFFF - _ValueInv;
+
 		public Sequence(uint value)
 		{
 			_ValueInv = 0xFFFFFFFF - value;
@@ -102,21 +85,9 @@ namespace NBitcoin
 			_ValueInv = 0xFFFFFFFF - (uint)value;
 		}
 
-		public bool IsRelativeLock
-		{
-			get
-			{
-				return (Value & SEQUENCE_LOCKTIME_DISABLE_FLAG) == 0;
-			}
-		}
+		public bool IsRelativeLock => (Value & SEQUENCE_LOCKTIME_DISABLE_FLAG) == 0;
 
-		public bool IsRBF
-		{
-			get
-			{
-				return Value <= MAX_BIP125_RBF_SEQUENCE;
-			}
-		}
+		public bool IsRBF => Value <= MAX_BIP125_RBF_SEQUENCE;
 
 		public SequenceLockType LockType
 		{

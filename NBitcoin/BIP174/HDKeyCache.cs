@@ -10,13 +10,8 @@ namespace NBitcoin
 		private readonly IHDKey hdKey;
 		private readonly KeyPath _PathFromRoot;
 		private readonly ConcurrentDictionary<KeyPath, IHDKey> derivationCache;
-		public IHDKey Inner
-		{
-			get
-			{
-				return hdKey;
-			}
-		}
+		public IHDKey Inner => hdKey;
+
 		internal HDKeyCache(IHDKey masterKey)
 		{
 			this.hdKey = masterKey;
@@ -61,13 +56,8 @@ namespace NBitcoin
 		private readonly IHDScriptPubKey hdKey;
 		private readonly KeyPath _PathFromRoot;
 		private readonly ConcurrentDictionary<KeyPath, IHDScriptPubKey> derivationCache;
-		public IHDScriptPubKey Inner
-		{
-			get
-			{
-				return hdKey;
-			}
-		}
+		public IHDScriptPubKey Inner => hdKey;
+
 		internal HDScriptPubKeyCache(IHDScriptPubKey masterKey)
 		{
 			this.hdKey = masterKey;

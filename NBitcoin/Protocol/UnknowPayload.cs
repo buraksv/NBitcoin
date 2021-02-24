@@ -17,24 +17,12 @@ namespace NBitcoin.Protocol
 			_Command = command;
 		}
 		internal string _Command;
-		public override string Command
-		{
-			get
-			{
-				return _Command;
-			}
-		}
+		public override string Command => _Command;
 		private byte[] _Data = new byte[0];
 		public byte[] Data
 		{
-			get
-			{
-				return _Data;
-			}
-			set
-			{
-				_Data = value;
-			}
+			get => _Data;
+			set => _Data = value;
 		}
 		public override void ReadWriteCore(BitcoinStream stream)
 		{

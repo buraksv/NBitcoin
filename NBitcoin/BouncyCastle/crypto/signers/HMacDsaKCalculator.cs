@@ -32,13 +32,7 @@ namespace NBitcoin.BouncyCastle.Crypto.Signers
 			this.K = new byte[hMac.GetMacSize()];
 		}
 
-		public virtual bool IsDeterministic
-		{
-			get
-			{
-				return true;
-			}
-		}
+		public virtual bool IsDeterministic => true;
 
 		public virtual void Init(BigInteger n, SecureRandom random)
 		{

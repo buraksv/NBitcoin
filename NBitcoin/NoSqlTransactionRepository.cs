@@ -9,13 +9,7 @@ namespace NBitcoin
 	public class NoSqlTransactionRepository : ITransactionRepository
 	{
 		private readonly NoSqlRepository _Repository;
-		public NoSqlRepository Repository
-		{
-			get
-			{
-				return _Repository;
-			}
-		}
+		public NoSqlRepository Repository => _Repository;
 
 		public NoSqlTransactionRepository() : this(new InMemoryNoSqlRepository())
 		{

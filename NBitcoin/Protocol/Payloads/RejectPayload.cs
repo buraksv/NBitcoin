@@ -39,26 +39,14 @@ namespace NBitcoin.Protocol
 		/// </summary>
 		public string Message
 		{
-			get
-			{
-				return Encoders.ASCII.EncodeData(_Message.GetString(true));
-			}
-			set
-			{
-				_Message = new VarString(Encoders.ASCII.DecodeData(value));
-			}
+			get => Encoders.ASCII.EncodeData(_Message.GetString(true));
+			set => _Message = new VarString(Encoders.ASCII.DecodeData(value));
 		}
 		byte _Code;
 		public RejectCode Code
 		{
-			get
-			{
-				return (RejectCode)_Code;
-			}
-			set
-			{
-				_Code = (byte)value;
-			}
+			get => (RejectCode)_Code;
+			set => _Code = (byte)value;
 		}
 
 		public RejectCodeType CodeType
@@ -102,14 +90,8 @@ namespace NBitcoin.Protocol
 		/// </summary>
 		public string Reason
 		{
-			get
-			{
-				return Encoders.ASCII.EncodeData(_Reason.GetString(true));
-			}
-			set
-			{
-				_Reason = new VarString(Encoders.ASCII.DecodeData(value));
-			}
+			get => Encoders.ASCII.EncodeData(_Reason.GetString(true));
+			set => _Reason = new VarString(Encoders.ASCII.DecodeData(value));
 		}
 
 		uint256 _Hash;
@@ -118,14 +100,8 @@ namespace NBitcoin.Protocol
 		/// </summary>
 		public uint256 Hash
 		{
-			get
-			{
-				return _Hash;
-			}
-			set
-			{
-				_Hash = value;
-			}
+			get => _Hash;
+			set => _Hash = value;
 		}
 
 		public override void ReadWriteCore(BitcoinStream stream)

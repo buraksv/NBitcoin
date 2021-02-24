@@ -16,13 +16,8 @@ namespace NBitcoin.Protobuf
 		internal const int PROTOBUF_32BIT = 5; // fixed32, sfixed32, float
 
 		Stream _Inner;
-		public Stream Inner
-		{
-			get
-			{
-				return _Inner;
-			}
-		}
+		public Stream Inner => _Inner;
+
 		public ProtobufReaderWriter(Stream stream)
 		{
 			_Inner = stream;
@@ -136,10 +131,7 @@ namespace NBitcoin.Protobuf
 		int _Position;
 		public int Position
 		{
-			get
-			{
-				return _Position;
-			}
+			get => _Position;
 			private set
 			{
 				_Position = value;

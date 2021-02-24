@@ -27,21 +27,9 @@ namespace NBitcoin.BouncyCastle.Crypto.Parameters
 			this.parameters = parameters;
 		}
 
-		public string AlgorithmName
-		{
-			get
-			{
-				return algorithm;
-			}
-		}
+		public string AlgorithmName => algorithm;
 
-		public ECDomainParameters Parameters
-		{
-			get
-			{
-				return parameters;
-			}
-		}
+		public ECDomainParameters Parameters => parameters;
 
 		public override bool Equals(
 			object obj)

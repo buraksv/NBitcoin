@@ -29,36 +29,14 @@ namespace NBitcoin
 		internal PubKey pubkey = new PubKey(validPubKey);
 		internal byte[] vchChainCode = new byte[ChainCodeLength];
 
-		public byte Depth
-		{
-			get
-			{
-				return nDepth;
-			}
-		}
+		public byte Depth => nDepth;
 
-		public uint Child
-		{
-			get
-			{
-				return nChild;
-			}
-		}
+		public uint Child => nChild;
 
-		public bool IsHardened
-		{
-			get
-			{
-				return (nChild & 0x80000000u) != 0;
-			}
-		}
-		public PubKey PubKey
-		{
-			get
-			{
-				return pubkey;
-			}
-		}
+		public bool IsHardened => (nChild & 0x80000000u) != 0;
+
+		public PubKey PubKey => pubkey;
+
 		public byte[] ChainCode
 		{
 			get
@@ -141,13 +119,7 @@ namespace NBitcoin
 			return childKey.IsChildOf(this);
 		}
 
-		public HDFingerprint ParentFingerprint
-		{
-			get
-			{
-				return parentFingerprint;
-			}
-		}
+		public HDFingerprint ParentFingerprint => parentFingerprint;
 
 		public ExtPubKey Derive(uint index)
 		{
@@ -196,13 +168,7 @@ namespace NBitcoin
 		}
 
 
-		private uint256 Hash
-		{
-			get
-			{
-				return Hashes.Hash256(this.ToBytes());
-			}
-		}
+		private uint256 Hash => Hashes.Hash256(this.ToBytes());
 
 		public override bool Equals(object obj)
 		{
@@ -256,13 +222,7 @@ namespace NBitcoin
 		/// <summary>
 		/// The P2PKH payment script
 		/// </summary>
-		public Script ScriptPubKey
-		{
-			get
-			{
-				return PubKey.Hash.ScriptPubKey;
-			}
-		}
+		public Script ScriptPubKey => PubKey.Hash.ScriptPubKey;
 
 		#endregion
 	}

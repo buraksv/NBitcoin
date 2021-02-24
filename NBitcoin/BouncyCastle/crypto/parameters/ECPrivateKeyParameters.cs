@@ -28,13 +28,7 @@ namespace NBitcoin.BouncyCastle.Crypto.Parameters
 			this.d = d;
 		}
 
-		public BigInteger D
-		{
-			get
-			{
-				return d;
-			}
-		}
+		public BigInteger D => d;
 
 		public override bool Equals(
 			object obj)

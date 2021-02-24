@@ -158,27 +158,15 @@ namespace NBitcoin.Altcoins.Elements
 		uint _nHeight;
 		public int Height
 		{
-			get
-			{
-				return checked((int)_nHeight);
-			}
-			set
-			{
-				_nHeight = checked((uint)value);
-			}
+			get => checked((int)_nHeight);
+			set => _nHeight = checked((uint)value);
 		}
 
 		BlockProof _Proof;
 		public BlockProof Proof
 		{
-			get
-			{
-				return _Proof;
-			}
-			set
-			{
-				_Proof = value;
-			}
+			get => _Proof;
+			set => _Proof = value;
 		}
 
 		public DynaFedParams DynaFedParams = new DynaFedParams();
@@ -197,28 +185,16 @@ namespace NBitcoin.Altcoins.Elements
 		Script _Challenge;
 		public Script Challenge
 		{
-			get
-			{
-				return _Challenge;
-			}
-			set
-			{
-				_Challenge = value;
-			}
+			get => _Challenge;
+			set => _Challenge = value;
 		}
 
 
 		Script _Solution;
 		public Script Solution
 		{
-			get
-			{
-				return _Solution;
-			}
-			set
-			{
-				_Solution = value;
-			}
+			get => _Solution;
+			set => _Solution = value;
 		}
 
 		public bool IsNull => Challenge == Script.Empty;

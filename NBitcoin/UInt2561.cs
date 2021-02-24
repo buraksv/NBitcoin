@@ -12,14 +12,8 @@ namespace NBitcoin
 			uint256 _Value;
 			public uint256 Value
 			{
-				get
-				{
-					return _Value;
-				}
-				set
-				{
-					_Value = value;
-				}
+				get => _Value;
+				set => _Value = value;
 			}
 			public MutableUint256()
 			{
@@ -58,22 +52,10 @@ namespace NBitcoin
 			}
 		}
 		static readonly uint256 _Zero = new uint256();
-		public static uint256 Zero
-		{
-			get
-			{
-				return _Zero;
-			}
-		}
+		public static uint256 Zero => _Zero;
 
 		static readonly uint256 _One = new uint256(1);
-		public static uint256 One
-		{
-			get
-			{
-				return _One;
-			}
-		}
+		public static uint256 One => _One;
 
 		public uint256()
 		{
@@ -458,13 +440,7 @@ namespace NBitcoin
 			return WIDTH_BYTE;
 		}
 
-		public int Size
-		{
-			get
-			{
-				return WIDTH_BYTE;
-			}
-		}
+		public int Size => WIDTH_BYTE;
 
 		public ulong GetLow64()
 		{
@@ -500,14 +476,8 @@ namespace NBitcoin
 			uint160 _Value;
 			public uint160 Value
 			{
-				get
-				{
-					return _Value;
-				}
-				set
-				{
-					_Value = value;
-				}
+				get => _Value;
+				set => _Value = value;
 			}
 			public MutableUint160()
 			{
@@ -534,22 +504,10 @@ namespace NBitcoin
 			}
 		}
 		static readonly uint160 _Zero = new uint160();
-		public static uint160 Zero
-		{
-			get
-			{
-				return _Zero;
-			}
-		}
+		public static uint160 Zero => _Zero;
 
 		static readonly uint160 _One = new uint160(1);
-		public static uint160 One
-		{
-			get
-			{
-				return _One;
-			}
-		}
+		public static uint160 One => _One;
 
 		public uint160()
 		{
@@ -820,13 +778,7 @@ namespace NBitcoin
 			return WIDTH_BYTE;
 		}
 
-		public int Size
-		{
-			get
-			{
-				return WIDTH_BYTE;
-			}
-		}
+		public int Size => WIDTH_BYTE;
 
 		public ulong GetLow64()
 		{

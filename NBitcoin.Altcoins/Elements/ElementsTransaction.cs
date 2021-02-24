@@ -86,14 +86,8 @@ namespace NBitcoin.Altcoins.Elements
 		byte[] _Commitment = _Empty;
 		public byte[] Commitment
 		{
-			get
-			{
-				return _Commitment;
-			}
-			private set
-			{
-				_Commitment = value;
-			}
+			get => _Commitment;
+			private set => _Commitment = value;
 		}
 
 		const int nCommittedSize = 33;
@@ -139,13 +133,7 @@ namespace NBitcoin.Altcoins.Elements
 			}
 		}
 
-		public bool IsExplicit
-		{
-			get
-			{
-				return _Commitment.Length == GetDef().ExplicitSize && _Commitment[0] == 1;
-			}
-		}
+		public bool IsExplicit => _Commitment.Length == GetDef().ExplicitSize && _Commitment[0] == 1;
 	}
 
 	public class AssetIssuance : IBitcoinSerializable
@@ -162,65 +150,35 @@ namespace NBitcoin.Altcoins.Elements
 		uint256 _BlindingNonce = uint256.Zero;
 		public uint256 BlindingNonce
 		{
-			get
-			{
-				return _BlindingNonce;
-			}
-			set
-			{
-				_BlindingNonce = value;
-			}
+			get => _BlindingNonce;
+			set => _BlindingNonce = value;
 		}
 
 
 		uint256 _Entropy = uint256.Zero;
 		public uint256 Entropy
 		{
-			get
-			{
-				return _Entropy;
-			}
-			set
-			{
-				_Entropy = value;
-			}
+			get => _Entropy;
+			set => _Entropy = value;
 		}
 
 
 		ConfidentialValue _Amount = new ConfidentialValue(Money.Zero);
 		public ConfidentialValue ConfidentialAmount
 		{
-			get
-			{
-				return _Amount;
-			}
-			set
-			{
-				_Amount = value;
-			}
+			get => _Amount;
+			set => _Amount = value;
 		}
 
 
 		ConfidentialValue _InflationKeys = new ConfidentialValue(Money.Zero);
 		public ConfidentialValue InflationKeys
 		{
-			get
-			{
-				return _InflationKeys;
-			}
-			set
-			{
-				_InflationKeys = value;
-			}
+			get => _InflationKeys;
+			set => _InflationKeys = value;
 		}
 
-		public Money Amount
-		{
-			get
-			{
-				return _Amount.Amount;
-			}
-		}
+		public Money Amount => _Amount.Amount;
 
 		public void ReadWrite(BitcoinStream stream)
 		{
@@ -288,13 +246,7 @@ namespace NBitcoin.Altcoins.Elements
 		internal const uint OUTPOINT_INDEX_MASK = 0x7fffffff;
 		internal const uint OUTPOINT_ISSUANCE_FLAG = (1U << 31);
 
-		public bool HasAssetIssuance
-		{
-			get
-			{
-				return _AssetIssuance != null && !_AssetIssuance.IsNull();
-			}
-		}
+		public bool HasAssetIssuance => _AssetIssuance != null && !_AssetIssuance.IsNull();
 
 		public override void ReadWrite(BitcoinStream stream)
 		{
@@ -353,14 +305,8 @@ namespace NBitcoin.Altcoins.Elements
 		AssetIssuance _AssetIssuance;
 		public AssetIssuance AssetIssuance
 		{
-			get
-			{
-				return _AssetIssuance;
-			}
-			set
-			{
-				_AssetIssuance = value;
-			}
+			get => _AssetIssuance;
+			set => _AssetIssuance = value;
 		}
 
 		public byte[] IssuanceAmountRangeProof
@@ -462,23 +408,14 @@ namespace NBitcoin.Altcoins.Elements
 
 		}
 
-		public bool IsFee
-		{
-			get
-			{
-				return this.ScriptPubKey == Script.Empty && _ConfidentialValue.IsExplicit && Asset.IsExplicit;
-			}
-		}
+		public bool IsFee => this.ScriptPubKey == Script.Empty && _ConfidentialValue.IsExplicit && Asset.IsExplicit;
 
 		public ConfidentialAsset Asset => GetAssetCore();
 
 		protected ConfidentialValue _ConfidentialValue = new ConfidentialValue();
 		public ConfidentialValue ConfidentialValue
 		{
-			get
-			{
-				return _ConfidentialValue;
-			}
+			get => _ConfidentialValue;
 			set
 			{
 				_ConfidentialValue = value;
@@ -490,14 +427,8 @@ namespace NBitcoin.Altcoins.Elements
 		protected ConfidentialNonce _Nonce = new ConfidentialNonce();
 		public ConfidentialNonce Nonce
 		{
-			get
-			{
-				return _Nonce;
-			}
-			set
-			{
-				_Nonce = value;
-			}
+			get => _Nonce;
+			set => _Nonce = value;
 		}
 
 		protected abstract ConfidentialAsset GetAssetCore();
@@ -532,10 +463,7 @@ namespace NBitcoin.Altcoins.Elements
 
 		public override Money Value
 		{
-			get
-			{
-				return base.Value;
-			}
+			get => base.Value;
 			set
 			{
 				base.Value = value;
@@ -554,14 +482,8 @@ namespace NBitcoin.Altcoins.Elements
 
 		public new ConfidentialAsset<TNetwork> Asset
 		{
-			get
-			{
-				return _Asset;
-			}
-			set
-			{
-				_Asset = value;
-			}
+			get => _Asset;
+			set => _Asset = value;
 		}
 
 		public override void ReadWrite(BitcoinStream stream)

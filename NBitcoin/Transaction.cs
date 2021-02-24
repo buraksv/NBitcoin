@@ -12,38 +12,20 @@ namespace NBitcoin
 #nullable enable
 	public class OutPoint : IBitcoinSerializable, IEquatable<OutPoint>
 	{
-		public bool IsNull
-		{
-			get
-			{
-				return (hash == uint256.Zero && n == uint.MaxValue);
-			}
-		}
+		public bool IsNull => (hash == uint256.Zero && n == uint.MaxValue);
 		private uint256 hash = uint256.Zero;
 		private uint n;
 
 
 		public uint256 Hash
 		{
-			get
-			{
-				return hash;
-			}
-			set
-			{
-				hash = value;
-			}
+			get => hash;
+			set => hash = value;
 		}
 		public uint N
 		{
-			get
-			{
-				return n;
-			}
-			set
-			{
-				n = value;
-			}
+			get => n;
+			set => n = value;
 		}
 
 		public readonly static OutPoint Zero = new OutPoint(uint256.Zero, 0);
@@ -230,38 +212,20 @@ namespace NBitcoin
 
 		public Sequence Sequence
 		{
-			get
-			{
-				return nSequence;
-			}
-			set
-			{
-				nSequence = value.Value;
-			}
+			get => nSequence;
+			set => nSequence = value.Value;
 		}
 		public OutPoint PrevOut
 		{
-			get
-			{
-				return prevout;
-			}
-			set
-			{
-				prevout = value;
-			}
+			get => prevout;
+			set => prevout = value;
 		}
 
 
 		public Script ScriptSig
 		{
-			get
-			{
-				return scriptSig;
-			}
-			set
-			{
-				scriptSig = value;
-			}
+			get => scriptSig;
+			set => scriptSig = value;
 		}
 
 
@@ -281,14 +245,8 @@ namespace NBitcoin
 		/// </summary>
 		public WitScript WitScript
 		{
-			get
-			{
-				return witScript;
-			}
-			set
-			{
-				witScript = value;
-			}
+			get => witScript;
+			set => witScript = value;
 		}
 
 		#region IBitcoinSerializable Members
@@ -308,13 +266,7 @@ namespace NBitcoin
 			return result != null && result.PublicKey == pubKey;
 		}
 
-		public bool IsFinal
-		{
-			get
-			{
-				return (nSequence == uint.MaxValue);
-			}
-		}
+		public bool IsFinal => (nSequence == uint.MaxValue);
 
 		public virtual ConsensusFactory GetConsensusFactory()
 		{
@@ -403,13 +355,8 @@ namespace NBitcoin
 
 
 		private TxOut _TxOut = new TxOut();
-		public TxOut TxOut
-		{
-			get
-			{
-				return _TxOut;
-			}
-		}
+		public TxOut TxOut => _TxOut;
+
 		public TxOutCompressor()
 		{
 
@@ -451,13 +398,8 @@ namespace NBitcoin
 		// and nHeight of the enclosing transaction.
 		const uint nSpecialScripts = 6;
 		byte[] _Script;
-		public byte[] ScriptBytes
-		{
-			get
-			{
-				return _Script;
-			}
-		}
+		public byte[] ScriptBytes => _Script;
+
 		public ScriptCompressor(Script script)
 		{
 			_Script = script.ToBytes(true);
@@ -595,14 +537,8 @@ namespace NBitcoin
 		protected Script publicKey = Script.Empty;
 		public Script ScriptPubKey
 		{
-			get
-			{
-				return this.publicKey;
-			}
-			set
-			{
-				this.publicKey = value;
-			}
+			get => this.publicKey;
+			set => this.publicKey = value;
 		}
 
 		public TxOut()
@@ -627,14 +563,8 @@ namespace NBitcoin
 		Money _Value = NullMoney;
 		public virtual Money Value
 		{
-			get
-			{
-				return _Value;
-			}
-			set
-			{
-				_Value = value;
-			}
+			get => _Value;
+			set => _Value = value;
 		}
 
 
@@ -710,39 +640,21 @@ namespace NBitcoin
 
 		public OutPoint PrevOut
 		{
-			get
-			{
-				return TxIn.PrevOut;
-			}
-			set
-			{
-				TxIn.PrevOut = value;
-			}
+			get => TxIn.PrevOut;
+			set => TxIn.PrevOut = value;
 		}
 
 		public Script ScriptSig
 		{
-			get
-			{
-				return TxIn.ScriptSig;
-			}
-			set
-			{
-				TxIn.ScriptSig = value;
-			}
+			get => TxIn.ScriptSig;
+			set => TxIn.ScriptSig = value;
 		}
 
 
 		public WitScript WitScript
 		{
-			get
-			{
-				return TxIn.WitScript;
-			}
-			set
-			{
-				TxIn.WitScript = value;
-			}
+			get => TxIn.WitScript;
+			set => TxIn.WitScript = value;
 		}
 		public Transaction Transaction
 		{
@@ -1099,31 +1011,13 @@ namespace NBitcoin
 			return push;
 		}
 
-		public byte[] this[int index]
-		{
-			get
-			{
-				return _Pushes[index];
-			}
-		}
+		public byte[] this[int index] => _Pushes[index];
 
-		public IEnumerable<byte[]> Pushes
-		{
-			get
-			{
-				return _Pushes;
-			}
-		}
+		public IEnumerable<byte[]> Pushes => _Pushes;
 
 		static WitScript _Empty = new WitScript(new byte[0][], true);
 
-		public static WitScript Empty
-		{
-			get
-			{
-				return _Empty;
-			}
-		}
+		public static WitScript Empty => _Empty;
 
 		public override bool Equals(object obj)
 		{
@@ -1200,13 +1094,7 @@ namespace NBitcoin
 			return new Script(_Pushes.Select(p => Op.GetPushOp(p)).ToArray());
 		}
 
-		public int PushCount
-		{
-			get
-			{
-				return _Pushes.Length;
-			}
-		}
+		public int PushCount => _Pushes.Length;
 
 		public byte[] GetUnsafePush(int i)
 		{
@@ -1286,14 +1174,8 @@ namespace NBitcoin
 
 		public uint Version
 		{
-			get
-			{
-				return nVersion;
-			}
-			set
-			{
-				nVersion = value;
-			}
+			get => nVersion;
+			set => nVersion = value;
 		}
 		protected TxInList vin;
 		protected TxOutList vout;
@@ -1361,30 +1243,13 @@ namespace NBitcoin
 
 		public LockTime LockTime
 		{
-			get
-			{
-				return nLockTime;
-			}
-			set
-			{
-				nLockTime = value;
-			}
+			get => nLockTime;
+			set => nLockTime = value;
 		}
 
-		public TxInList Inputs
-		{
-			get
-			{
-				return vin;
-			}
-		}
-		public TxOutList Outputs
-		{
-			get
-			{
-				return vout;
-			}
-		}
+		public TxInList Inputs => vin;
+
+		public TxOutList Outputs => vout;
 
 		//Since it is impossible to serialize a transaction with 0 input without problems during deserialization with wit activated, we fit a flag in the version to workaround it
 		protected const uint NoDummyInput = (1 << 27);
@@ -1594,13 +1459,7 @@ namespace NBitcoin
 			return Inputs.FindIndexedInput(coin.Outpoint) ?? throw new ArgumentException("The coin is not being spent by this transaction", nameof(coin));
 		}
 
-		public virtual bool IsCoinBase
-		{
-			get
-			{
-				return (Inputs.Count == 1 && Inputs[0].PrevOut.IsNull);
-			}
-		}
+		public virtual bool IsCoinBase => (Inputs.Count == 1 && Inputs[0].PrevOut.IsNull);
 
 		public static uint CURRENT_VERSION = 2;
 		public static uint MAX_STANDARD_TX_SIZE = 100000;

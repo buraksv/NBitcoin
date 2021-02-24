@@ -24,13 +24,7 @@ namespace NBitcoin.BouncyCastle.Crypto.Paddings
         *
         * @return the name of the algorithm the cipher implements.
         */
-		public string PaddingName
-		{
-			get
-			{
-				return "PKCS7";
-			}
-		}
+		public string PaddingName => "PKCS7";
 
 		/**
         * add the pad bytes to the passed in block, returning the

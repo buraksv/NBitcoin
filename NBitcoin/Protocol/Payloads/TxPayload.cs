@@ -24,14 +24,8 @@ namespace NBitcoin.Protocol
 		Transaction _Object;
 		public Transaction Object
 		{
-			get
-			{
-				return _Object;
-			}
-			set
-			{
-				_Object = value;
-			}
+			get => _Object;
+			set => _Object = value;
 		}
 
 		public override void ReadWriteCore(BitcoinStream stream)

@@ -20,60 +20,18 @@
 			this.m_bits = bits;
 		}
 
-		public virtual BigInteger Beta
-		{
-			get
-			{
-				return m_beta;
-			}
-		}
+		public virtual BigInteger Beta => m_beta;
 
-		public virtual BigInteger Lambda
-		{
-			get
-			{
-				return m_lambda;
-			}
-		}
+		public virtual BigInteger Lambda => m_lambda;
 
-		public virtual BigInteger[] V1
-		{
-			get
-			{
-				return m_v1;
-			}
-		}
+		public virtual BigInteger[] V1 => m_v1;
 
-		public virtual BigInteger[] V2
-		{
-			get
-			{
-				return m_v2;
-			}
-		}
+		public virtual BigInteger[] V2 => m_v2;
 
-		public virtual BigInteger G1
-		{
-			get
-			{
-				return m_g1;
-			}
-		}
+		public virtual BigInteger G1 => m_g1;
 
-		public virtual BigInteger G2
-		{
-			get
-			{
-				return m_g2;
-			}
-		}
+		public virtual BigInteger G2 => m_g2;
 
-		public virtual int Bits
-		{
-			get
-			{
-				return m_bits;
-			}
-		}
+		public virtual int Bits => m_bits;
 	}
 }

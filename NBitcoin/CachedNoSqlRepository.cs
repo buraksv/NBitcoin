@@ -22,13 +22,8 @@ namespace NBitcoin
 				_Data = str.GetString(true);
 			}
 			private byte[] _Data = new byte[0];
-			public byte[] Data
-			{
-				get
-				{
-					return _Data;
-				}
-			}
+			public byte[] Data => _Data;
+
 			#region IBitcoinSerializable Members
 
 			public void ReadWrite(BitcoinStream stream)
@@ -44,13 +39,7 @@ namespace NBitcoin
 			_InnerRepository = inner;
 		}
 		private readonly NoSqlRepository _InnerRepository;
-		public NoSqlRepository InnerRepository
-		{
-			get
-			{
-				return _InnerRepository;
-			}
-		}
+		public NoSqlRepository InnerRepository => _InnerRepository;
 		Dictionary<string, byte[]> _Table = new Dictionary<string, byte[]>();
 		HashSet<string> _Removed = new HashSet<string>();
 		HashSet<string> _Added = new HashSet<string>();

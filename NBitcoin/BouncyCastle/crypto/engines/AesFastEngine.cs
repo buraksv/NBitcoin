@@ -856,21 +856,9 @@ namespace NBitcoin.BouncyCastle.Crypto.Engines
 			this.forEncryption = forEncryption;
 		}
 
-		public virtual string AlgorithmName
-		{
-			get
-			{
-				return "AES";
-			}
-		}
+		public virtual string AlgorithmName => "AES";
 
-		public virtual bool IsPartialBlockOkay
-		{
-			get
-			{
-				return false;
-			}
-		}
+		public virtual bool IsPartialBlockOkay => false;
 
 		public virtual int GetBlockSize()
 		{

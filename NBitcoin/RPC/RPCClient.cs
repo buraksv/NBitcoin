@@ -157,44 +157,20 @@ namespace NBitcoin.RPC
 		HttpClient _HttpClient;
 		public HttpClient HttpClient
 		{
-			get
-			{
-				return _HttpClient ?? _Shared.Value;
-			}
-			set
-			{
-				_HttpClient = value;
-			}
+			get => _HttpClient ?? _Shared.Value;
+			set => _HttpClient = value;
 		}
 
 		private string _Authentication;
 		private readonly Uri _address;
-		public Uri Address
-		{
-			get
-			{
-				return _address;
-			}
-		}
+		public Uri Address => _address;
 
 
 		RPCCredentialString _CredentialString;
-		public RPCCredentialString CredentialString
-		{
-			get
-			{
-				return _CredentialString;
-			}
-		}
+		public RPCCredentialString CredentialString => _CredentialString;
 
 		private readonly Network _network;
-		public Network Network
-		{
-			get
-			{
-				return _network;
-			}
-		}
+		public Network Network => _network;
 
 		/// <summary>
 		/// Use default bitcoin parameters to configure a RPCClient.
@@ -493,13 +469,7 @@ namespace NBitcoin.RPC
 		{
 		}
 
-		public string Authentication
-		{
-			get
-			{
-				return _Authentication;
-			}
-		}
+		public string Authentication => _Authentication;
 
 		ConcurrentQueue<Tuple<RPCRequest, TaskCompletionSource<RPCResponse>>> _BatchedRequests;
 

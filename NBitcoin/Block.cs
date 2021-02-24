@@ -132,14 +132,8 @@ namespace NBitcoin
 
 		public uint256 HashPrevBlock
 		{
-			get
-			{
-				return hashPrevBlock;
-			}
-			set
-			{
-				hashPrevBlock = value;
-			}
+			get => hashPrevBlock;
+			set => hashPrevBlock = value;
 		}
 		protected uint256 hashMerkleRoot;
 
@@ -148,53 +142,29 @@ namespace NBitcoin
 
 		public Target Bits
 		{
-			get
-			{
-				return nBits;
-			}
-			set
-			{
-				nBits = value;
-			}
+			get => nBits;
+			set => nBits = value;
 		}
 
 		protected int nVersion;
 
 		public int Version
 		{
-			get
-			{
-				return nVersion;
-			}
-			set
-			{
-				nVersion = value;
-			}
+			get => nVersion;
+			set => nVersion = value;
 		}
 
 		protected uint nNonce;
 
 		public uint Nonce
 		{
-			get
-			{
-				return nNonce;
-			}
-			set
-			{
-				nNonce = value;
-			}
+			get => nNonce;
+			set => nNonce = value;
 		}
 		public uint256 HashMerkleRoot
 		{
-			get
-			{
-				return hashMerkleRoot;
-			}
-			set
-			{
-				hashMerkleRoot = value;
-			}
+			get => hashMerkleRoot;
+			set => hashMerkleRoot = value;
 		}
 
 		protected internal virtual void SetNull()
@@ -207,13 +177,8 @@ namespace NBitcoin
 			nNonce = 0;
 		}
 
-		public virtual bool IsNull
-		{
-			get
-			{
-				return (nBits == 0);
-			}
-		}
+		public virtual bool IsNull => (nBits == 0);
+
 		#region IBitcoinSerializable Members
 
 		public virtual void ReadWrite(BitcoinStream stream)
@@ -291,14 +256,8 @@ namespace NBitcoin
 
 		public DateTimeOffset BlockTime
 		{
-			get
-			{
-				return Utils.UnixTimeToDateTime(nTime);
-			}
-			set
-			{
-				this.nTime = Utils.DateTimeToUnixTime(value);
-			}
+			get => Utils.UnixTimeToDateTime(nTime);
+			set => this.nTime = Utils.DateTimeToUnixTime(value);
 		}
 
 		static BigInteger Pow256 = BigInteger.ValueOf(2).Pow(256);
@@ -399,14 +358,8 @@ namespace NBitcoin
 
 		public List<Transaction> Transactions
 		{
-			get
-			{
-				return vtx;
-			}
-			set
-			{
-				vtx = value;
-			}
+			get => vtx;
+			set => vtx = value;
 		}
 
 		public MerkleNode GetMerkleRoot()
@@ -492,13 +445,7 @@ namespace NBitcoin
 			}
 		}
 
-		public bool HeaderOnly
-		{
-			get
-			{
-				return vtx == null || vtx.Count == 0;
-			}
-		}
+		public bool HeaderOnly => vtx == null || vtx.Count == 0;
 
 		/// <summary>
 		/// Get the coinbase height as specified by the first tx input of this block (BIP 34)
@@ -518,13 +465,8 @@ namespace NBitcoin
 			vtx.Clear();
 		}
 
-		public BlockHeader Header
-		{
-			get
-			{
-				return header;
-			}
-		}
+		public BlockHeader Header => header;
+
 		public uint256 GetHash()
 		{
 			//Block's hash is his header's hash

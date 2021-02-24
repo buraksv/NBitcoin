@@ -87,22 +87,10 @@ namespace NBitcoin
 		}
 
 		KeyId _KeyId;
-		public KeyId Hash
-		{
-			get
-			{
-				return _KeyId;
-			}
-		}
+		public KeyId Hash => _KeyId;
 
 
-		public Base58Type Type
-		{
-			get
-			{
-				return Base58Type.PUBKEY_ADDRESS;
-			}
-		}
+		public Base58Type Type => Base58Type.PUBKEY_ADDRESS;
 
 		protected override Script GeneratePaymentScript()
 		{

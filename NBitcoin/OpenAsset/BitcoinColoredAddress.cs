@@ -35,13 +35,7 @@ namespace NBitcoin
 			}
 		}
 
-		protected override bool IsValid
-		{
-			get
-			{
-				return Address != null;
-			}
-		}
+		protected override bool IsValid => Address != null;
 
 		BitcoinAddress _Address;
 		public BitcoinAddress Address
@@ -57,23 +51,11 @@ namespace NBitcoin
 			}
 		}
 
-		public override Base58Type Type
-		{
-			get
-			{
-				return Base58Type.COLORED_ADDRESS;
-			}
-		}
+		public override Base58Type Type => Base58Type.COLORED_ADDRESS;
 
 		#region IDestination Members
 
-		public Script ScriptPubKey
-		{
-			get
-			{
-				return Address.ScriptPubKey;
-			}
-		}
+		public Script ScriptPubKey => Address.ScriptPubKey;
 
 		#endregion
 

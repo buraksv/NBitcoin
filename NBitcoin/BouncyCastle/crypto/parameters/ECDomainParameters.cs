@@ -54,37 +54,13 @@ namespace NBitcoin.BouncyCastle.Crypto.Parameters
 			this.seed = Arrays.Clone(seed);
 		}
 
-		public ECCurve Curve
-		{
-			get
-			{
-				return curve;
-			}
-		}
+		public ECCurve Curve => curve;
 
-		public ECPoint G
-		{
-			get
-			{
-				return g;
-			}
-		}
+		public ECPoint G => g;
 
-		public BigInteger N
-		{
-			get
-			{
-				return n;
-			}
-		}
+		public BigInteger N => n;
 
-		public BigInteger H
-		{
-			get
-			{
-				return h;
-			}
-		}
+		public BigInteger H => h;
 
 		public byte[] GetSeed()
 		{

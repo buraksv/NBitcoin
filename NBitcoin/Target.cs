@@ -12,13 +12,7 @@ namespace NBitcoin
 	public class Target
 	{
 		static Target _Difficulty1 = new Target(new byte[] { 0x1d, 0x00, 0xff, 0xff });
-		public static Target Difficulty1
-		{
-			get
-			{
-				return _Difficulty1;
-			}
-		}
+		public static Target Difficulty1 => _Difficulty1;
 
 		public Target(uint compact)
 			: this(ToBytes(compact))

@@ -47,13 +47,7 @@ namespace NBitcoin.Protocol
 			Headers.AddRange(headers);
 		}
 
-		public List<BlockHeader> Headers
-		{
-			get
-			{
-				return headers;
-			}
-		}
+		public List<BlockHeader> Headers => headers;
 
 		public override void ReadWriteCore(BitcoinStream stream)
 		{

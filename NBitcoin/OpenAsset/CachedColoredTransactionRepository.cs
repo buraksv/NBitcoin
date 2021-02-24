@@ -24,38 +24,20 @@ namespace NBitcoin.OpenAsset
 
 		public int MaxCachedTransactions
 		{
-			get
-			{
-				return _InnerTransactionRepository.MaxCachedTransactions;
-			}
-			set
-			{
-				_InnerTransactionRepository.MaxCachedTransactions = value;
-			}
+			get => _InnerTransactionRepository.MaxCachedTransactions;
+			set => _InnerTransactionRepository.MaxCachedTransactions = value;
 		}
 
 		public bool WriteThrough
 		{
-			get
-			{
-				return _InnerTransactionRepository.WriteThrough;
-			}
-			set
-			{
-				_InnerTransactionRepository.WriteThrough = value;
-			}
+			get => _InnerTransactionRepository.WriteThrough;
+			set => _InnerTransactionRepository.WriteThrough = value;
 		}
 
 		public bool ReadThrough
 		{
-			get
-			{
-				return _InnerTransactionRepository.ReadThrough;
-			}
-			set
-			{
-				_InnerTransactionRepository.ReadThrough = value;
-			}
+			get => _InnerTransactionRepository.ReadThrough;
+			set => _InnerTransactionRepository.ReadThrough = value;
 		}
 
 		public CachedColoredTransactionRepository(IColoredTransactionRepository inner)
@@ -68,21 +50,9 @@ namespace NBitcoin.OpenAsset
 		}
 		#region IColoredTransactionRepository Members
 
-		public CachedTransactionRepository Transactions
-		{
-			get
-			{
-				return _InnerTransactionRepository;
-			}
-		}
+		public CachedTransactionRepository Transactions => _InnerTransactionRepository;
 
-		ITransactionRepository IColoredTransactionRepository.Transactions
-		{
-			get
-			{
-				return _InnerTransactionRepository;
-			}
-		}
+		ITransactionRepository IColoredTransactionRepository.Transactions => _InnerTransactionRepository;
 
 		private void EvictIfNecessary(uint256 txId)
 		{

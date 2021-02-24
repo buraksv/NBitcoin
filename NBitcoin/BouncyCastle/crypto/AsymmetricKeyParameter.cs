@@ -11,13 +11,7 @@ namespace NBitcoin.BouncyCastle.Crypto
 			this.privateKey = privateKey;
 		}
 
-		public bool IsPrivate
-		{
-			get
-			{
-				return privateKey;
-			}
-		}
+		public bool IsPrivate => privateKey;
 
 		public override bool Equals(
 			object obj)

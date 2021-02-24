@@ -34,13 +34,7 @@ namespace NBitcoin.BouncyCastle.Crypto.Macs
 			this.outputBuf = new byte[blockLength + digestSize];
 		}
 
-		public virtual string AlgorithmName
-		{
-			get
-			{
-				return digest.AlgorithmName + "/HMAC";
-			}
-		}
+		public virtual string AlgorithmName => digest.AlgorithmName + "/HMAC";
 
 		public virtual IDigest GetUnderlyingDigest()
 		{

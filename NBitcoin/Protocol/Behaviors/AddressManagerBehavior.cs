@@ -76,14 +76,8 @@ namespace NBitcoin.Protocol.Behaviors
 		/// </summary>
 		public int PeersToDiscover
 		{
-			get
-			{
-				return _PeersToDiscover;
-			}
-			set
-			{
-				_PeersToDiscover = value;
-			}
+			get => _PeersToDiscover;
+			set => _PeersToDiscover = value;
 		}
 
 		public static void SetAddrman(NodeBehaviorsCollection behaviors, AddressManager addrman)
@@ -116,10 +110,7 @@ namespace NBitcoin.Protocol.Behaviors
 		AddressManager _AddressManager;
 		public AddressManager AddressManager
 		{
-			get
-			{
-				return _AddressManager;
-			}
+			get => _AddressManager;
 			set
 			{
 				AssertNotAttached();

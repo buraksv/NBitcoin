@@ -68,70 +68,40 @@ namespace NBitcoin.Altcoins
 
 			public uint Height
 			{
-				get
-				{
-					return nHeight;
-				}
-				set
-				{
-					nHeight = value;
-				}
+				get => nHeight;
+				set => nHeight = value;
 			}
 
 			uint[] vReserved = new uint[7];
 
 			public uint[] Reserved
 			{
-				get
-				{
-					return vReserved;
-				}
-				set
-				{
-					vReserved = value;
-				}
+				get => vReserved;
+				set => vReserved = value;
 			}
 
 			uint256 nNewNonce = new uint256();
 
 			public uint256 NewNonce
 			{
-				get
-				{
-					return nNewNonce;
-				}
-				set
-				{
-					nNewNonce = value;
-				}
+				get => nNewNonce;
+				set => nNewNonce = value;
 			}
 
 			uint nSolutionSize = 0;
 
 			public uint SolutionSize
 			{
-				get
-				{
-					return nSolutionSize;
-				}
-				set
-				{
-					nSolutionSize = value;
-				}
+				get => nSolutionSize;
+				set => nSolutionSize = value;
 			}
 
 			byte[] nSolution = new byte[0];
 
 			public byte[] Solution
 			{
-				get
-				{
-					return nSolution;
-				}
-				set
-				{
-					nSolution = value;
-				}
+				get => nSolution;
+				set => nSolution = value;
 			}
 
 			public override void ReadWrite(BitcoinStream stream)

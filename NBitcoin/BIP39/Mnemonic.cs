@@ -147,30 +147,12 @@ namespace NBitcoin
 		}
 
 		private readonly Wordlist _WordList;
-		public Wordlist WordList
-		{
-			get
-			{
-				return _WordList;
-			}
-		}
+		public Wordlist WordList => _WordList;
 
 		private readonly int[] _Indices;
-		public int[] Indices
-		{
-			get
-			{
-				return _Indices;
-			}
-		}
+		public int[] Indices => _Indices;
 		private readonly string[] _Words;
-		public string[] Words
-		{
-			get
-			{
-				return _Words;
-			}
-		}
+		public string[] Words => _Words;
 
 		static Encoding NoBOMUTF8 = new UTF8Encoding(false);
 		public byte[] DeriveSeed(string passphrase = null)

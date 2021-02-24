@@ -7,27 +7,11 @@ namespace NBitcoin.BouncyCastle.Utilities.IO
 	{
 		private bool closed;
 
-		public sealed override bool CanRead
-		{
-			get
-			{
-				return !closed;
-			}
-		}
-		public sealed override bool CanSeek
-		{
-			get
-			{
-				return false;
-			}
-		}
-		public sealed override bool CanWrite
-		{
-			get
-			{
-				return false;
-			}
-		}
+		public sealed override bool CanRead => !closed;
+
+		public sealed override bool CanSeek => false;
+
+		public sealed override bool CanWrite => false;
 
 #if NETSTANDARD1X
         protected override void Dispose(bool disposing)
@@ -49,23 +33,12 @@ namespace NBitcoin.BouncyCastle.Utilities.IO
 		public sealed override void Flush()
 		{
 		}
-		public sealed override long Length
-		{
-			get
-			{
-				throw new NotSupportedException();
-			}
-		}
+		public sealed override long Length => throw new NotSupportedException();
+
 		public sealed override long Position
 		{
-			get
-			{
-				throw new NotSupportedException();
-			}
-			set
-			{
-				throw new NotSupportedException();
-			}
+			get => throw new NotSupportedException();
+			set => throw new NotSupportedException();
 		}
 
 		public override int Read(byte[] buffer, int offset, int count)

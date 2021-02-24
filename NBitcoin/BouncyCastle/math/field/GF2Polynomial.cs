@@ -12,13 +12,7 @@ namespace NBitcoin.BouncyCastle.Math.Field
 			this.exponents = Arrays.Clone(exponents);
 		}
 
-		public virtual int Degree
-		{
-			get
-			{
-				return exponents[exponents.Length - 1];
-			}
-		}
+		public virtual int Degree => exponents[exponents.Length - 1];
 
 		public virtual int[] GetExponentsPresent()
 		{

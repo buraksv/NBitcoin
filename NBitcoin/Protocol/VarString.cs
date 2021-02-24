@@ -14,13 +14,8 @@ namespace NBitcoin.Protocol
 			_Bytes = new byte[0];
 		}
 		byte[] _Bytes;
-		public int Length
-		{
-			get
-			{
-				return _Bytes.Length;
-			}
-		}
+		public int Length => _Bytes.Length;
+
 		public VarString(byte[] bytes)
 		{
 			if (bytes == null)

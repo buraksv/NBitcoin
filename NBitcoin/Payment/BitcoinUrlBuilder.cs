@@ -95,13 +95,7 @@ namespace NBitcoin.Payment
 		}
 
 		private readonly Dictionary<string, string> _UnknowParameters = new Dictionary<string, string>();
-		public Dictionary<string, string> UnknowParameters
-		{
-			get
-			{
-				return _UnknowParameters;
-			}
-		}
+		public Dictionary<string, string> UnknowParameters => _UnknowParameters;
 #if !NOHTTPCLIENT
 		[Obsolete("BIP70 is obsolete")]
 		public PaymentRequest GetPaymentRequest()

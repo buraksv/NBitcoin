@@ -23,14 +23,8 @@ namespace NBitcoin.Protocol
 
 		public List<InventoryVector> Inventory
 		{
-			set
-			{
-				inventory = value;
-			}
-			get
-			{
-				return inventory;
-			}
+			set => inventory = value;
+			get => inventory;
 		}
 
 		public override void ReadWriteCore(BitcoinStream stream)

@@ -77,13 +77,7 @@ namespace NBitcoin
 		}
 
 		WitKeyId _Hash;
-		public WitKeyId Hash
-		{
-			get
-			{
-				return _Hash;
-			}
-		}
+		public WitKeyId Hash => _Hash;
 
 
 		protected override Script GeneratePaymentScript()
@@ -91,13 +85,7 @@ namespace NBitcoin
 			return PayToWitTemplate.Instance.GenerateScriptPubKey(OpcodeType.OP_0, Hash._DestBytes);
 		}
 
-		public Bech32Type Type
-		{
-			get
-			{
-				return Bech32Type.WITNESS_PUBKEY_ADDRESS;
-			}
-		}
+		public Bech32Type Type => Bech32Type.WITNESS_PUBKEY_ADDRESS;
 	}
 
 	public class BitcoinWitScriptAddress : BitcoinAddress, IBech32Data, IPubkeyHashUsable
@@ -167,26 +155,14 @@ namespace NBitcoin
 
 
 		WitScriptId _Hash;
-		public WitScriptId Hash
-		{
-			get
-			{
-				return _Hash;
-			}
-		}
+		public WitScriptId Hash => _Hash;
 
 		protected override Script GeneratePaymentScript()
 		{
 			return PayToWitTemplate.Instance.GenerateScriptPubKey(OpcodeType.OP_0, Hash._DestBytes);
 		}
 
-		public Bech32Type Type
-		{
-			get
-			{
-				return Bech32Type.WITNESS_SCRIPT_ADDRESS;
-			}
-		}
+		public Bech32Type Type => Bech32Type.WITNESS_SCRIPT_ADDRESS;
 	}
 }
 #nullable disable

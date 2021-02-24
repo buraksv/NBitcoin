@@ -8,13 +8,7 @@ namespace NBitcoin
 {
 	public abstract class ChainBase
 	{
-		public virtual ChainedBlock Genesis
-		{
-			get
-			{
-				return GetBlock(0);
-			}
-		}
+		public virtual ChainedBlock Genesis => GetBlock(0);
 		public abstract ChainedBlock GetBlock(uint256 id);
 		public abstract ChainedBlock GetBlock(int height);
 		public abstract ChainedBlock Tip

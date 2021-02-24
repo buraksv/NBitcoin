@@ -33,21 +33,9 @@ namespace NBitcoin.Policy
 			_MaximumSize = maximumSize;
 		}
 		private readonly int _ActualSize;
-		public int ActualSize
-		{
-			get
-			{
-				return _ActualSize;
-			}
-		}
+		public int ActualSize => _ActualSize;
 		private readonly int _MaximumSize;
-		public int MaximumSize
-		{
-			get
-			{
-				return _MaximumSize;
-			}
-		}
+		public int MaximumSize => _MaximumSize;
 	}
 	public class FeeTooHighPolicyError : TransactionPolicyError
 	{
@@ -59,21 +47,9 @@ namespace NBitcoin.Policy
 		}
 
 		private readonly Money _Fee;
-		public Money Fee
-		{
-			get
-			{
-				return _Fee;
-			}
-		}
+		public Money Fee => _Fee;
 		private readonly Money _ExpectedMaxFee;
-		public Money ExpectedMaxFee
-		{
-			get
-			{
-				return _ExpectedMaxFee;
-			}
-		}
+		public Money ExpectedMaxFee => _ExpectedMaxFee;
 	}
 
 	public class DustPolicyError : TransactionPolicyError
@@ -86,22 +62,10 @@ namespace NBitcoin.Policy
 		}
 
 		private readonly Money _Value;
-		public Money Value
-		{
-			get
-			{
-				return _Value;
-			}
-		}
+		public Money Value => _Value;
 
 		private readonly Money _DustThreshold;
-		public Money DustThreshold
-		{
-			get
-			{
-				return _DustThreshold;
-			}
-		}
+		public Money DustThreshold => _DustThreshold;
 	}
 
 	public class FeeTooLowPolicyError : TransactionPolicyError
@@ -114,21 +78,9 @@ namespace NBitcoin.Policy
 		}
 
 		private readonly Money _Fee;
-		public Money Fee
-		{
-			get
-			{
-				return _Fee;
-			}
-		}
+		public Money Fee => _Fee;
 		private readonly Money _ExpectedMinFee;
-		public Money ExpectedMinFee
-		{
-			get
-			{
-				return _ExpectedMinFee;
-			}
-		}
+		public Money ExpectedMinFee => _ExpectedMinFee;
 	}
 
 	public class InputPolicyError : TransactionPolicyError
@@ -141,22 +93,10 @@ namespace NBitcoin.Policy
 		}
 
 		private readonly OutPoint _OutPoint;
-		public OutPoint OutPoint
-		{
-			get
-			{
-				return _OutPoint;
-			}
-		}
+		public OutPoint OutPoint => _OutPoint;
 
 		private readonly uint _InputIndex;
-		public uint InputIndex
-		{
-			get
-			{
-				return _InputIndex;
-			}
-		}
+		public uint InputIndex => _InputIndex;
 	}
 
 	public class DuplicateInputPolicyError : TransactionPolicyError
@@ -169,21 +109,9 @@ namespace NBitcoin.Policy
 		}
 
 		private readonly OutPoint _OutPoint;
-		public OutPoint OutPoint
-		{
-			get
-			{
-				return _OutPoint;
-			}
-		}
+		public OutPoint OutPoint => _OutPoint;
 		private readonly uint[] _InputIndices;
-		public uint[] InputIndices
-		{
-			get
-			{
-				return _InputIndices;
-			}
-		}
+		public uint[] InputIndices => _InputIndices;
 	}
 
 	public class OutputPolicyError : TransactionPolicyError
@@ -194,13 +122,7 @@ namespace NBitcoin.Policy
 			_OutputIndex = outputIndex;
 		}
 		private readonly int _OutputIndex;
-		public int OutputIndex
-		{
-			get
-			{
-				return _OutputIndex;
-			}
-		}
+		public int OutputIndex => _OutputIndex;
 	}
 	public class CoinNotFoundPolicyError : InputPolicyError
 	{
@@ -229,32 +151,13 @@ namespace NBitcoin.Policy
 
 
 		private readonly ScriptError _ScriptError;
-		public ScriptError ScriptError
-		{
-			get
-			{
-				return _ScriptError;
-			}
-		}
+		public ScriptError ScriptError => _ScriptError;
 
 		private readonly ScriptVerify _ScriptVerify;
-		public ScriptVerify ScriptVerify
-		{
-			get
-			{
-				return _ScriptVerify;
-			}
-		}
+		public ScriptVerify ScriptVerify => _ScriptVerify;
 
 		private readonly Script _ScriptPubKey;
-		public Script ScriptPubKey
-		{
-			get
-			{
-				return _ScriptPubKey;
-			}
-
-		}
+		public Script ScriptPubKey => _ScriptPubKey;
 	}
 	public interface ITransactionPolicy
 	{

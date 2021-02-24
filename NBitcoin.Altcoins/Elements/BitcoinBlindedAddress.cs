@@ -153,22 +153,10 @@ namespace NBitcoin.Altcoins.Elements
 		}
 
 		BitcoinAddress _UnblindedAddress;
-		public BitcoinAddress UnblindedAddress
-		{
-			get
-			{
-				return _UnblindedAddress;
-			}
-		}
+		public BitcoinAddress UnblindedAddress => _UnblindedAddress;
 
 		PubKey _BlindingKey;
-		public PubKey BlindingKey
-		{
-			get
-			{
-				return _BlindingKey;
-			}
-		}
+		public PubKey BlindingKey => _BlindingKey;
 
 		protected override Script GeneratePaymentScript()
 		{

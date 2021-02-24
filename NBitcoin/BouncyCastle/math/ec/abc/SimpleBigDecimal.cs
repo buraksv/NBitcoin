@@ -152,21 +152,9 @@ namespace NBitcoin.BouncyCastle.Math.EC.Abc
 			return Add(oneHalf.AdjustScale(scale)).Floor();
 		}
 
-		public int IntValue
-		{
-			get
-			{
-				return Floor().IntValue;
-			}
-		}
+		public int IntValue => Floor().IntValue;
 
-		public long LongValue
-		{
-			get
-			{
-				return Floor().LongValue;
-			}
-		}
+		public long LongValue => Floor().LongValue;
 
 		//		public double doubleValue()
 		//		{
@@ -178,13 +166,7 @@ namespace NBitcoin.BouncyCastle.Math.EC.Abc
 		//			return new Float(ToString()).floatValue();
 		//		}
 
-		public int Scale
-		{
-			get
-			{
-				return scale;
-			}
-		}
+		public int Scale => scale;
 
 		public override string ToString()
 		{

@@ -8,13 +8,7 @@ namespace NBitcoin.Protocol
 {
 	public class Payload : IBitcoinSerializable
 	{
-		public virtual string Command
-		{
-			get
-			{
-				return PayloadAttribute.GetCommandName(this.GetType());
-			}
-		}
+		public virtual string Command => PayloadAttribute.GetCommandName(this.GetType());
 
 		#region IBitcoinSerializable Members
 

@@ -48,22 +48,10 @@ namespace NBitcoin
 			_MasterFingerprint = masterKey.GetPublicKey().GetHDFingerPrint();
 		}
 		private readonly KeyPath _KeyPath;
-		public KeyPath KeyPath
-		{
-			get
-			{
-				return _KeyPath;
-			}
-		}
+		public KeyPath KeyPath => _KeyPath;
 
 		private readonly HDFingerprint _MasterFingerprint;
-		public HDFingerprint MasterFingerprint
-		{
-			get
-			{
-				return _MasterFingerprint;
-			}
-		}
+		public HDFingerprint MasterFingerprint => _MasterFingerprint;
 
 		public RootedKeyPath Derive(KeyPath keyPath)
 		{

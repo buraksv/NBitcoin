@@ -54,14 +54,8 @@ namespace NBitcoin
 
 		public uint256 Hash
 		{
-			get
-			{
-				return _Hash;
-			}
-			set
-			{
-				_Hash = value;
-			}
+			get => _Hash;
+			set => _Hash = value;
 		}
 
 		public void UpdateHash()

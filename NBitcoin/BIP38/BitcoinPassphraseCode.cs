@@ -19,13 +19,7 @@ namespace NBitcoin
 		}
 
 		private readonly BitcoinEncryptedSecretEC _EncryptedKey;
-		public BitcoinEncryptedSecretEC EncryptedKey
-		{
-			get
-			{
-				return _EncryptedKey;
-			}
-		}
+		public BitcoinEncryptedSecretEC EncryptedKey => _EncryptedKey;
 
 		Func<BitcoinConfirmationCode> _CalculateConfirmation;
 		private BitcoinConfirmationCode _ConfirmationCode;
@@ -42,22 +36,10 @@ namespace NBitcoin
 			}
 		}
 		private readonly BitcoinAddress _GeneratedAddress;
-		public BitcoinAddress GeneratedAddress
-		{
-			get
-			{
-				return _GeneratedAddress;
-			}
-		}
+		public BitcoinAddress GeneratedAddress => _GeneratedAddress;
 
 		private readonly byte[] _Seed;
-		public byte[] Seed
-		{
-			get
-			{
-				return _Seed;
-			}
-		}
+		public byte[] Seed => _Seed;
 	}
 
 	public class LotSequence
@@ -95,21 +77,9 @@ namespace NBitcoin
 		}
 
 		private readonly int _Lot;
-		public int Lot
-		{
-			get
-			{
-				return _Lot;
-			}
-		}
+		public int Lot => _Lot;
 		private readonly int _Sequence;
-		public int Sequence
-		{
-			get
-			{
-				return _Sequence;
-			}
-		}
+		public int Sequence => _Sequence;
 
 		readonly byte[] _Bytes;
 		public byte[] ToBytes()
@@ -117,13 +87,7 @@ namespace NBitcoin
 			return _Bytes.ToArray();
 		}
 
-		private int Id
-		{
-			get
-			{
-				return Utils.ToInt32(_Bytes, 0, true);
-			}
-		}
+		private int Id => Utils.ToInt32(_Bytes, 0, true);
 
 		public override bool Equals(object obj)
 		{
@@ -281,37 +245,13 @@ namespace NBitcoin
 
 
 		byte[] _OwnerEntropy;
-		public byte[] OwnerEntropy
-		{
-			get
-			{
-				return _OwnerEntropy ?? (_OwnerEntropy = vchData.Skip(1).Take(8).ToArray());
-			}
-		}
+		public byte[] OwnerEntropy => _OwnerEntropy ?? (_OwnerEntropy = vchData.Skip(1).Take(8).ToArray());
 		byte[] _Passpoint;
-		public byte[] Passpoint
-		{
-			get
-			{
-				return _Passpoint ?? (_Passpoint = vchData.Skip(1).Skip(8).ToArray());
-			}
-		}
+		public byte[] Passpoint => _Passpoint ?? (_Passpoint = vchData.Skip(1).Skip(8).ToArray());
 
-		protected override bool IsValid
-		{
-			get
-			{
-				return 1 + 8 + 33 == vchData.Length && (vchData[0] == 0x53 || vchData[0] == 0x51);
-			}
-		}
+		protected override bool IsValid => 1 + 8 + 33 == vchData.Length && (vchData[0] == 0x53 || vchData[0] == 0x51);
 
 
-		public override Base58Type Type
-		{
-			get
-			{
-				return Base58Type.PASSPHRASE_CODE;
-			}
-		}
+		public override Base58Type Type => Base58Type.PASSPHRASE_CODE;
 	}
 }

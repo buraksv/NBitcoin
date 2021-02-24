@@ -49,13 +49,7 @@ namespace NBitcoin.BouncyCastle.Crypto.Digests
 			xOff = t.xOff;
 		}
 
-		public override string AlgorithmName
-		{
-			get
-			{
-				return "RIPEMD160";
-			}
-		}
+		public override string AlgorithmName => "RIPEMD160";
 
 		public override int GetDigestSize()
 		{

@@ -136,29 +136,11 @@ namespace NBitcoin
 		}
 
 		readonly uint[] _Indexes;
-		public uint this[int index]
-		{
-			get
-			{
-				return _Indexes[index];
-			}
-		}
+		public uint this[int index] => _Indexes[index];
 
-		public uint[] Indexes
-		{
-			get
-			{
-				return _Indexes.ToArray();
-			}
-		}
+		public uint[] Indexes => _Indexes.ToArray();
 
-		public int Length
-		{
-			get
-			{
-				return _Indexes.Length;
-			}
-		}
+		public int Length => _Indexes.Length;
 
 		public KeyPath Derive(int index, bool hardened)
 		{

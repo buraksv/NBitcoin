@@ -16,13 +16,8 @@ namespace NBitcoin.Altcoins
 		{
 
 			private static readonly GroestlEncoder _Instance = new GroestlEncoder();
-			public static GroestlEncoder Instance
-			{
-				get
-				{
-					return _Instance;
-				}
-			}
+			public static GroestlEncoder Instance => _Instance;
+
 			private GroestlEncoder()
 			{
 
@@ -60,24 +55,14 @@ namespace NBitcoin.Altcoins
 		{
 
 			private static readonly GroestlcoinConsensusFactory _Instance = new GroestlcoinConsensusFactory();
-			public static GroestlcoinConsensusFactory Instance
-			{
-				get
-				{
-					return _Instance;
-				}
-			}
+			public static GroestlcoinConsensusFactory Instance => _Instance;
+
 			class GroestlcoinProtocolCapabilities : ProtocolCapabilities
 			{
 
 				private static readonly GroestlcoinProtocolCapabilities _Instance = new GroestlcoinProtocolCapabilities();
-				public static GroestlcoinProtocolCapabilities Instance
-				{
-					get
-					{
-						return _Instance;
-					}
-				}
+				public static GroestlcoinProtocolCapabilities Instance => _Instance;
+
 				public GroestlcoinProtocolCapabilities()
 				{
 					PeerTooOld = false;
@@ -176,13 +161,8 @@ namespace NBitcoin.Altcoins
 		{
 
 			private static readonly GroestlcoinStringParser _Instance = new GroestlcoinStringParser();
-			public static GroestlcoinStringParser Instance
-			{
-				get
-				{
-					return _Instance;
-				}
-			}
+			public static GroestlcoinStringParser Instance => _Instance;
+
 			private GroestlcoinStringParser()
 			{
 

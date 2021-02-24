@@ -33,10 +33,7 @@ namespace NBitcoin.Protocol
 		BlockHeader _Header;
 		public BlockHeader Header
 		{
-			get
-			{
-				return _Header;
-			}
+			get => _Header;
 			set
 			{
 				_Header = value;
@@ -49,10 +46,7 @@ namespace NBitcoin.Protocol
 		ulong _Nonce;
 		public ulong Nonce
 		{
-			get
-			{
-				return _Nonce;
-			}
+			get => _Nonce;
 			set
 			{
 				_Nonce = value;
@@ -63,27 +57,14 @@ namespace NBitcoin.Protocol
 
 
 		private List<ulong> _ShortIds = new List<ulong>();
-		public List<ulong> ShortIds
-		{
-			get
-			{
-				return _ShortIds;
-			}
-		}
-
+		public List<ulong> ShortIds => _ShortIds;
 
 
 		private List<PrefilledTransaction> _PrefilledTransactions = new List<PrefilledTransaction>();
 		private ulong _ShortTxidk0;
 		private ulong _ShortTxidk1;
 
-		public List<PrefilledTransaction> PrefilledTransactions
-		{
-			get
-			{
-				return _PrefilledTransactions;
-			}
-		}
+		public List<PrefilledTransaction> PrefilledTransactions => _PrefilledTransactions;
 
 		public override void ReadWriteCore(BitcoinStream stream)
 		{

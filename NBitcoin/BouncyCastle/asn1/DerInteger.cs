@@ -47,25 +47,13 @@ namespace NBitcoin.BouncyCastle.Asn1
 			this.bytes = bytes;
 		}
 
-		public BigInteger Value
-		{
-			get
-			{
-				return new BigInteger(bytes);
-			}
-		}
+		public BigInteger Value => new BigInteger(bytes);
 
 		/**
          * in some cases positive values Get crammed into a space,
          * that's not quite big enough...
          */
-		public BigInteger PositiveValue
-		{
-			get
-			{
-				return new BigInteger(1, bytes);
-			}
-		}
+		public BigInteger PositiveValue => new BigInteger(1, bytes);
 
 		internal override void Encode(
 			DerOutputStream derOut)

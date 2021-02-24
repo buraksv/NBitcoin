@@ -22,36 +22,21 @@ namespace NBitcoin.Protocol
 
 		public uint Magic
 		{
-			get
-			{
-				return magic;
-			}
-			set
-			{
-				magic = value;
-			}
+			get => magic;
+			set => magic = value;
 		}
 		byte[] command = new byte[12];
 
 		public string Command
 		{
-			get
-			{
-				return Encoders.ASCII.EncodeData(command);
-			}
-			private set
-			{
-				command = Encoders.ASCII.DecodeData(value.Trim().PadRight(12, '\0'));
-			}
+			get => Encoders.ASCII.EncodeData(command);
+			private set => command = Encoders.ASCII.DecodeData(value.Trim().PadRight(12, '\0'));
 		}
 
 		Payload _PayloadObject;
 		public Payload Payload
 		{
-			get
-			{
-				return _PayloadObject;
-			}
+			get => _PayloadObject;
 			set
 			{
 				_PayloadObject = value;

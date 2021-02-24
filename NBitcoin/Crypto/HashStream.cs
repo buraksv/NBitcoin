@@ -25,48 +25,18 @@ namespace NBitcoin.Crypto
 
 		}
 
-		public override bool CanRead
-		{
-			get
-			{
-				throw new NotImplementedException();
-			}
-		}
+		public override bool CanRead => throw new NotImplementedException();
 
-		public override bool CanSeek
-		{
-			get
-			{
-				throw new NotImplementedException();
-			}
-		}
+		public override bool CanSeek => throw new NotImplementedException();
 
-		public override bool CanWrite
-		{
-			get
-			{
-				throw new NotImplementedException();
-			}
-		}
+		public override bool CanWrite => throw new NotImplementedException();
 
-		public override long Length
-		{
-			get
-			{
-				throw new NotImplementedException();
-			}
-		}
+		public override long Length => throw new NotImplementedException();
 
 		public override long Position
 		{
-			get
-			{
-				throw new NotImplementedException();
-			}
-			set
-			{
-				throw new NotImplementedException();
-			}
+			get => throw new NotImplementedException();
+			set => throw new NotImplementedException();
 		}
 
 		public override void Flush()
@@ -225,48 +195,18 @@ namespace NBitcoin.Crypto
 			ms = new MemoryStream(capacity);
 		}
 
-		public override bool CanRead
-		{
-			get
-			{
-				throw new NotImplementedException();
-			}
-		}
+		public override bool CanRead => throw new NotImplementedException();
 
-		public override bool CanSeek
-		{
-			get
-			{
-				throw new NotImplementedException();
-			}
-		}
+		public override bool CanSeek => throw new NotImplementedException();
 
-		public override bool CanWrite
-		{
-			get
-			{
-				throw new NotImplementedException();
-			}
-		}
+		public override bool CanWrite => throw new NotImplementedException();
 
-		public override long Length
-		{
-			get
-			{
-				throw new NotImplementedException();
-			}
-		}
+		public override long Length => throw new NotImplementedException();
 
 		public override long Position
 		{
-			get
-			{
-				throw new NotImplementedException();
-			}
-			set
-			{
-				throw new NotImplementedException();
-			}
+			get => throw new NotImplementedException();
+			set => throw new NotImplementedException();
 		}
 
 		public override void Flush()

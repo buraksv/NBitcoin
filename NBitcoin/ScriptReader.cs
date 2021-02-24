@@ -376,10 +376,7 @@ namespace NBitcoin
 
 		public OpcodeType Code
 		{
-			get
-			{
-				return _Code;
-			}
+			get => _Code;
 			set
 			{
 				_Code = value;
@@ -646,21 +643,11 @@ namespace NBitcoin
 			private set;
 		}
 
-		public bool IsSmallUInt
-		{
-			get
-			{
-				return Code == OpcodeType.OP_0 ||
-						OpcodeType.OP_1 <= Code && Code <= OpcodeType.OP_16;
-			}
-		}
-		public bool IsSmallInt
-		{
-			get
-			{
-				return IsSmallUInt || Code == OpcodeType.OP_1NEGATE;
-			}
-		}
+		public bool IsSmallUInt =>
+			Code == OpcodeType.OP_0 ||
+			OpcodeType.OP_1 <= Code && Code <= OpcodeType.OP_16;
+
+		public bool IsSmallInt => IsSmallUInt || Code == OpcodeType.OP_1NEGATE;
 
 		public int? GetInt()
 		{
@@ -699,13 +686,8 @@ namespace NBitcoin
 	public class ScriptReader
 	{
 		private readonly Stream _Inner;
-		public Stream Inner
-		{
-			get
-			{
-				return _Inner;
-			}
-		}
+		public Stream Inner => _Inner;
+
 		public ScriptReader(Stream stream)
 		{
 			if (stream == null)

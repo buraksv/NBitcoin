@@ -35,13 +35,7 @@ namespace NBitcoin.Protocol
 			_Inventory.AddRange(invs);
 		}
 		List<InventoryVector> _Inventory = new List<InventoryVector>();
-		public List<InventoryVector> Inventory
-		{
-			get
-			{
-				return _Inventory;
-			}
-		}
+		public List<InventoryVector> Inventory => _Inventory;
 
 		#region IBitcoinSerializable Members
 

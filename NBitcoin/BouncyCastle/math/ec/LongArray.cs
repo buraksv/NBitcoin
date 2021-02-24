@@ -748,13 +748,7 @@ namespace NBitcoin.BouncyCastle.Math.EC
 			}
 		}
 
-		public int Length
-		{
-			get
-			{
-				return m_ints.Length;
-			}
-		}
+		public int Length => m_ints.Length;
 
 		private static void FlipWord(long[] buf, int off, int bit, long word)
 		{

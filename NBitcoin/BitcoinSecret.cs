@@ -43,31 +43,14 @@ namespace NBitcoin
 			return PrivateKey.PubKey.GetSegwitAddress(Network);
 		}
 
-		public virtual KeyId PubKeyHash
-		{
-			get
-			{
-				return PrivateKey.PubKey.Hash;
-			}
-		}
+		public virtual KeyId PubKeyHash => PrivateKey.PubKey.Hash;
 
-		public PubKey PubKey
-		{
-			get
-			{
-				return PrivateKey.PubKey;
-			}
-		}
+		public PubKey PubKey => PrivateKey.PubKey;
 
 		#region ISecret Members
 		Key _Key;
-		public Key PrivateKey
-		{
-			get
-			{
-				return _Key ?? (_Key = new Key(vchData, 32, IsCompressed));
-			}
-		}
+		public Key PrivateKey => _Key ?? (_Key = new Key(vchData, 32, IsCompressed));
+
 		#endregion
 
 		protected override bool IsValid
@@ -118,32 +101,14 @@ namespace NBitcoin
 			}
 		}
 
-		public bool IsCompressed
-		{
-			get
-			{
-				return vchData.Length > 32 && vchData[32] == 1;
-			}
-		}
+		public bool IsCompressed => vchData.Length > 32 && vchData[32] == 1;
 
-		public override Base58Type Type
-		{
-			get
-			{
-				return Base58Type.SECRET_KEY;
-			}
-		}
+		public override Base58Type Type => Base58Type.SECRET_KEY;
 
 		#region IDestination Members
 
 		[Obsolete("Use GetAddress(ScriptPubKeyType.Legacy) instead")]
-		public Script ScriptPubKey
-		{
-			get
-			{
-				return GetAddress().ScriptPubKey;
-			}
-		}
+		public Script ScriptPubKey => GetAddress().ScriptPubKey;
 
 		#endregion
 	}

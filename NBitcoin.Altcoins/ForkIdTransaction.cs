@@ -24,22 +24,10 @@ namespace NBitcoin.Altcoins
 		}
 
 		private readonly bool _SupportSegwit;
-		public bool SupportSegwit
-		{
-			get
-			{
-				return _SupportSegwit;
-			}
-		}
+		public bool SupportSegwit => _SupportSegwit;
 
 		private readonly uint _ForkId;
-		public uint ForkId
-		{
-			get
-			{
-				return _ForkId;
-			}
-		}
+		public uint ForkId => _ForkId;
 
 		public override uint256 GetSignatureHash(Script scriptCode, int nIn, SigHash nHashType, TxOut spentOutput, HashVersion sigversion, PrecomputedTransactionData precomputedTransactionData)
 		{

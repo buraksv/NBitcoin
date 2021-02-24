@@ -185,13 +185,7 @@ namespace NBitcoin.RPC
 		}
 
 		private readonly RPCResponse _RPCResult;
-		public RPCResponse RPCResult
-		{
-			get
-			{
-				return _RPCResult;
-			}
-		}
+		public RPCResponse RPCResult => _RPCResult;
 
 		private static string FindMessage(RPCErrorCode code)
 		{
@@ -225,22 +219,10 @@ namespace NBitcoin.RPC
 		}
 
 		private readonly RPCErrorCode _RPCCode;
-		public RPCErrorCode RPCCode
-		{
-			get
-			{
-				return _RPCCode;
-			}
-		}
+		public RPCErrorCode RPCCode => _RPCCode;
 
 		private readonly string _RPCCodeMessage;
-		public string RPCCodeMessage
-		{
-			get
-			{
-				return _RPCCodeMessage;
-			}
-		}
+		public string RPCCodeMessage => _RPCCodeMessage;
 	}
 }
 #endif

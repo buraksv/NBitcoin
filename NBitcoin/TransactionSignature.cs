@@ -7,13 +7,7 @@ namespace NBitcoin
 	public class TransactionSignature
 	{
 		static readonly TransactionSignature _Empty = new TransactionSignature(new ECDSASignature(NBitcoin.BouncyCastle.Math.BigInteger.ValueOf(0), NBitcoin.BouncyCastle.Math.BigInteger.ValueOf(0)), SigHash.All);
-		public static TransactionSignature Empty
-		{
-			get
-			{
-				return _Empty;
-			}
-		}
+		public static TransactionSignature Empty => _Empty;
 
 		/// <summary>
 		/// Check if valid transaction signature
@@ -80,21 +74,9 @@ namespace NBitcoin
 		}
 
 		private readonly ECDSASignature _Signature;
-		public ECDSASignature Signature
-		{
-			get
-			{
-				return _Signature;
-			}
-		}
+		public ECDSASignature Signature => _Signature;
 		private readonly SigHash _SigHash;
-		public SigHash SigHash
-		{
-			get
-			{
-				return _SigHash;
-			}
-		}
+		public SigHash SigHash => _SigHash;
 
 		public byte[] ToBytes()
 		{
@@ -166,13 +148,7 @@ namespace NBitcoin
 			return Encoders.Hex.EncodeData(ToBytes());
 		}
 
-		public bool IsLowS
-		{
-			get
-			{
-				return Signature.IsLowS;
-			}
-		}
+		public bool IsLowS => Signature.IsLowS;
 
 
 		/// <summary>

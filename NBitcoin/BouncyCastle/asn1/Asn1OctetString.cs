@@ -27,13 +27,7 @@ namespace NBitcoin.BouncyCastle.Asn1
 			return new MemoryStream(str, false);
 		}
 
-		public Asn1OctetStringParser Parser
-		{
-			get
-			{
-				return this;
-			}
-		}
+		public Asn1OctetStringParser Parser => this;
 
 		public virtual byte[] GetOctets()
 		{

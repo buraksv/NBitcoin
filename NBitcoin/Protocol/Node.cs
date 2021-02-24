@@ -143,37 +143,13 @@ namespace NBitcoin.Protocol
 		public class NodeConnection
 		{
 			private readonly Node _Node;
-			public Node Node
-			{
-				get
-				{
-					return _Node;
-				}
-			}
+			public Node Node => _Node;
 			readonly Socket _Socket;
-			public Socket Socket
-			{
-				get
-				{
-					return _Socket;
-				}
-			}
+			public Socket Socket => _Socket;
 			private readonly ManualResetEvent _Disconnected;
-			public ManualResetEvent Disconnected
-			{
-				get
-				{
-					return _Disconnected;
-				}
-			}
+			public ManualResetEvent Disconnected => _Disconnected;
 			private readonly CancellationTokenSource _Cancel;
-			public CancellationTokenSource Cancel
-			{
-				get
-				{
-					return _Cancel;
-				}
-			}
+			public CancellationTokenSource Cancel => _Cancel;
 
 			public NodeConnection(Node node, Socket socket)
 			{
@@ -367,10 +343,7 @@ namespace NBitcoin.Protocol
 		volatile NodeState _State = NodeState.Offline;
 		public NodeState State
 		{
-			get
-			{
-				return _State;
-			}
+			get => _State;
 			private set
 			{
 				Logs.NodeServer.LogInformation("State changed from {stateFrom} to {stateTo}", _State, value);
@@ -411,13 +384,7 @@ namespace NBitcoin.Protocol
 		}
 
 		private readonly NodeFiltersCollection _Filters = new NodeFiltersCollection();
-		public NodeFiltersCollection Filters
-		{
-			get
-			{
-				return _Filters;
-			}
-		}
+		public NodeFiltersCollection Filters => _Filters;
 
 		public event NodeEventMessageIncoming MessageReceived;
 		protected void OnMessageReceived(IncomingMessage message)
@@ -799,31 +766,13 @@ namespace NBitcoin.Protocol
 		}
 
 		IPAddress _RemoteSocketAddress;
-		public IPAddress RemoteSocketAddress
-		{
-			get
-			{
-				return _RemoteSocketAddress;
-			}
-		}
+		public IPAddress RemoteSocketAddress => _RemoteSocketAddress;
 
 		EndPoint _RemoteSocketEndpoint;
-		public EndPoint RemoteSocketEndpoint
-		{
-			get
-			{
-				return _RemoteSocketEndpoint;
-			}
-		}
+		public EndPoint RemoteSocketEndpoint => _RemoteSocketEndpoint;
 
 		int _RemoteSocketPort;
-		public int RemoteSocketPort
-		{
-			get
-			{
-				return _RemoteSocketPort;
-			}
-		}
+		public int RemoteSocketPort => _RemoteSocketPort;
 
 		public bool Inbound
 		{
@@ -844,22 +793,10 @@ namespace NBitcoin.Protocol
 		}
 
 		private readonly NodeBehaviorsCollection _Behaviors;
-		public NodeBehaviorsCollection Behaviors
-		{
-			get
-			{
-				return _Behaviors;
-			}
-		}
+		public NodeBehaviorsCollection Behaviors => _Behaviors;
 
 		private readonly NetworkAddress _Peer;
-		public NetworkAddress Peer
-		{
-			get
-			{
-				return _Peer;
-			}
-		}
+		public NetworkAddress Peer => _Peer;
 
 		public DateTimeOffset LastSeen
 		{
@@ -954,22 +891,10 @@ namespace NBitcoin.Protocol
 			internal set;
 		}
 
-		public bool IsConnected
-		{
-			get
-			{
-				return State == NodeState.Connected || State == NodeState.HandShaked;
-			}
-		}
+		public bool IsConnected => State == NodeState.Connected || State == NodeState.HandShaked;
 
 		private readonly MessageProducer<IncomingMessage> _MessageProducer = new MessageProducer<IncomingMessage>();
-		public MessageProducer<IncomingMessage> MessageProducer
-		{
-			get
-			{
-				return _MessageProducer;
-			}
-		}
+		public MessageProducer<IncomingMessage> MessageProducer => _MessageProducer;
 
 		public TPayload ReceiveMessage<TPayload>(TimeSpan timeout) where TPayload : Payload
 		{
@@ -998,22 +923,10 @@ namespace NBitcoin.Protocol
 		}
 
 		private readonly VersionPayload _MyVersion;
-		public VersionPayload MyVersion
-		{
-			get
-			{
-				return _MyVersion;
-			}
-		}
+		public VersionPayload MyVersion => _MyVersion;
 
 		VersionPayload _PeerVersion;
-		public VersionPayload PeerVersion
-		{
-			get
-			{
-				return _PeerVersion;
-			}
-		}
+		public VersionPayload PeerVersion => _PeerVersion;
 
 		public void VersionHandshake(CancellationToken cancellationToken = default(CancellationToken))
 		{
@@ -1139,38 +1052,20 @@ namespace NBitcoin.Protocol
 		/// </summary>
 		public TransactionOptions PreferredTransactionOptions
 		{
-			get
-			{
-				return _PreferredTransactionOptions;
-			}
-			set
-			{
-				_PreferredTransactionOptions = value;
-			}
+			get => _PreferredTransactionOptions;
+			set => _PreferredTransactionOptions = value;
 		}
 
 		TransactionOptions _SupportedTransactionOptions = TransactionOptions.None;
 		/// <summary>
 		/// Transaction options supported by the peer
 		/// </summary>
-		public TransactionOptions SupportedTransactionOptions
-		{
-			get
-			{
-				return _SupportedTransactionOptions;
-			}
-		}
+		public TransactionOptions SupportedTransactionOptions => _SupportedTransactionOptions;
 
 		/// <summary>
 		/// Transaction options we prefer and which is also supported by peer
 		/// </summary>
-		public TransactionOptions ActualTransactionOptions
-		{
-			get
-			{
-				return PreferredTransactionOptions & SupportedTransactionOptions;
-			}
-		}
+		public TransactionOptions ActualTransactionOptions => PreferredTransactionOptions & SupportedTransactionOptions;
 
 		public NodeDisconnectReason DisconnectReason
 		{
@@ -1183,13 +1078,7 @@ namespace NBitcoin.Protocol
 			return String.Format("{0} ({1})", State, Peer.Endpoint);
 		}
 
-		private Socket Socket
-		{
-			get
-			{
-				return _Connection.Socket;
-			}
-		}
+		private Socket Socket => _Connection.Socket;
 
 		internal TimeSpan PollHeaderDelay = TimeSpan.FromMinutes(1.0);
 

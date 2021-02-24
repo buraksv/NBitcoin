@@ -23,40 +23,22 @@ namespace NBitcoin.Protocol
 		uint version = (uint)Network.Main.MaxP2PVersion;
 		public uint Version
 		{
-			get
-			{
-				return version;
-			}
-			set
-			{
-				version = value;
-			}
+			get => version;
+			set => version = value;
 		}
 
 		BlockLocator blockLocators;
 
 		public BlockLocator BlockLocators
 		{
-			get
-			{
-				return blockLocators;
-			}
-			set
-			{
-				blockLocators = value;
-			}
+			get => blockLocators;
+			set => blockLocators = value;
 		}
 		uint256 _HashStop = uint256.Zero;
 		public uint256 HashStop
 		{
-			get
-			{
-				return _HashStop;
-			}
-			set
-			{
-				_HashStop = value;
-			}
+			get => _HashStop;
+			set => _HashStop = value;
 		}
 
 		public override void ReadWriteCore(BitcoinStream stream)

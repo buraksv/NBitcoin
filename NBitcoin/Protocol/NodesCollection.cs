@@ -19,21 +19,9 @@ namespace NBitcoin.Protocol
 		}
 
 		private readonly bool _Added;
-		public bool Added
-		{
-			get
-			{
-				return _Added;
-			}
-		}
+		public bool Added => _Added;
 		private readonly Node _Node;
-		public Node Node
-		{
-			get
-			{
-				return _Node;
-			}
-		}
+		public Node Node => _Node;
 	}
 
 	public interface IReadOnlyNodesCollection : IEnumerable<Node>
@@ -71,23 +59,12 @@ namespace NBitcoin.Protocol
 		}
 
 		MessageProducer<IncomingMessage> _MessageProducer = new MessageProducer<IncomingMessage>();
-		public MessageProducer<IncomingMessage> MessageProducer
-		{
-			get
-			{
-				return _MessageProducer;
-			}
-		}
+		public MessageProducer<IncomingMessage> MessageProducer => _MessageProducer;
 
 		ConcurrentDictionary<Node, Node> _Nodes = new ConcurrentDictionary<Node, Node>();
 
-		public int Count
-		{
-			get
-			{
-				return _Nodes.Count;
-			}
-		}
+		public int Count => _Nodes.Count;
+
 		public bool Add(Node node)
 		{
 			if (node == null)

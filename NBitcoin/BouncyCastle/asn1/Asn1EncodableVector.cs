@@ -62,13 +62,8 @@ namespace NBitcoin.BouncyCastle.Asn1
 		}
 
 		public Asn1Encodable this[
-			int index]
-		{
-			get
-			{
-				return (Asn1Encodable)v[index];
-			}
-		}
+			int index] =>
+			(Asn1Encodable)v[index];
 
 		[Obsolete("Use 'object[index]' syntax instead")]
 		public Asn1Encodable Get(
@@ -78,21 +73,9 @@ namespace NBitcoin.BouncyCastle.Asn1
 		}
 
 		[Obsolete("Use 'Count' property instead")]
-		public int Size
-		{
-			get
-			{
-				return v.Count;
-			}
-		}
+		public int Size => v.Count;
 
-		public int Count
-		{
-			get
-			{
-				return v.Count;
-			}
-		}
+		public int Count => v.Count;
 
 		public IEnumerator GetEnumerator()
 		{

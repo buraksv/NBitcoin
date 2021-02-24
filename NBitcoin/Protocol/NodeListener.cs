@@ -11,13 +11,7 @@ namespace NBitcoin.Protocol
 	public class NodeListener : PollMessageListener<IncomingMessage>, IDisposable
 	{
 		private readonly Node _Node;
-		public Node Node
-		{
-			get
-			{
-				return _Node;
-			}
-		}
+		public Node Node => _Node;
 		IDisposable _Subscription;
 		public NodeListener(Node node)
 		{

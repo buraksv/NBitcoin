@@ -48,13 +48,7 @@ namespace NBitcoin
 			return value;
 		}
 
-		public int Count
-		{
-			get
-			{
-				return array.Length;
-			}
-		}
+		public int Count => array.Length;
 
 		public BitArray ToBitArray()
 		{
@@ -103,13 +97,8 @@ namespace NBitcoin
 	class BitWriter
 	{
 		List<bool> values = new List<bool>();
-		public int Count
-		{
-			get
-			{
-				return values.Count;
-			}
-		}
+		public int Count => values.Count;
+
 		public void Write(bool value)
 		{
 			values.Insert(Position, value);
@@ -196,14 +185,8 @@ namespace NBitcoin
 		int _Position;
 		public int Position
 		{
-			get
-			{
-				return _Position;
-			}
-			set
-			{
-				_Position = value;
-			}
+			get => _Position;
+			set => _Position = value;
 		}
 
 		internal void Write(BitReader reader, int bitCount)

@@ -28,13 +28,7 @@ namespace NBitcoin.BouncyCastle.Crypto.Parameters
 			this.q = q.Normalize();
 		}
 
-		public ECPoint Q
-		{
-			get
-			{
-				return q;
-			}
-		}
+		public ECPoint Q => q;
 
 		public override bool Equals(object obj)
 		{

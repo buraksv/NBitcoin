@@ -35,14 +35,8 @@ namespace NBitcoin
 
 		public T this[uint index]
 		{
-			get
-			{
-				return base[(int)index];
-			}
-			set
-			{
-				base[(int)index] = value;
-			}
+			get => base[(int)index];
+			set => base[(int)index] = value;
 		}
 	}
 }

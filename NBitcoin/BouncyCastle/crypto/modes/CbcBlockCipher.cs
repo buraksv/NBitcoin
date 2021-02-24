@@ -32,10 +32,7 @@ namespace NBitcoin.BouncyCastle.Crypto.Modes
 			return (byte[])iv.Clone();
 		}
 
-		public ICipherParameters Parameters
-		{
-			get { return parameters; }
-		}
+		public ICipherParameters Parameters => parameters;
 	}
 
 	/**
@@ -126,15 +123,9 @@ namespace NBitcoin.BouncyCastle.Crypto.Modes
 		*
 		* @return the name of the underlying algorithm followed by "/CBC".
 		*/
-		public string AlgorithmName
-		{
-			get { return cipher.AlgorithmName + "/CBC"; }
-		}
+		public string AlgorithmName => cipher.AlgorithmName + "/CBC";
 
-		public bool IsPartialBlockOkay
-		{
-			get { return false; }
-		}
+		public bool IsPartialBlockOkay => false;
 
 		/**
 		* return the block size of the underlying cipher.

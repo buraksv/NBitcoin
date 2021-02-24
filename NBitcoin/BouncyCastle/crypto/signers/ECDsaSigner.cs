@@ -41,13 +41,7 @@ namespace NBitcoin.BouncyCastle.Crypto.Signers
 			this.forceLowR = forceLowR;
 		}
 
-		public virtual string AlgorithmName
-		{
-			get
-			{
-				return "ECDSA";
-			}
-		}
+		public virtual string AlgorithmName => "ECDSA";
 
 		public virtual void Init(bool forSigning, ICipherParameters parameters)
 		{

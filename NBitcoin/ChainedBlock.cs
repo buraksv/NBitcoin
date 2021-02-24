@@ -52,24 +52,12 @@ namespace NBitcoin
 		// pointer to the index of the predecessor of this block
 		ChainedBlock pprev;
 
-		public ChainedBlock Previous
-		{
-			get
-			{
-				return pprev;
-			}
-		}
+		public ChainedBlock Previous => pprev;
 
 		// height of the entry in the chain. The genesis block has height 0
 		int nHeight;
 
-		public int Height
-		{
-			get
-			{
-				return nHeight;
-			}
-		}
+		public int Height => nHeight;
 
 
 		BlockHeader header;
@@ -77,13 +65,7 @@ namespace NBitcoin
 		/// <summary>
 		/// Returns true if this ChainedBlock has the underlying header
 		/// </summary>
-		public bool HasHeader
-		{
-			get
-			{
-				return header != null;
-			}
-		}
+		public bool HasHeader => header != null;
 
 		/// <summary>
 		/// Get the BlockHeader
@@ -113,13 +95,7 @@ namespace NBitcoin
 		// Might be computationally intense
 		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
 		[Obsolete("Use GetChainWork() instead")]
-		public uint256 ChainWork
-		{
-			get
-			{
-				return GetChainWork(true);
-			}
-		}
+		public uint256 ChainWork => GetChainWork(true);
 
 
 		/// <summary>

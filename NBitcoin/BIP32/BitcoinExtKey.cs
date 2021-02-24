@@ -48,13 +48,7 @@ namespace NBitcoin
 		/// <summary>
 		/// Gets whether the data is the correct expected length.
 		/// </summary>
-		protected override bool IsValid
-		{
-			get
-			{
-				return vchData.Length == 74;
-			}
-		}
+		protected override bool IsValid => vchData.Length == 74;
 
 		ExtKey _Key;
 
@@ -77,25 +71,13 @@ namespace NBitcoin
 		/// <summary>
 		/// Gets the type of item represented by this Base58 data.
 		/// </summary>
-		public override Base58Type Type
-		{
-			get
-			{
-				return Base58Type.EXT_SECRET_KEY;
-			}
-		}
+		public override Base58Type Type => Base58Type.EXT_SECRET_KEY;
 
 		/// <summary>
 		/// Gets the script of the hash of the public key corresponing to the private key 
 		/// of the extended key of this Base58 item.
 		/// </summary>
-		public override Script ScriptPubKey
-		{
-			get
-			{
-				return ExtKey.ScriptPubKey;
-			}
-		}
+		public override Script ScriptPubKey => ExtKey.ScriptPubKey;
 
 		/// <summary>
 		/// Gets the Base58 representation, in the same network, of the neutered extended key.
@@ -145,13 +127,7 @@ namespace NBitcoin
 		/// <summary>
 		/// Gets the private key of the extended key of this Base58 item.
 		/// </summary>
-		public Key PrivateKey
-		{
-			get
-			{
-				return ExtKey.PrivateKey;
-			}
-		}
+		public Key PrivateKey => ExtKey.PrivateKey;
 
 		#endregion
 
@@ -225,24 +201,12 @@ namespace NBitcoin
 		/// <summary>
 		/// Gets the type of item represented by this Base58 data.
 		/// </summary>
-		public override Base58Type Type
-		{
-			get
-			{
-				return Base58Type.EXT_PUBLIC_KEY;
-			}
-		}
+		public override Base58Type Type => Base58Type.EXT_PUBLIC_KEY;
 
 		/// <summary>
 		/// Gets the script of the hash of the public key of the extended key of this Base58 item.
 		/// </summary>
-		public override Script ScriptPubKey
-		{
-			get
-			{
-				return ExtPubKey.ScriptPubKey;
-			}
-		}
+		public override Script ScriptPubKey => ExtPubKey.ScriptPubKey;
 
 		/// <summary>
 		/// Implicit cast from BitcoinExtPubKey to ExtPubKey.

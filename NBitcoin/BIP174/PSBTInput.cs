@@ -155,73 +155,37 @@ namespace NBitcoin
 
 		public Transaction NonWitnessUtxo
 		{
-			get
-			{
-				return non_witness_utxo;
-			}
-			set
-			{
-				non_witness_utxo = value;
-			}
+			get => non_witness_utxo;
+			set => non_witness_utxo = value;
 		}
 
 		public TxOut WitnessUtxo
 		{
-			get
-			{
-				return witness_utxo;
-			}
-			set
-			{
-				witness_utxo = value;
-			}
+			get => witness_utxo;
+			set => witness_utxo = value;
 		}
 
 		public SigHash? SighashType
 		{
-			get
-			{
-				return sighash_type;
-			}
-			set
-			{
-				sighash_type = value;
-			}
+			get => sighash_type;
+			set => sighash_type = value;
 		}
 
 		public Script FinalScriptSig
 		{
-			get
-			{
-				return final_script_sig;
-			}
-			set
-			{
-				final_script_sig = value;
-			}
+			get => final_script_sig;
+			set => final_script_sig = value;
 		}
 
 		public WitScript FinalScriptWitness
 		{
-			get
-			{
-				return final_script_witness;
-			}
-			set
-			{
-				final_script_witness = value;
-			}
+			get => final_script_witness;
+			set => final_script_witness = value;
 		}
 
 
 
-		public PartialSigKVMap PartialSigs
-		{
-			get
-			{
-				return partial_sigs;
-			}
-		}
+		public PartialSigKVMap PartialSigs => partial_sigs;
 
 		public override void AddKeyPath(PubKey key, RootedKeyPath rootedKeyPath)
 		{

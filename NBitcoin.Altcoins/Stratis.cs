@@ -146,14 +146,8 @@ namespace NBitcoin.Altcoins
 
 			public byte[] Signature
 			{
-				get
-				{
-					return signature;
-				}
-				set
-				{
-					signature = value;
-				}
+				get => signature;
+				set => signature = value;
 			}
 
 			internal void SetNull()
@@ -268,8 +262,8 @@ namespace NBitcoin.Altcoins
 			/// </summary>
 			public StratisBlockSignature BlockSignature
 			{
-				get { return this.blockSignature; }
-				set { this.blockSignature = value; }
+				get => this.blockSignature;
+				set => this.blockSignature = value;
 			}
 
 			/// <summary>

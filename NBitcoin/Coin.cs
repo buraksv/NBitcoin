@@ -63,13 +63,7 @@ namespace NBitcoin
 		}
 
 
-		public AssetId AssetId
-		{
-			get
-			{
-				return Bearer.TxOut.ScriptPubKey.Hash.ToAssetId();
-			}
-		}
+		public AssetId AssetId => Bearer.TxOut.ScriptPubKey.Hash.ToAssetId();
 
 		public Uri DefinitionUrl
 		{
@@ -82,33 +76,15 @@ namespace NBitcoin
 
 		public Money Amount
 		{
-			get
-			{
-				return Bearer.TxOut.Value;
-			}
-			set
-			{
-				Bearer.TxOut.Value = value;
-			}
+			get => Bearer.TxOut.Value;
+			set => Bearer.TxOut.Value = value;
 		}
 
-		public TxOut TxOut
-		{
-			get
-			{
-				return Bearer.TxOut;
-			}
-		}
+		public TxOut TxOut => Bearer.TxOut;
 
 		#endregion
 
-		public Script ScriptPubKey
-		{
-			get
-			{
-				return Bearer.TxOut.ScriptPubKey;
-			}
-		}
+		public Script ScriptPubKey => Bearer.TxOut.ScriptPubKey;
 
 		#region IColoredCoin Members
 
@@ -120,61 +96,25 @@ namespace NBitcoin
 		}
 
 
-		public OutPoint Outpoint
-		{
-			get
-			{
-				return Bearer.Outpoint;
-			}
-		}
+		public OutPoint Outpoint => Bearer.Outpoint;
 
 		#endregion
 
 		#region IColoredCoin Members
 
-		AssetId IColoredCoin.AssetId
-		{
-			get
-			{
-				return AssetId;
-			}
-		}
+		AssetId IColoredCoin.AssetId => AssetId;
 
-		Coin IColoredCoin.Bearer
-		{
-			get
-			{
-				return Bearer;
-			}
-		}
+		Coin IColoredCoin.Bearer => Bearer;
 
 		#endregion
 
 		#region ICoin Members
 
-		IMoney ICoin.Amount
-		{
-			get
-			{
-				return Amount;
-			}
-		}
+		IMoney ICoin.Amount => Amount;
 
-		OutPoint ICoin.Outpoint
-		{
-			get
-			{
-				return Outpoint;
-			}
-		}
+		OutPoint ICoin.Outpoint => Outpoint;
 
-		TxOut ICoin.TxOut
-		{
-			get
-			{
-				return TxOut;
-			}
-		}
+		TxOut ICoin.TxOut => TxOut;
 
 		#endregion
 
@@ -186,13 +126,7 @@ namespace NBitcoin
 			return this.Bearer.GetScriptCode();
 		}
 
-		public bool CanGetScriptCode
-		{
-			get
-			{
-				return this.Bearer.CanGetScriptCode;
-			}
-		}
+		public bool CanGetScriptCode => this.Bearer.CanGetScriptCode;
 
 		public HashVersion GetHashVersion()
 		{
@@ -228,13 +162,7 @@ namespace NBitcoin
 				throw new ArgumentNullException(nameof(entry));
 		}
 
-		public AssetId AssetId
-		{
-			get
-			{
-				return Amount.Id;
-			}
-		}
+		public AssetId AssetId => Amount.Id;
 
 		public AssetMoney Amount
 		{
@@ -245,14 +173,8 @@ namespace NBitcoin
 		[Obsolete("Use Amount instead")]
 		public AssetMoney Asset
 		{
-			get
-			{
-				return Amount;
-			}
-			set
-			{
-				Amount = value;
-			}
+			get => Amount;
+			set => Amount = value;
 		}
 
 		public Coin Bearer
@@ -261,31 +183,13 @@ namespace NBitcoin
 			set;
 		}
 
-		public TxOut TxOut
-		{
-			get
-			{
-				return Bearer.TxOut;
-			}
-		}
+		public TxOut TxOut => Bearer.TxOut;
 
 		#region ICoin Members
 
-		public OutPoint Outpoint
-		{
-			get
-			{
-				return Bearer.Outpoint;
-			}
-		}
+		public OutPoint Outpoint => Bearer.Outpoint;
 
-		public Script ScriptPubKey
-		{
-			get
-			{
-				return Bearer.ScriptPubKey;
-			}
-		}
+		public Script ScriptPubKey => Bearer.ScriptPubKey;
 
 		#endregion
 
@@ -322,62 +226,26 @@ namespace NBitcoin
 
 		#region IColoredCoin Members
 
-		AssetId IColoredCoin.AssetId
-		{
-			get
-			{
-				return AssetId;
-			}
-		}
+		AssetId IColoredCoin.AssetId => AssetId;
 
-		Coin IColoredCoin.Bearer
-		{
-			get
-			{
-				return Bearer;
-			}
-		}
+		Coin IColoredCoin.Bearer => Bearer;
 
 		#endregion
 
 		#region ICoin Members
 
-		IMoney ICoin.Amount
-		{
-			get
-			{
-				return Amount;
-			}
-		}
+		IMoney ICoin.Amount => Amount;
 
-		OutPoint ICoin.Outpoint
-		{
-			get
-			{
-				return Outpoint;
-			}
-		}
+		OutPoint ICoin.Outpoint => Outpoint;
 
-		TxOut ICoin.TxOut
-		{
-			get
-			{
-				return TxOut;
-			}
-		}
+		TxOut ICoin.TxOut => TxOut;
 
 		public Script GetScriptCode()
 		{
 			return this.Bearer.GetScriptCode();
 		}
 
-		public bool CanGetScriptCode
-		{
-			get
-			{
-				return this.Bearer.CanGetScriptCode;
-			}
-		}
+		public bool CanGetScriptCode => this.Bearer.CanGetScriptCode;
 
 		public HashVersion GetHashVersion()
 		{
@@ -445,13 +313,7 @@ namespace NBitcoin
 			return ScriptPubKey;
 		}
 
-		public virtual bool CanGetScriptCode
-		{
-			get
-			{
-				return _OverrideScriptCode != null || !ScriptPubKey.IsScriptType(ScriptType.P2SH) && !PayToWitScriptHashTemplate.Instance.CheckScriptPubKey(ScriptPubKey);
-			}
-		}
+		public virtual bool CanGetScriptCode => _OverrideScriptCode != null || !ScriptPubKey.IsScriptType(ScriptType.P2SH) && !PayToWitScriptHashTemplate.Instance.CheckScriptPubKey(ScriptPubKey);
 
 		public virtual HashVersion GetHashVersion()
 		{
@@ -564,29 +426,11 @@ namespace NBitcoin
 
 		#region ICoin Members
 
-		IMoney ICoin.Amount
-		{
-			get
-			{
-				return Amount;
-			}
-		}
+		IMoney ICoin.Amount => Amount;
 
-		OutPoint ICoin.Outpoint
-		{
-			get
-			{
-				return Outpoint;
-			}
-		}
+		OutPoint ICoin.Outpoint => Outpoint;
 
-		TxOut ICoin.TxOut
-		{
-			get
-			{
-				return TxOut;
-			}
-		}
+		TxOut ICoin.TxOut => TxOut;
 
 		#endregion
 	}
@@ -642,13 +486,7 @@ namespace NBitcoin
 				throw new ArgumentException(paramName: paramName ?? "redeem", message: error);
 		}
 
-		public bool IsP2SH
-		{
-			get
-			{
-				return ScriptPubKey.ToBytes(true)[0] == (byte)OpcodeType.OP_HASH160;
-			}
-		}
+		public bool IsP2SH => ScriptPubKey.ToBytes(true)[0] == (byte)OpcodeType.OP_HASH160;
 
 
 		public Script GetP2SHRedeem()
@@ -663,16 +501,10 @@ namespace NBitcoin
 			return p2shRedeem;
 		}
 
-		public RedeemType RedeemType
-		{
-			get
-			{
-				return
-					Redeem.Hash.ScriptPubKey == TxOut.ScriptPubKey ?
-					RedeemType.P2SH :
-					RedeemType.WitnessV0;
-			}
-		}
+		public RedeemType RedeemType =>
+			Redeem.Hash.ScriptPubKey == TxOut.ScriptPubKey ?
+				RedeemType.P2SH :
+				RedeemType.WitnessV0;
 
 		public static bool IsCoherent(Script scriptPubKey, Script redeem, out string error)
 		{
@@ -752,13 +584,7 @@ namespace NBitcoin
 			return Redeem;
 		}
 
-		public override bool CanGetScriptCode
-		{
-			get
-			{
-				return _OverrideScriptCode != null || !IsP2SH || !PayToWitScriptHashTemplate.Instance.CheckScriptPubKey(Redeem);
-			}
-		}
+		public override bool CanGetScriptCode => _OverrideScriptCode != null || !IsP2SH || !PayToWitScriptHashTemplate.Instance.CheckScriptPubKey(Redeem);
 
 		public override HashVersion GetHashVersion()
 		{

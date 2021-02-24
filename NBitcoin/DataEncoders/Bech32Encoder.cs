@@ -281,13 +281,7 @@ namespace NBitcoin.DataEncoders
 
 		protected readonly byte[] _HrpExpand;
 		protected readonly byte[] _Hrp;
-		public byte[] HumanReadablePart
-		{
-			get
-			{
-				return _Hrp;
-			}
-		}
+		public byte[] HumanReadablePart => _Hrp;
 
 		private static uint Polymod(byte[] values)
 		{

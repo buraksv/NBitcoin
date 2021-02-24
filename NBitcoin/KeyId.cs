@@ -110,13 +110,7 @@ namespace NBitcoin
 		{
 		}
 
-		public override Script ScriptPubKey
-		{
-			get
-			{
-				return PayToPubkeyHashTemplate.Instance.GenerateScriptPubKey(this);
-			}
-		}
+		public override Script ScriptPubKey => PayToPubkeyHashTemplate.Instance.GenerateScriptPubKey(this);
 
 		public override BitcoinAddress GetAddress(Network network)
 		{
@@ -155,22 +149,10 @@ namespace NBitcoin
 		}
 
 
-		public override Script ScriptPubKey
-		{
-			get
-			{
-				return PayToWitTemplate.Instance.GenerateScriptPubKey(OpcodeType.OP_0, _DestBytes);
-			}
-		}
+		public override Script ScriptPubKey => PayToWitTemplate.Instance.GenerateScriptPubKey(OpcodeType.OP_0, _DestBytes);
 
 		[Obsolete("Use AsKeyId().ScriptPubKey instead")]
-		public Script WitScriptPubKey
-		{
-			get
-			{
-				return new KeyId(_DestBytes).ScriptPubKey;
-			}
-		}
+		public Script WitScriptPubKey => new KeyId(_DestBytes).ScriptPubKey;
 
 		public KeyId AsKeyId()
 		{
@@ -213,13 +195,7 @@ namespace NBitcoin
 		{
 		}
 
-		public override Script ScriptPubKey
-		{
-			get
-			{
-				return PayToWitTemplate.Instance.GenerateScriptPubKey(OpcodeType.OP_0, _DestBytes);
-			}
-		}
+		public override Script ScriptPubKey => PayToWitTemplate.Instance.GenerateScriptPubKey(OpcodeType.OP_0, _DestBytes);
 
 		public override BitcoinAddress GetAddress(Network network)
 		{
@@ -257,13 +233,7 @@ namespace NBitcoin
 		{
 		}
 
-		public override Script ScriptPubKey
-		{
-			get
-			{
-				return PayToScriptHashTemplate.Instance.GenerateScriptPubKey(this);
-			}
-		}
+		public override Script ScriptPubKey => PayToScriptHashTemplate.Instance.GenerateScriptPubKey(this);
 
 		public override BitcoinAddress GetAddress(Network network)
 		{

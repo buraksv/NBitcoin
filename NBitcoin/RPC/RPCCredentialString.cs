@@ -96,13 +96,7 @@ namespace NBitcoin.RPC
 		/// <summary>
 		/// Use default connection settings of the chain
 		/// </summary>
-		public bool UseDefault
-		{
-			get
-			{
-				return CookieFile == null && UserPassword == null;
-			}
-		}
+		public bool UseDefault => CookieFile == null && UserPassword == null;
 
 		/// <summary>
 		/// Name of the wallet in multi wallet mode
@@ -117,10 +111,7 @@ namespace NBitcoin.RPC
 		/// </summary>
 		public string CookieFile
 		{
-			get
-			{
-				return _CookieFile;
-			}
+			get => _CookieFile;
 			set
 			{
 				if (value != null)
@@ -142,10 +133,7 @@ namespace NBitcoin.RPC
 		/// </summary>
 		public NetworkCredential UserPassword
 		{
-			get
-			{
-				return _UsernamePassword;
-			}
+			get => _UsernamePassword;
 			set
 			{
 				if (value != null)

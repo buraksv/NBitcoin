@@ -26,13 +26,7 @@ namespace NBitcoin
 		protected byte[] vchVersion = new byte[0];
 		protected string wifData = "";
 		private Network _Network;
-		public Network Network
-		{
-			get
-			{
-				return _Network;
-			}
-		}
+		public Network Network => _Network;
 
 		protected void Init<T>(string base64, Network expectedNetwork = null) where T : Base58Data
 		{
@@ -101,13 +95,7 @@ namespace NBitcoin
 		}
 
 
-		protected virtual bool IsValid
-		{
-			get
-			{
-				return true;
-			}
-		}
+		protected virtual bool IsValid => true;
 
 		public abstract Base58Type Type
 		{

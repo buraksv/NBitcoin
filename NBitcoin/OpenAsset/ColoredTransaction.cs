@@ -26,26 +26,14 @@ namespace NBitcoin.OpenAsset
 		uint _Index;
 		public uint Index
 		{
-			get
-			{
-				return _Index;
-			}
-			set
-			{
-				_Index = value;
-			}
+			get => _Index;
+			set => _Index = value;
 		}
 		AssetMoney _Asset = new AssetMoney(new AssetId(new uint160(0)));
 		public AssetMoney Asset
 		{
-			get
-			{
-				return _Asset;
-			}
-			set
-			{
-				_Asset = value;
-			}
+			get => _Asset;
+			set => _Asset = value;
 		}
 		#region IBitcoinSerializable Members
 
@@ -386,40 +374,22 @@ namespace NBitcoin.OpenAsset
 		ColorMarker _Marker;
 		public ColorMarker Marker
 		{
-			get
-			{
-				return _Marker;
-			}
-			set
-			{
-				_Marker = value;
-			}
+			get => _Marker;
+			set => _Marker = value;
 		}
 
 		List<ColoredEntry> _Issuances;
 		public List<ColoredEntry> Issuances
 		{
-			get
-			{
-				return _Issuances;
-			}
-			set
-			{
-				_Issuances = value;
-			}
+			get => _Issuances;
+			set => _Issuances = value;
 		}
 
 		List<ColoredEntry> _Transfers;
 		public List<ColoredEntry> Transfers
 		{
-			get
-			{
-				return _Transfers;
-			}
-			set
-			{
-				_Transfers = value;
-			}
+			get => _Transfers;
+			set => _Transfers = value;
 		}
 
 		public AssetMoney[] GetDestroyedAssets()
@@ -475,14 +445,8 @@ namespace NBitcoin.OpenAsset
 		List<ColoredEntry> _Inputs;
 		public List<ColoredEntry> Inputs
 		{
-			get
-			{
-				return _Inputs;
-			}
-			set
-			{
-				_Inputs = value;
-			}
+			get => _Inputs;
+			set => _Inputs = value;
 		}
 #if !NOJSONNET
 		public override string ToString()

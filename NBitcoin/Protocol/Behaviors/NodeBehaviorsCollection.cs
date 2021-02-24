@@ -17,13 +17,7 @@ namespace NBitcoin.Protocol.Behaviors
 		}
 
 
-		bool CanAttach
-		{
-			get
-			{
-				return _Node != null && !DelayAttach && _Node.State != NodeState.Offline && _Node.State != NodeState.Failed && _Node.State != NodeState.Disconnecting;
-			}
-		}
+		bool CanAttach => _Node != null && !DelayAttach && _Node.State != NodeState.Offline && _Node.State != NodeState.Failed && _Node.State != NodeState.Disconnecting;
 
 		protected override void OnAdding(INodeBehavior obj)
 		{
@@ -39,10 +33,7 @@ namespace NBitcoin.Protocol.Behaviors
 		bool _DelayAttach;
 		internal bool DelayAttach
 		{
-			get
-			{
-				return _DelayAttach;
-			}
+			get => _DelayAttach;
 			set
 			{
 				_DelayAttach = value;

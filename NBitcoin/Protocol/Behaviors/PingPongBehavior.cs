@@ -35,10 +35,7 @@ namespace NBitcoin.Protocol.Behaviors
 		/// </summary>
 		public PingPongMode Mode
 		{
-			get
-			{
-				return _Mode;
-			}
+			get => _Mode;
 			set
 			{
 				AssertNotAttached();
@@ -53,10 +50,7 @@ namespace NBitcoin.Protocol.Behaviors
 		/// </summary>
 		public TimeSpan TimeoutInterval
 		{
-			get
-			{
-				return _TimeoutInterval;
-			}
+			get => _TimeoutInterval;
 			set
 			{
 				AssertNotAttached();
@@ -71,10 +65,7 @@ namespace NBitcoin.Protocol.Behaviors
 		/// </summary>
 		public TimeSpan PingInterval
 		{
-			get
-			{
-				return _PingInterval;
-			}
+			get => _PingInterval;
 			set
 			{
 				AssertNotAttached();

@@ -27,29 +27,11 @@ namespace NBitcoin.BouncyCastle.Math.EC
 		public abstract ECFieldElement Invert();
 		public abstract ECFieldElement Sqrt();
 
-		public virtual int BitLength
-		{
-			get
-			{
-				return ToBigInteger().BitLength;
-			}
-		}
+		public virtual int BitLength => ToBigInteger().BitLength;
 
-		public virtual bool IsOne
-		{
-			get
-			{
-				return BitLength == 1;
-			}
-		}
+		public virtual bool IsOne => BitLength == 1;
 
-		public virtual bool IsZero
-		{
-			get
-			{
-				return 0 == ToBigInteger().SignValue;
-			}
-		}
+		public virtual bool IsZero => 0 == ToBigInteger().SignValue;
 
 		public virtual ECFieldElement MultiplyMinusProduct(ECFieldElement b, ECFieldElement x, ECFieldElement y)
 		{
@@ -165,29 +147,11 @@ namespace NBitcoin.BouncyCastle.Math.EC
          *
          * @return the string "Fp".
          */
-		public override string FieldName
-		{
-			get
-			{
-				return "Fp";
-			}
-		}
+		public override string FieldName => "Fp";
 
-		public override int FieldSize
-		{
-			get
-			{
-				return q.BitLength;
-			}
-		}
+		public override int FieldSize => q.BitLength;
 
-		public BigInteger Q
-		{
-			get
-			{
-				return q;
-			}
-		}
+		public BigInteger Q => q;
 
 		public override ECFieldElement Add(
 			ECFieldElement b)
@@ -677,29 +641,11 @@ namespace NBitcoin.BouncyCastle.Math.EC
 			this.x = x;
 		}
 
-		public override int BitLength
-		{
-			get
-			{
-				return x.Degree();
-			}
-		}
+		public override int BitLength => x.Degree();
 
-		public override bool IsOne
-		{
-			get
-			{
-				return x.IsOne();
-			}
-		}
+		public override bool IsOne => x.IsOne();
 
-		public override bool IsZero
-		{
-			get
-			{
-				return x.IsZero();
-			}
-		}
+		public override bool IsZero => x.IsZero();
 
 		public override bool TestBitZero()
 		{
@@ -711,21 +657,9 @@ namespace NBitcoin.BouncyCastle.Math.EC
 			return x.ToBigInteger();
 		}
 
-		public override string FieldName
-		{
-			get
-			{
-				return "F2m";
-			}
-		}
+		public override string FieldName => "F2m";
 
-		public override int FieldSize
-		{
-			get
-			{
-				return m;
-			}
-		}
+		public override int FieldSize => m;
 
 		/**
         * Checks, if the ECFieldElements <code>a</code> and <code>b</code>
@@ -888,25 +822,13 @@ namespace NBitcoin.BouncyCastle.Math.EC
             * {@link F2mFieldElement.Ppb} (pentanomial
             * basis representation).
             */
-		public int Representation
-		{
-			get
-			{
-				return this.representation;
-			}
-		}
+		public int Representation => this.representation;
 
 		/**
             * @return the degree <code>m</code> of the reduction polynomial
             * <code>f(z)</code>.
             */
-		public int M
-		{
-			get
-			{
-				return this.m;
-			}
-		}
+		public int M => this.m;
 
 		/**
             * @return Tpb: The integer <code>k</code> where <code>x<sup>m</sup> +
@@ -916,13 +838,7 @@ namespace NBitcoin.BouncyCastle.Math.EC
             * x<sup>k3</sup> + x<sup>k2</sup> + x<sup>k1</sup> + 1</code>
             * represents the reduction polynomial <code>f(z)</code>.<br/>
             */
-		public int K1
-		{
-			get
-			{
-				return this.ks[0];
-			}
-		}
+		public int K1 => this.ks[0];
 
 		/**
             * @return Tpb: Always returns <code>0</code><br/>
@@ -930,13 +846,7 @@ namespace NBitcoin.BouncyCastle.Math.EC
             * x<sup>k3</sup> + x<sup>k2</sup> + x<sup>k1</sup> + 1</code>
             * represents the reduction polynomial <code>f(z)</code>.<br/>
             */
-		public int K2
-		{
-			get
-			{
-				return this.ks.Length >= 2 ? this.ks[1] : 0;
-			}
-		}
+		public int K2 => this.ks.Length >= 2 ? this.ks[1] : 0;
 
 		/**
             * @return Tpb: Always set to <code>0</code><br/>
@@ -944,13 +854,7 @@ namespace NBitcoin.BouncyCastle.Math.EC
             * x<sup>k3</sup> + x<sup>k2</sup> + x<sup>k1</sup> + 1</code>
             * represents the reduction polynomial <code>f(z)</code>.<br/>
             */
-		public int K3
-		{
-			get
-			{
-				return this.ks.Length >= 3 ? this.ks[2] : 0;
-			}
-		}
+		public int K3 => this.ks.Length >= 3 ? this.ks[2] : 0;
 
 		public override bool Equals(
 			object obj)

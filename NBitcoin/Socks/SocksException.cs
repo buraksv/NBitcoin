@@ -24,14 +24,9 @@ namespace NBitcoin.Socks
 			SocksErrorCode = errorCode;
 		}
 
-		public bool IsTransient
-		{
-			get
-			{
-				return SocksErrorCode == SocksErrorCode.GeneralServerFailure ||
-					   SocksErrorCode == SocksErrorCode.TTLExpired;
-			}
-		}
+		public bool IsTransient =>
+			SocksErrorCode == SocksErrorCode.GeneralServerFailure ||
+			SocksErrorCode == SocksErrorCode.TTLExpired;
 
 		public SocksErrorCode SocksErrorCode
 		{

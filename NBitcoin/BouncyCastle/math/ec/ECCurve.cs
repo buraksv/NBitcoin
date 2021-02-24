@@ -300,53 +300,17 @@ namespace NBitcoin.BouncyCastle.Math.EC
 			get;
 		}
 
-		public virtual IFiniteField Field
-		{
-			get
-			{
-				return m_field;
-			}
-		}
+		public virtual IFiniteField Field => m_field;
 
-		public virtual ECFieldElement A
-		{
-			get
-			{
-				return m_a;
-			}
-		}
+		public virtual ECFieldElement A => m_a;
 
-		public virtual ECFieldElement B
-		{
-			get
-			{
-				return m_b;
-			}
-		}
+		public virtual ECFieldElement B => m_b;
 
-		public virtual BigInteger Order
-		{
-			get
-			{
-				return m_order;
-			}
-		}
+		public virtual BigInteger Order => m_order;
 
-		public virtual BigInteger Cofactor
-		{
-			get
-			{
-				return m_cofactor;
-			}
-		}
+		public virtual BigInteger Cofactor => m_cofactor;
 
-		public virtual int CoordinateSystem
-		{
-			get
-			{
-				return m_coord;
-			}
-		}
+		public virtual int CoordinateSystem => m_coord;
 
 		protected virtual void CheckPoint(ECPoint point)
 		{
@@ -598,29 +562,11 @@ namespace NBitcoin.BouncyCastle.Math.EC
 			}
 		}
 
-		public virtual BigInteger Q
-		{
-			get
-			{
-				return m_q;
-			}
-		}
+		public virtual BigInteger Q => m_q;
 
-		public override ECPoint Infinity
-		{
-			get
-			{
-				return m_infinity;
-			}
-		}
+		public override ECPoint Infinity => m_infinity;
 
-		public override int FieldSize
-		{
-			get
-			{
-				return m_q.BitLength;
-			}
-		}
+		public override int FieldSize => m_q.BitLength;
 
 		public override ECFieldElement FromBigInteger(BigInteger x)
 		{
@@ -851,13 +797,7 @@ namespace NBitcoin.BouncyCastle.Math.EC
          * Returns true if this is a Koblitz curve (ABC curve).
          * @return true if this is a Koblitz curve (ABC curve), false otherwise
          */
-		public virtual bool IsKoblitz
-		{
-			get
-			{
-				return m_order != null && m_cofactor != null && m_b.IsOne && (m_a.IsZero || m_a.IsOne);
-			}
-		}
+		public virtual bool IsKoblitz => m_order != null && m_cofactor != null && m_b.IsOne && (m_a.IsZero || m_a.IsOne);
 	}
 
 	/**
@@ -1095,13 +1035,7 @@ namespace NBitcoin.BouncyCastle.Math.EC
 			return base.CreateDefaultMultiplier();
 		}
 
-		public override int FieldSize
-		{
-			get
-			{
-				return m;
-			}
-		}
+		public override int FieldSize => m;
 
 		public override ECFieldElement FromBigInteger(BigInteger x)
 		{
@@ -1118,21 +1052,9 @@ namespace NBitcoin.BouncyCastle.Math.EC
 			return new F2mPoint(this, x, y, zs, withCompression);
 		}
 
-		public override ECPoint Infinity
-		{
-			get
-			{
-				return m_infinity;
-			}
-		}
+		public override ECPoint Infinity => m_infinity;
 
-		public int M
-		{
-			get
-			{
-				return m;
-			}
-		}
+		public int M => m;
 
 		/**
          * Return true if curve uses a Trinomial basis.
@@ -1144,46 +1066,16 @@ namespace NBitcoin.BouncyCastle.Math.EC
 			return k2 == 0 && k3 == 0;
 		}
 
-		public int K1
-		{
-			get
-			{
-				return k1;
-			}
-		}
+		public int K1 => k1;
 
-		public int K2
-		{
-			get
-			{
-				return k2;
-			}
-		}
+		public int K2 => k2;
 
-		public int K3
-		{
-			get
-			{
-				return k3;
-			}
-		}
+		public int K3 => k3;
 
 		[Obsolete("Use 'Order' property instead")]
-		public BigInteger N
-		{
-			get
-			{
-				return m_order;
-			}
-		}
+		public BigInteger N => m_order;
 
 		[Obsolete("Use 'Cofactor' property instead")]
-		public BigInteger H
-		{
-			get
-			{
-				return m_cofactor;
-			}
-		}
+		public BigInteger H => m_cofactor;
 	}
 }

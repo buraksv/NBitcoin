@@ -60,21 +60,9 @@ namespace NBitcoin
 		}
 
 		ScriptId _Hash;
-		public ScriptId Hash
-		{
-			get
-			{
-				return _Hash;
-			}
-		}
+		public ScriptId Hash => _Hash;
 
-		public Base58Type Type
-		{
-			get
-			{
-				return Base58Type.SCRIPT_ADDRESS;
-			}
-		}
+		public Base58Type Type => Base58Type.SCRIPT_ADDRESS;
 
 		protected override Script GeneratePaymentScript()
 		{
@@ -144,13 +132,7 @@ namespace NBitcoin
 
 
 		private readonly Network _Network;
-		public Network Network
-		{
-			get
-			{
-				return _Network;
-			}
-		}
+		public Network Network => _Network;
 
 		public override string ToString()
 		{

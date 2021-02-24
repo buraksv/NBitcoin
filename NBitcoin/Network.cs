@@ -17,20 +17,9 @@ namespace NBitcoin
 	public class DNSSeedData
 	{
 		string name, host;
-		public string Name
-		{
-			get
-			{
-				return name;
-			}
-		}
-		public string Host
-		{
-			get
-			{
-				return host;
-			}
-		}
+		public string Name => name;
+
+		public string Host => host;
 		public DNSSeedData(string name, string host)
 		{
 			this.name = name;
@@ -163,27 +152,12 @@ namespace NBitcoin
 
 	public class Consensus
 	{
-		public static Consensus Main
-		{
-			get
-			{
-				return Network.Main.Consensus;
-			}
-		}
-		public static Consensus TestNet
-		{
-			get
-			{
-				return Network.TestNet.Consensus;
-			}
-		}
-		public static Consensus RegTest
-		{
-			get
-			{
-				return Network.RegTest.Consensus;
-			}
-		}
+		public static Consensus Main => Network.Main.Consensus;
+
+		public static Consensus TestNet => Network.TestNet.Consensus;
+
+		public static Consensus RegTest => Network.RegTest.Consensus;
+
 		public class BuriedDeploymentsArray
 		{
 			Consensus _Parent;
@@ -195,10 +169,7 @@ namespace NBitcoin
 			}
 			public int this[BuriedDeployments index]
 			{
-				get
-				{
-					return _Heights[(int)index];
-				}
+				get => _Heights[(int)index];
 				set
 				{
 					_Parent.EnsureNotFrozen();
@@ -218,10 +189,7 @@ namespace NBitcoin
 
 			public BIP9DeploymentsParameters this[BIP9Deployments index]
 			{
-				get
-				{
-					return _Parameters[(int)index];
-				}
+				get => _Parameters[(int)index];
 				set
 				{
 					_Parent.EnsureNotFrozen();
@@ -236,31 +204,16 @@ namespace NBitcoin
 			_BIP9Deployments = new BIP9DeploymentsArray(this);
 		}
 		private readonly BuriedDeploymentsArray _BuriedDeployments;
-		public BuriedDeploymentsArray BuriedDeployments
-		{
-			get
-			{
-				return _BuriedDeployments;
-			}
-		}
+		public BuriedDeploymentsArray BuriedDeployments => _BuriedDeployments;
 
 
 		private readonly BIP9DeploymentsArray _BIP9Deployments;
-		public BIP9DeploymentsArray BIP9Deployments
-		{
-			get
-			{
-				return _BIP9Deployments;
-			}
-		}
+		public BIP9DeploymentsArray BIP9Deployments => _BIP9Deployments;
 
 		int _SubsidyHalvingInterval;
 		public int SubsidyHalvingInterval
 		{
-			get
-			{
-				return _SubsidyHalvingInterval;
-			}
+			get => _SubsidyHalvingInterval;
 			set
 			{
 				EnsureNotFrozen();
@@ -271,10 +224,7 @@ namespace NBitcoin
 		private ConsensusFactory _ConsensusFactory = new ConsensusFactory();
 		public ConsensusFactory ConsensusFactory
 		{
-			get
-			{
-				return _ConsensusFactory;
-			}
+			get => _ConsensusFactory;
 			set
 			{
 				EnsureNotFrozen();
@@ -287,10 +237,7 @@ namespace NBitcoin
 
 		public int MajorityEnforceBlockUpgrade
 		{
-			get
-			{
-				return _MajorityEnforceBlockUpgrade;
-			}
+			get => _MajorityEnforceBlockUpgrade;
 			set
 			{
 				EnsureNotFrozen();
@@ -301,10 +248,7 @@ namespace NBitcoin
 		int _MajorityRejectBlockOutdated;
 		public int MajorityRejectBlockOutdated
 		{
-			get
-			{
-				return _MajorityRejectBlockOutdated;
-			}
+			get => _MajorityRejectBlockOutdated;
 			set
 			{
 				EnsureNotFrozen();
@@ -315,10 +259,7 @@ namespace NBitcoin
 		int _MajorityWindow;
 		public int MajorityWindow
 		{
-			get
-			{
-				return _MajorityWindow;
-			}
+			get => _MajorityWindow;
 			set
 			{
 				EnsureNotFrozen();
@@ -329,10 +270,7 @@ namespace NBitcoin
 		uint256? _BIP34Hash;
 		public uint256? BIP34Hash
 		{
-			get
-			{
-				return _BIP34Hash;
-			}
+			get => _BIP34Hash;
 			set
 			{
 				EnsureNotFrozen();
@@ -344,10 +282,7 @@ namespace NBitcoin
 		Target? _PowLimit;
 		public Target? PowLimit
 		{
-			get
-			{
-				return _PowLimit;
-			}
+			get => _PowLimit;
 			set
 			{
 				EnsureNotFrozen();
@@ -359,10 +294,7 @@ namespace NBitcoin
 		TimeSpan _PowTargetTimespan;
 		public TimeSpan PowTargetTimespan
 		{
-			get
-			{
-				return _PowTargetTimespan;
-			}
+			get => _PowTargetTimespan;
 			set
 			{
 				EnsureNotFrozen();
@@ -374,10 +306,7 @@ namespace NBitcoin
 		TimeSpan _PowTargetSpacing;
 		public TimeSpan PowTargetSpacing
 		{
-			get
-			{
-				return _PowTargetSpacing;
-			}
+			get => _PowTargetSpacing;
 			set
 			{
 				EnsureNotFrozen();
@@ -389,10 +318,7 @@ namespace NBitcoin
 		bool _PowAllowMinDifficultyBlocks;
 		public bool PowAllowMinDifficultyBlocks
 		{
-			get
-			{
-				return _PowAllowMinDifficultyBlocks;
-			}
+			get => _PowAllowMinDifficultyBlocks;
 			set
 			{
 				EnsureNotFrozen();
@@ -404,10 +330,7 @@ namespace NBitcoin
 		bool _PowNoRetargeting;
 		public bool PowNoRetargeting
 		{
-			get
-			{
-				return _PowNoRetargeting;
-			}
+			get => _PowNoRetargeting;
 			set
 			{
 				EnsureNotFrozen();
@@ -444,10 +367,7 @@ namespace NBitcoin
 		uint256? _MinimumChainWork;
 		public uint256? MinimumChainWork
 		{
-			get
-			{
-				return _MinimumChainWork;
-			}
+			get => _MinimumChainWork;
 			set
 			{
 				EnsureNotFrozen();
@@ -455,21 +375,12 @@ namespace NBitcoin
 			}
 		}
 
-		public long DifficultyAdjustmentInterval
-		{
-			get
-			{
-				return ((long)PowTargetTimespan.TotalSeconds / (long)PowTargetSpacing.TotalSeconds);
-			}
-		}
+		public long DifficultyAdjustmentInterval => ((long)PowTargetTimespan.TotalSeconds / (long)PowTargetSpacing.TotalSeconds);
 
 		int _MinerConfirmationWindow;
 		public int MinerConfirmationWindow
 		{
-			get
-			{
-				return _MinerConfirmationWindow;
-			}
+			get => _MinerConfirmationWindow;
 			set
 			{
 				EnsureNotFrozen();
@@ -480,10 +391,7 @@ namespace NBitcoin
 		int _RuleChangeActivationThreshold;
 		public int RuleChangeActivationThreshold
 		{
-			get
-			{
-				return _RuleChangeActivationThreshold;
-			}
+			get => _RuleChangeActivationThreshold;
 			set
 			{
 				EnsureNotFrozen();
@@ -495,10 +403,7 @@ namespace NBitcoin
 		int _CoinbaseMaturity = 100;
 		public int CoinbaseMaturity
 		{
-			get
-			{
-				return _CoinbaseMaturity;
-			}
+			get => _CoinbaseMaturity;
 			set
 			{
 				EnsureNotFrozen();
@@ -513,10 +418,7 @@ namespace NBitcoin
 		/// </summary>
 		public int CoinType
 		{
-			get
-			{
-				return _CoinType;
-			}
+			get => _CoinType;
 			set
 			{
 				EnsureNotFrozen();
@@ -531,10 +433,7 @@ namespace NBitcoin
 		/// </summary>
 		public bool LitecoinWorkCalculation
 		{
-			get
-			{
-				return _LitecoinWorkCalculation;
-			}
+			get => _LitecoinWorkCalculation;
 			set
 			{
 				EnsureNotFrozen();
@@ -557,10 +456,7 @@ namespace NBitcoin
 		bool _SupportSegwit = true;
 		public bool SupportSegwit
 		{
-			get
-			{
-				return _SupportSegwit;
-			}
+			get => _SupportSegwit;
 			set
 			{
 				EnsureNotFrozen();
@@ -571,10 +467,7 @@ namespace NBitcoin
 		bool _NeverNeedPreviousTxForSigning;
 		public bool NeverNeedPreviousTxForSigning
 		{
-			get
-			{
-				return _NeverNeedPreviousTxForSigning;
-			}
+			get => _NeverNeedPreviousTxForSigning;
 			set
 			{
 				EnsureNotFrozen();
@@ -1927,32 +1820,14 @@ namespace NBitcoin
 		readonly byte[] _GenesisBytes;
 
 		private int nRPCPort;
-		public int RPCPort
-		{
-			get
-			{
-				return nRPCPort;
-			}
-		}
+		public int RPCPort => nRPCPort;
 
 		private int nDefaultPort;
-		public int DefaultPort
-		{
-			get
-			{
-				return nDefaultPort;
-			}
-		}
+		public int DefaultPort => nDefaultPort;
 
 
 		private Consensus consensus = new Consensus();
-		public Consensus Consensus
-		{
-			get
-			{
-				return consensus;
-			}
-		}
+		public Consensus Consensus => consensus;
 
 		private Network(string name, byte[] genesis, uint magic, INetworkSet networkSet)
 		{
@@ -1977,22 +1852,10 @@ namespace NBitcoin
 
 		private readonly string name;
 
-		public string Name
-		{
-			get
-			{
-				return name;
-			}
-		}
+		public string Name => name;
 
 		private NetworkType networkType;
-		public NetworkType NetworkType
-		{
-			get
-			{
-				return networkType;
-			}
-		}
+		public NetworkType NetworkType => networkType;
 
 		static Network()
 		{
@@ -2019,44 +1882,20 @@ namespace NBitcoin
 		}
 
 		static Network _Main;
-		public static Network Main
-		{
-			get
-			{
-				return _Main;
-			}
-		}
+		public static Network Main => _Main;
 
 		static Network _TestNet;
-		public static Network TestNet
-		{
-			get
-			{
-				return _TestNet;
-			}
-		}
+		public static Network TestNet => _TestNet;
 
 		static Network _RegTest;
-		public static Network RegTest
-		{
-			get
-			{
-				return _RegTest;
-			}
-		}
+		public static Network RegTest => _RegTest;
 
 		static Dictionary<string, Network> _OtherAliases = new Dictionary<string, Network>();
 		static List<Network> _OtherNetworks = new List<Network>();
 
 
 		private readonly INetworkSet _NetworkSet;
-		public INetworkSet NetworkSet
-		{
-			get
-			{
-				return _NetworkSet;
-			}
-		}
+		public INetworkSet NetworkSet => _NetworkSet;
 
 		internal static Network Register(NetworkBuilder builder)
 		{
@@ -2669,13 +2508,7 @@ namespace NBitcoin
 		}
 
 
-		public uint256 GenesisHash
-		{
-			get
-			{
-				return consensus.HashGenesisBlock;
-			}
-		}
+		public uint256 GenesisHash => consensus.HashGenesisBlock;
 
 		public static IEnumerable<Network> GetNetworks()
 		{
@@ -2763,36 +2596,13 @@ namespace NBitcoin
 		}
 
 #if !NOSOCKET
-		public IEnumerable<NetworkAddress> SeedNodes
-		{
-			get
-			{
-				return this.vFixedSeeds;
-			}
-		}
-		public IEnumerable<DNSSeedData> DNSSeeds
-		{
-			get
-			{
-				return this.vSeeds;
-			}
-		}
+		public IEnumerable<NetworkAddress> SeedNodes => this.vFixedSeeds;
+		public IEnumerable<DNSSeedData> DNSSeeds => this.vSeeds;
 #endif
 		readonly byte[] _MagicBytes;
-		public byte[] MagicBytes
-		{
-			get
-			{
-				return _MagicBytes;
-			}
-		}
-		public uint Magic
-		{
-			get
-			{
-				return magic;
-			}
-		}
+		public byte[] MagicBytes => _MagicBytes;
+
+		public uint Magic => magic;
 
 		public Money GetReward(int nHeight)
 		{

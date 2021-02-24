@@ -93,27 +93,15 @@ namespace NBitcoin.Protocol
 		[Obsolete("Use SocketSettings.ReceiveBufferSize instead")]
 		public int ReceiveBufferSize
 		{
-			get
-			{
-				return SocketSettings.ReceiveBufferSize is int v ? v : 1048576;
-			}
-			set
-			{
-				SocketSettings.ReceiveBufferSize = value;
-			}
+			get => SocketSettings.ReceiveBufferSize is int v ? v : 1048576;
+			set => SocketSettings.ReceiveBufferSize = value;
 		}
 
 		[Obsolete("Use SocketSettings.SendBufferSize instead")]
 		public int SendBufferSize
 		{
-			get
-			{
-				return SocketSettings.SendBufferSize is int v ? v : 1048576;
-			}
-			set
-			{
-				SocketSettings.SendBufferSize = value;
-			}
+			get => SocketSettings.SendBufferSize is int v ? v : 1048576;
+			set => SocketSettings.SendBufferSize = value;
 		}
 
 		public SocketSettings SocketSettings { get; set; } = new SocketSettings();
@@ -136,13 +124,7 @@ namespace NBitcoin.Protocol
 		}
 
 		private readonly NodeBehaviorsCollection _TemplateBehaviors = new NodeBehaviorsCollection(null);
-		public NodeBehaviorsCollection TemplateBehaviors
-		{
-			get
-			{
-				return _TemplateBehaviors;
-			}
-		}
+		public NodeBehaviorsCollection TemplateBehaviors => _TemplateBehaviors;
 
 		public NodeConnectionParameters Clone()
 		{

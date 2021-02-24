@@ -71,69 +71,70 @@ namespace NBitcoin.Scripting
 		internal int Tag { get; }
 
 		internal static readonly ScriptToken _unique_BoolAnd = new ScriptToken(0);
-		internal static ScriptToken BoolAnd { get { return _unique_BoolAnd; } }
+		internal static ScriptToken BoolAnd => _unique_BoolAnd;
 		internal static readonly ScriptToken _unique_BoolOr = new ScriptToken(1);
-		internal static ScriptToken BoolOr { get { return _unique_BoolOr; } }
+		internal static ScriptToken BoolOr => _unique_BoolOr;
 
 		internal static readonly ScriptToken _unique_Add = new ScriptToken(2);
-		internal static ScriptToken Add { get { return _unique_Add; } }
+		internal static ScriptToken Add => _unique_Add;
 
 		internal static readonly ScriptToken _unique_Equal = new ScriptToken(3);
-		internal static ScriptToken Equal { get { return _unique_Equal; } }
+		internal static ScriptToken Equal => _unique_Equal;
 
 		internal static readonly ScriptToken _unique_EqualVerify = new ScriptToken(4);
-		internal static ScriptToken EqualVerify { get { return _unique_EqualVerify; } }
+		internal static ScriptToken EqualVerify => _unique_EqualVerify;
 
 		internal static readonly ScriptToken _unique_CheckSig = new ScriptToken(5);
-		internal static ScriptToken CheckSig { get { return _unique_CheckSig; } }
+		internal static ScriptToken CheckSig => _unique_CheckSig;
 
 		internal static readonly ScriptToken _unique_CheckSigVerify = new ScriptToken(6);
-		internal static ScriptToken CheckSigVerify { get { return _unique_CheckSigVerify; } }
+		internal static ScriptToken CheckSigVerify => _unique_CheckSigVerify;
 		internal static readonly ScriptToken _unique_CheckMultiSig = new ScriptToken(7);
-		internal static ScriptToken CheckMultiSig { get { return _unique_CheckMultiSig; } }
+		internal static ScriptToken CheckMultiSig => _unique_CheckMultiSig;
 		internal static readonly ScriptToken _unique_CheckMultiSigVerify = new ScriptToken(8);
-		internal static ScriptToken CheckMultiSigVerify { get { return _unique_CheckMultiSigVerify; } }
+		internal static ScriptToken CheckMultiSigVerify => _unique_CheckMultiSigVerify;
 
 		internal static readonly ScriptToken _unique_CheckSequenceVerify = new ScriptToken(9);
-		internal static ScriptToken CheckSequenceVerify { get { return _unique_CheckSequenceVerify; } }
+		internal static ScriptToken CheckSequenceVerify => _unique_CheckSequenceVerify;
 		internal static readonly ScriptToken _unique_FromAltStack = new ScriptToken(10);
-		internal static ScriptToken FromAltStack { get { return _unique_FromAltStack; } }
+		internal static ScriptToken FromAltStack => _unique_FromAltStack;
 		internal static readonly ScriptToken _unique_ToAltStack = new ScriptToken(11);
-		internal static ScriptToken ToAltStack { get { return _unique_ToAltStack; } }
+		internal static ScriptToken ToAltStack => _unique_ToAltStack;
 
 		internal static readonly ScriptToken _unique_Drop = new ScriptToken(12);
-		internal static ScriptToken Drop { get { return _unique_Drop; } }
+		internal static ScriptToken Drop => _unique_Drop;
 
 		internal static readonly ScriptToken _unique_Dup = new ScriptToken(13);
-		internal static ScriptToken Dup { get { return _unique_Dup; } }
+		internal static ScriptToken Dup => _unique_Dup;
 
 		internal static readonly ScriptToken _unique_If = new ScriptToken(14);
-		internal static ScriptToken If { get { return _unique_If; } }
+		internal static ScriptToken If => _unique_If;
 		internal static readonly ScriptToken _unique_IfDup = new ScriptToken(15);
-		internal static ScriptToken IfDup { get { return _unique_IfDup; } }
+		internal static ScriptToken IfDup => _unique_IfDup;
 
 		internal static readonly ScriptToken _unique_NotIf = new ScriptToken(16);
-		internal static ScriptToken NotIf { get { return _unique_NotIf; } }
+		internal static ScriptToken NotIf => _unique_NotIf;
 
 		internal static readonly ScriptToken _unique_Else = new ScriptToken(17);
-		internal static ScriptToken Else { get { return _unique_Else; } }
+		internal static ScriptToken Else => _unique_Else;
 
 		internal static readonly ScriptToken _unique_EndIf = new ScriptToken(18);
-		internal static ScriptToken EndIf { get { return _unique_EndIf; } }
+		internal static ScriptToken EndIf => _unique_EndIf;
 		internal static readonly ScriptToken _unique_ZeroNotEqual = new ScriptToken(19);
-		internal static ScriptToken ZeroNotEqual { get { return _unique_ZeroNotEqual; } }
+		internal static ScriptToken ZeroNotEqual => _unique_ZeroNotEqual;
 
 		internal static readonly ScriptToken _unique_Size = new ScriptToken(20);
-		internal static ScriptToken Size { get { return _unique_Size; } }
+		internal static ScriptToken Size => _unique_Size;
 
 		internal static readonly ScriptToken _unique_Swap = new ScriptToken(21);
-		internal static ScriptToken Swap { get { return _unique_Swap; } }
+		internal static ScriptToken Swap => _unique_Swap;
 		internal static readonly ScriptToken _unique_Verify = new ScriptToken(23);
-		internal static ScriptToken Verify { get { return _unique_Verify; } }
+		internal static ScriptToken Verify => _unique_Verify;
 		internal static readonly ScriptToken _unique_Hash160 = new ScriptToken(24);
-		internal static ScriptToken Hash160 { get { return _unique_Hash160; } }
+		internal static ScriptToken Hash160 => _unique_Hash160;
 		internal static readonly ScriptToken _unique_Sha256 = new ScriptToken(25);
-		internal static ScriptToken Sha256 { get { return _unique_Sha256; } }
+		internal static ScriptToken Sha256 => _unique_Sha256;
+
 		internal class Number : ScriptToken
 		{
 			internal uint Item { get; }

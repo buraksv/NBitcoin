@@ -14,13 +14,7 @@ namespace NBitcoin.Protocol
 	public class AddrPayload : Payload, IBitcoinSerializable
 	{
 		NetworkAddress[] addr_list = new NetworkAddress[0];
-		public NetworkAddress[] Addresses
-		{
-			get
-			{
-				return addr_list;
-			}
-		}
+		public NetworkAddress[] Addresses => addr_list;
 
 		public AddrPayload()
 		{

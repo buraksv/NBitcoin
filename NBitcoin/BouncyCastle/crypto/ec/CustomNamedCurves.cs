@@ -18,13 +18,7 @@ namespace NBitcoin.BouncyCastle.Crypto.EC
 			return c.Configure().SetEndomorphism(new GlvTypeBEndomorphism(c, p)).Create();
 		}
 
-		public static X9ECParameters Secp256k1
-		{
-			get
-			{
-				return SecP256K1Holder.Instance.Parameters;
-			}
-		}
+		public static X9ECParameters Secp256k1 => SecP256K1Holder.Instance.Parameters;
 
 		/*
          * secp256k1

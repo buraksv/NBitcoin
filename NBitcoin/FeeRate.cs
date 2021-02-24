@@ -12,33 +12,15 @@ namespace NBitcoin
 		/// <summary>
 		/// Fee per KB
 		/// </summary>
-		public Money FeePerK
-		{
-			get
-			{
-				return _FeePerK;
-			}
-		}
+		public Money FeePerK => _FeePerK;
 
 		/// <summary>
 		/// Satoshi per Byte
 		/// </summary>
-		public decimal SatoshiPerByte
-		{
-			get
-			{
-				return (decimal)_FeePerK.Satoshi / 1000;
-			}
-		}
+		public decimal SatoshiPerByte => (decimal)_FeePerK.Satoshi / 1000;
 
 		readonly static FeeRate _Zero = new FeeRate(Money.Zero);
-		public static FeeRate Zero
-		{
-			get
-			{
-				return _Zero;
-			}
-		}
+		public static FeeRate Zero => _Zero;
 
 		public FeeRate(Money feePerK)
 		{

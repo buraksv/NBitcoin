@@ -50,14 +50,8 @@ namespace NBitcoin.Payment
 		Money _Amount;
 		public Money Amount
 		{
-			get
-			{
-				return _Amount ?? Money.Zero;
-			}
-			set
-			{
-				_Amount = value;
-			}
+			get => _Amount ?? Money.Zero;
+			set => _Amount = value;
 		}
 		public Script Script
 		{
@@ -211,14 +205,8 @@ namespace NBitcoin.Payment
 		Network _Network;
 		public Network Network
 		{
-			get
-			{
-				return _Network ?? Network.Main;
-			}
-			set
-			{
-				_Network = value;
-			}
+			get => _Network ?? Network.Main;
+			set => _Network = value;
 		}
 
 		/// <summary>
@@ -261,13 +249,7 @@ namespace NBitcoin.Payment
 			set;
 		}
 		private readonly List<PaymentOutput> _Outputs = new List<PaymentOutput>();
-		public List<PaymentOutput> Outputs
-		{
-			get
-			{
-				return _Outputs;
-			}
-		}
+		public List<PaymentOutput> Outputs => _Outputs;
 	}
 	[Obsolete("BIP70 is obsolete")]
 	public class PaymentRequest
@@ -280,53 +262,23 @@ namespace NBitcoin.Payment
 				_Inner = inner;
 				Activated = true;
 			}
-			public override bool CanRead
-			{
-				get
-				{
-					return _Inner.CanRead;
-				}
-			}
+			public override bool CanRead => _Inner.CanRead;
 
-			public override bool CanSeek
-			{
-				get
-				{
-					return _Inner.CanSeek;
-				}
-			}
+			public override bool CanSeek => _Inner.CanSeek;
 
-			public override bool CanWrite
-			{
-				get
-				{
-					return _Inner.CanWrite;
-				}
-			}
+			public override bool CanWrite => _Inner.CanWrite;
 
 			public override void Flush()
 			{
 				_Inner.Flush();
 			}
 
-			public override long Length
-			{
-				get
-				{
-					return _Inner.Length;
-				}
-			}
+			public override long Length => _Inner.Length;
 
 			public override long Position
 			{
-				get
-				{
-					return _Inner.Position;
-				}
-				set
-				{
-					_Inner.Position = value;
-				}
+				get => _Inner.Position;
+				set => _Inner.Position = value;
 			}
 
 			public override int Read(byte[] buffer, int offset, int count)
@@ -393,14 +345,8 @@ namespace NBitcoin.Payment
 		/// </summary>
 		public static ICertificateServiceProvider DefaultCertificateServiceProvider
 		{
-			get
-			{
-				return _DefaultCertificateServiceProvider;
-			}
-			set
-			{
-				_DefaultCertificateServiceProvider = value;
-			}
+			get => _DefaultCertificateServiceProvider;
+			set => _DefaultCertificateServiceProvider = value;
 		}
 
 		/// <summary>
@@ -491,14 +437,8 @@ namespace NBitcoin.Payment
 		uint? _DetailsVersion;
 		public uint DetailsVersion
 		{
-			get
-			{
-				return _DetailsVersion ?? 1;
-			}
-			set
-			{
-				_DetailsVersion = value;
-			}
+			get => _DetailsVersion ?? 1;
+			set => _DetailsVersion = value;
 		}
 		public void WriteTo(Stream output)
 		{
@@ -585,22 +525,10 @@ namespace NBitcoin.Payment
 
 
 		private readonly List<byte[]> _AdditionalCertificates = new List<byte[]>();
-		public List<byte[]> AdditionalCertificates
-		{
-			get
-			{
-				return _AdditionalCertificates;
-			}
-		}
+		public List<byte[]> AdditionalCertificates => _AdditionalCertificates;
 
 		private PaymentDetails _PaymentDetails = new PaymentDetails();
-		public PaymentDetails Details
-		{
-			get
-			{
-				return _PaymentDetails;
-			}
-		}
+		public PaymentDetails Details => _PaymentDetails;
 
 		public byte[] ToBytes()
 		{

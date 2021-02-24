@@ -17,28 +17,11 @@ namespace NBitcoin.Stealth
 		byte[] _Rawform;
 		byte[] _Mask;
 		private readonly int _BitCount;
-		public int BitCount
-		{
-			get
-			{
-				return _BitCount;
-			}
-		}
-		public int ByteCount
-		{
-			get
-			{
-				return _Rawform.Length;
-			}
-		}
+		public int BitCount => _BitCount;
 
-		public byte[] Mask
-		{
-			get
-			{
-				return _Mask;
-			}
-		}
+		public int ByteCount => _Rawform.Length;
+
+		public byte[] Mask => _Mask;
 
 		public BitField(byte[] rawform, int bitcount)
 		{
@@ -224,13 +207,7 @@ namespace NBitcoin.Stealth
 			return ms.ToArray();
 		}
 
-		public override Base58Type Type
-		{
-			get
-			{
-				return Base58Type.STEALTH_ADDRESS;
-			}
-		}
+		public override Base58Type Type => Base58Type.STEALTH_ADDRESS;
 
 
 		/// <summary>

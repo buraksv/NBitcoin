@@ -12,10 +12,7 @@ namespace NBitcoin.OpenAsset
 		long _Quantity;
 		public long Quantity
 		{
-			get
-			{
-				return _Quantity;
-			}
+			get => _Quantity;
 			// used as a central point where long.MinValue checking can be enforced 
 			private set
 			{
@@ -34,13 +31,7 @@ namespace NBitcoin.OpenAsset
 		/// <summary>
 		/// AssetId of the current amount
 		/// </summary>
-		public AssetId Id
-		{
-			get
-			{
-				return _Id;
-			}
-		}
+		public AssetId Id => _Id;
 
 		/// <summary>
 		/// Get absolute value of the instance

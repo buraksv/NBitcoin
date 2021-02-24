@@ -20,28 +20,16 @@ namespace NBitcoin.Protocol
 		byte _PreferHeaderAndIDs;
 		public bool PreferHeaderAndIDs
 		{
-			get
-			{
-				return _PreferHeaderAndIDs == 1;
-			}
-			set
-			{
-				_PreferHeaderAndIDs = value ? (byte)1 : (byte)0;
-			}
+			get => _PreferHeaderAndIDs == 1;
+			set => _PreferHeaderAndIDs = value ? (byte)1 : (byte)0;
 		}
 
 
 		ulong _Version = 1;
 		public ulong Version
 		{
-			get
-			{
-				return _Version;
-			}
-			set
-			{
-				_Version = value;
-			}
+			get => _Version;
+			set => _Version = value;
 		}
 
 		public override void ReadWriteCore(BitcoinStream stream)

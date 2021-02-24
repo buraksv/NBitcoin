@@ -30,21 +30,9 @@ namespace NBitcoin.BouncyCastle.Math.EC.Custom.Sec
 			this.x = x;
 		}
 
-		public override bool IsZero
-		{
-			get
-			{
-				return Nat256.IsZero(x);
-			}
-		}
+		public override bool IsZero => Nat256.IsZero(x);
 
-		public override bool IsOne
-		{
-			get
-			{
-				return Nat256.IsOne(x);
-			}
-		}
+		public override bool IsOne => Nat256.IsOne(x);
 
 		public override bool TestBitZero()
 		{
@@ -56,21 +44,9 @@ namespace NBitcoin.BouncyCastle.Math.EC.Custom.Sec
 			return Nat256.ToBigInteger(x);
 		}
 
-		public override string FieldName
-		{
-			get
-			{
-				return "SecP256K1Field";
-			}
-		}
+		public override string FieldName => "SecP256K1Field";
 
-		public override int FieldSize
-		{
-			get
-			{
-				return Q.BitLength;
-			}
-		}
+		public override int FieldSize => Q.BitLength;
 
 		public override ECFieldElement Add(ECFieldElement b)
 		{

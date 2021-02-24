@@ -17,27 +17,15 @@ namespace NBitcoin
 
 		public BlockHeader Header
 		{
-			get
-			{
-				return header;
-			}
-			set
-			{
-				header = value;
-			}
+			get => header;
+			set => header = value;
 		}
 		PartialMerkleTree _PartialMerkleTree;
 
 		public PartialMerkleTree PartialMerkleTree
 		{
-			get
-			{
-				return _PartialMerkleTree;
-			}
-			set
-			{
-				_PartialMerkleTree = value;
-			}
+			get => _PartialMerkleTree;
+			set => _PartialMerkleTree = value;
 		}
 
 		// Create from a CBlock, filtering transactions according to filter

@@ -319,10 +319,7 @@ namespace NBitcoin
 		long _Satoshis;
 		public long Satoshi
 		{
-			get
-			{
-				return _Satoshis;
-			}
+			get => _Satoshis;
 			// used as a central point where long.MinValue checking can be enforced 
 			private set
 			{
@@ -703,13 +700,7 @@ namespace NBitcoin
 
 
 		static readonly Money _Zero = new Money(0L);
-		public static Money Zero
-		{
-			get
-			{
-				return _Zero;
-			}
-		}
+		public static Money Zero => _Zero;
 
 		/// <summary>
 		/// Tell if amount is almost equal to this instance

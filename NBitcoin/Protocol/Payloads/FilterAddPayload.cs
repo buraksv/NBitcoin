@@ -20,14 +20,8 @@ namespace NBitcoin.Protocol
 		byte[] _Data;
 		public byte[] Data
 		{
-			get
-			{
-				return _Data;
-			}
-			set
-			{
-				_Data = value;
-			}
+			get => _Data;
+			set => _Data = value;
 		}
 
 		public override void ReadWriteCore(BitcoinStream stream)

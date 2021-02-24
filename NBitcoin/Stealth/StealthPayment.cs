@@ -12,21 +12,10 @@ namespace NBitcoin.Stealth
 	public class StealthSpendKey
 	{
 		private readonly StealthPayment _Payment;
-		public StealthPayment Payment
-		{
-			get
-			{
-				return _Payment;
-			}
-		}
+		public StealthPayment Payment => _Payment;
 		private readonly KeyId _ID;
-		public KeyId ID
-		{
-			get
-			{
-				return _ID;
-			}
-		}
+		public KeyId ID => _ID;
+
 		public StealthSpendKey(KeyId id, StealthPayment payment)
 		{
 			_ID = id;

@@ -30,26 +30,14 @@ namespace NBitcoin.Protocol
 
 		public ulong Service
 		{
-			get
-			{
-				return service;
-			}
-			set
-			{
-				service = value;
-			}
+			get => service;
+			set => service = value;
 		}
 
 		public TimeSpan Ago
 		{
-			get
-			{
-				return DateTimeOffset.UtcNow - Time;
-			}
-			set
-			{
-				Time = DateTimeOffset.UtcNow - value;
-			}
+			get => DateTimeOffset.UtcNow - Time;
+			set => Time = DateTimeOffset.UtcNow - value;
 		}
 
 		public void Adjust()
@@ -61,10 +49,7 @@ namespace NBitcoin.Protocol
 
 		public IPEndPoint Endpoint
 		{
-			get
-			{
-				return new IPEndPoint(new IPAddress(ip), port);
-			}
+			get => new IPEndPoint(new IPAddress(ip), port);
 			set
 			{
 				port = (ushort)value.Port;
@@ -88,14 +73,8 @@ namespace NBitcoin.Protocol
 
 		public DateTimeOffset Time
 		{
-			get
-			{
-				return Utils.UnixTimeToDateTime(ntime);
-			}
-			set
-			{
-				ntime = Utils.DateTimeToUnixTime(value);
-			}
+			get => Utils.UnixTimeToDateTime(ntime);
+			set => ntime = Utils.DateTimeToUnixTime(value);
 		}
 		uint version = 100100;
 		#region IBitcoinSerializable Members

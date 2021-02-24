@@ -186,27 +186,15 @@ namespace NBitcoin.OpenAsset
 		ushort _Version = 1;
 		public ushort Version
 		{
-			get
-			{
-				return _Version;
-			}
-			set
-			{
-				_Version = value;
-			}
+			get => _Version;
+			set => _Version = value;
 		}
 
 		ulong[] _Quantities;
 		public ulong[] Quantities
 		{
-			get
-			{
-				return _Quantities;
-			}
-			set
-			{
-				_Quantities = value;
-			}
+			get => _Quantities;
+			set => _Quantities = value;
 		}
 
 		public void SetQuantity(uint index, long quantity)
@@ -226,14 +214,8 @@ namespace NBitcoin.OpenAsset
 		byte[] _Metadata = new byte[0];
 		public byte[] Metadata
 		{
-			get
-			{
-				return _Metadata;
-			}
-			set
-			{
-				_Metadata = value;
-			}
+			get => _Metadata;
+			set => _Metadata = value;
 		}
 		private const ulong MAX_QUANTITY = ((1UL << 63) - 1);
 

@@ -13,26 +13,14 @@ namespace NBitcoin.Protocol
 		uint256 _BlockId = uint256.Zero;
 		public uint256 BlockId
 		{
-			get
-			{
-				return _BlockId;
-			}
-			set
-			{
-				_BlockId = value;
-			}
+			get => _BlockId;
+			set => _BlockId = value;
 		}
 
 
 
 		private List<int> _Indices = new List<int>();
-		public List<int> Indices
-		{
-			get
-			{
-				return _Indices;
-			}
-		}
+		public List<int> Indices => _Indices;
 
 		public override void ReadWriteCore(BitcoinStream stream)
 		{

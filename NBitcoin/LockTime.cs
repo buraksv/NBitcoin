@@ -7,13 +7,8 @@ namespace NBitcoin
 		internal const uint LOCKTIME_THRESHOLD = 500000000; // Tue Nov  5 00:53:20 1985 UTC
 		uint _value;
 
-		public static LockTime Zero
-		{
-			get
-			{
-				return new LockTime((uint)0);
-			}
-		}
+		public static LockTime Zero => new LockTime((uint)0);
+
 		public LockTime(DateTimeOffset dateTime)
 		{
 			_value = Utils.DateTimeToUnixTime(dateTime);
@@ -50,30 +45,12 @@ namespace NBitcoin
 			}
 		}
 
-		public uint Value
-		{
-			get
-			{
-				return _value;
-			}
-		}
+		public uint Value => _value;
 
 
-		public bool IsHeightLock
-		{
-			get
-			{
-				return _value < LOCKTIME_THRESHOLD; // Tue Nov  5 00:53:20 1985 UTC
-			}
-		}
+		public bool IsHeightLock => _value < LOCKTIME_THRESHOLD; // Tue Nov  5 00:53:20 1985 UTC
 
-		public bool IsTimeLock
-		{
-			get
-			{
-				return !IsHeightLock;
-			}
-		}
+		public bool IsTimeLock => !IsHeightLock;
 
 
 		#region IBitcoinSerializable Members

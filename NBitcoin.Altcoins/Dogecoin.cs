@@ -52,98 +52,56 @@ namespace NBitcoin.Altcoins
 
 			public Transaction Transactions
 			{
-				get
-				{
-					return tx;
-				}
-				set
-				{
-					tx = value;
-				}
+				get => tx;
+				set => tx = value;
 			}
 
 			uint nIndex = 0;
 
 			public uint Index
 			{
-				get
-				{
-					return nIndex;
-				}
-				set
-				{
-					nIndex = value;
-				}
+				get => nIndex;
+				set => nIndex = value;
 			}
 
 			uint256 hashBlock = new uint256();
 
 			public uint256 HashBlock
 			{
-				get
-				{
-					return hashBlock;
-				}
-				set
-				{
-					hashBlock = value;
-				}
+				get => hashBlock;
+				set => hashBlock = value;
 			}
 
 			List<uint256> vMerkelBranch = new List<uint256>();
 
 			public List<uint256> MerkelBranch
 			{
-				get
-				{
-					return vMerkelBranch;
-				}
-				set
-				{
-					vMerkelBranch = value;
-				}
+				get => vMerkelBranch;
+				set => vMerkelBranch = value;
 			}
 
 			List<uint256> vChainMerkleBranch = new List<uint256>();
 
 			public List<uint256> ChainMerkleBranch
 			{
-				get
-				{
-					return vChainMerkleBranch;
-				}
-				set
-				{
-					vChainMerkleBranch = value;
-				}
+				get => vChainMerkleBranch;
+				set => vChainMerkleBranch = value;
 			}
 
 			uint nChainIndex = 0;
 
 			public uint ChainIndex
 			{
-				get
-				{
-					return nChainIndex;
-				}
-				set
-				{
-					nChainIndex = value;
-				}
+				get => nChainIndex;
+				set => nChainIndex = value;
 			}
 
 			BlockHeader parentBlock = new BlockHeader();
 
 			public BlockHeader ParentBlock
 			{
-				get
-				{
-					return parentBlock;
-				}
-				set
-				{
-					parentBlock = value;
-				}
+				get => parentBlock;
+				set => parentBlock = value;
 			}
 
 			public void ReadWrite(BitcoinStream stream)
@@ -178,14 +136,8 @@ namespace NBitcoin.Altcoins
 
 			public AuxPow AuxPow
 			{
-				get
-				{
-					return auxPow;
-				}
-				set
-				{
-					auxPow = value;
-				}
+				get => auxPow;
+				set => auxPow = value;
 			}
 
 			public override uint256 GetPoWHash()

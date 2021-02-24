@@ -40,29 +40,11 @@ namespace NBitcoin.BouncyCastle.Math.EC.Custom.Sec
 			}
 		}
 
-		public virtual BigInteger QQ
-		{
-			get
-			{
-				return q;
-			}
-		}
+		public virtual BigInteger QQ => q;
 
-		public override ECPoint Infinity
-		{
-			get
-			{
-				return m_infinity;
-			}
-		}
+		public override ECPoint Infinity => m_infinity;
 
-		public override int FieldSize
-		{
-			get
-			{
-				return q.BitLength;
-			}
-		}
+		public override int FieldSize => q.BitLength;
 
 		public override ECFieldElement FromBigInteger(BigInteger x)
 		{

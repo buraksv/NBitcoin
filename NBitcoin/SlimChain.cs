@@ -24,13 +24,7 @@ namespace NBitcoin
 			_Height = 0;
 		}
 
-		public int Height
-		{
-			get
-			{
-				return _Height;
-			}
-		}
+		public int Height => _Height;
 
 		public bool Contains(uint256 blockHash)
 		{
@@ -313,32 +307,14 @@ namespace NBitcoin
 			_Height = height;
 		}
 		private readonly uint256 _Hash;
-		public uint256 Hash
-		{
-			get
-			{
-				return _Hash;
-			}
-		}
+		public uint256 Hash => _Hash;
 
 		private readonly uint256 _Previous;
-		public uint256 Previous
-		{
-			get
-			{
-				return _Previous;
-			}
-		}
+		public uint256 Previous => _Previous;
 
 
 		private readonly int _Height;
-		public int Height
-		{
-			get
-			{
-				return _Height;
-			}
-		}
+		public int Height => _Height;
 
 		public override string ToString()
 		{

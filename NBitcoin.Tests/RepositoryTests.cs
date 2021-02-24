@@ -43,13 +43,7 @@ namespace NBitcoin.Tests
 			}
 
 			private byte[] _Data = new byte[0];
-			public byte[] Data
-			{
-				get
-				{
-					return _Data;
-				}
-			}
+			public byte[] Data => _Data;
 
 			#endregion
 		}

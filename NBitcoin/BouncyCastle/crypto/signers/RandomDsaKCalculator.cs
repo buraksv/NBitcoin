@@ -11,13 +11,7 @@ namespace NBitcoin.BouncyCastle.Crypto.Signers
 		private BigInteger q;
 		private SecureRandom random;
 
-		public virtual bool IsDeterministic
-		{
-			get
-			{
-				return false;
-			}
-		}
+		public virtual bool IsDeterministic => false;
 
 		public virtual void Init(BigInteger n, SecureRandom random)
 		{

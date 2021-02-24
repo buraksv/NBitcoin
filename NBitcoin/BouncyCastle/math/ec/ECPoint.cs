@@ -77,24 +77,13 @@ namespace NBitcoin.BouncyCastle.Math.EC
 			return Normalize().Detach();
 		}
 
-		public virtual ECCurve Curve
-		{
-			get
-			{
-				return m_curve;
-			}
-		}
+		public virtual ECCurve Curve => m_curve;
 
 		protected abstract ECPoint Detach();
 
-		protected virtual int CurveCoordinateSystem
-		{
-			get
-			{
-				// Cope with null curve, most commonly used by implicitlyCa
-				return null == m_curve ? ECCurve.COORD_AFFINE : m_curve.CoordinateSystem;
-			}
-		}
+		protected virtual int CurveCoordinateSystem =>
+			// Cope with null curve, most commonly used by implicitlyCa
+			null == m_curve ? ECCurve.COORD_AFFINE : m_curve.CoordinateSystem;
 
 		/**
          * Normalizes this point, and then returns the affine x-coordinate.
@@ -103,13 +92,7 @@ namespace NBitcoin.BouncyCastle.Math.EC
          * of caller-controlled normalization.
          */
 		[Obsolete("Use AffineXCoord, or Normalize() and XCoord, instead")]
-		public virtual ECFieldElement X
-		{
-			get
-			{
-				return Normalize().XCoord;
-			}
-		}
+		public virtual ECFieldElement X => Normalize().XCoord;
 
 		/**
          * Normalizes this point, and then returns the affine y-coordinate.
@@ -118,13 +101,7 @@ namespace NBitcoin.BouncyCastle.Math.EC
          * of caller-controlled normalization.
          */
 		[Obsolete("Use AffineYCoord, or Normalize() and YCoord, instead")]
-		public virtual ECFieldElement Y
-		{
-			get
-			{
-				return Normalize().YCoord;
-			}
-		}
+		public virtual ECFieldElement Y => Normalize().YCoord;
 
 		/**
          * Returns the affine x-coordinate after checking that this point is normalized.
@@ -165,13 +142,7 @@ namespace NBitcoin.BouncyCastle.Math.EC
          * 
          * @return the x-coordinate of this point
          */
-		public virtual ECFieldElement XCoord
-		{
-			get
-			{
-				return m_x;
-			}
-		}
+		public virtual ECFieldElement XCoord => m_x;
 
 		/**
          * Returns the y-coordinate.
@@ -182,13 +153,7 @@ namespace NBitcoin.BouncyCastle.Math.EC
          * 
          * @return the y-coordinate of this point
          */
-		public virtual ECFieldElement YCoord
-		{
-			get
-			{
-				return m_y;
-			}
-		}
+		public virtual ECFieldElement YCoord => m_y;
 
 		public virtual ECFieldElement GetZCoord(int index)
 		{
@@ -207,29 +172,11 @@ namespace NBitcoin.BouncyCastle.Math.EC
 			return copy;
 		}
 
-		protected internal ECFieldElement RawXCoord
-		{
-			get
-			{
-				return m_x;
-			}
-		}
+		protected internal ECFieldElement RawXCoord => m_x;
 
-		protected internal ECFieldElement RawYCoord
-		{
-			get
-			{
-				return m_y;
-			}
-		}
+		protected internal ECFieldElement RawYCoord => m_y;
 
-		protected internal ECFieldElement[] RawZCoords
-		{
-			get
-			{
-				return m_zs;
-			}
-		}
+		protected internal ECFieldElement[] RawZCoords => m_zs;
 
 		protected virtual void CheckNormalized()
 		{
@@ -308,21 +255,9 @@ namespace NBitcoin.BouncyCastle.Math.EC
 			return Curve.CreateRawPoint(RawXCoord.Multiply(sx), RawYCoord.Multiply(sy), IsCompressed);
 		}
 
-		public bool IsInfinity
-		{
-			get
-			{
-				return m_x == null && m_y == null;
-			}
-		}
+		public bool IsInfinity => m_x == null && m_y == null;
 
-		public bool IsCompressed
-		{
-			get
-			{
-				return m_withCompression;
-			}
-		}
+		public bool IsCompressed => m_withCompression;
 
 		public bool IsValid()
 		{
@@ -568,13 +503,7 @@ namespace NBitcoin.BouncyCastle.Math.EC
 		{
 		}
 
-		protected internal override bool CompressionYTilde
-		{
-			get
-			{
-				return this.AffineYCoord.TestBitZero();
-			}
-		}
+		protected internal override bool CompressionYTilde => this.AffineYCoord.TestBitZero();
 
 		protected override bool SatisfiesCurveEquation()
 		{

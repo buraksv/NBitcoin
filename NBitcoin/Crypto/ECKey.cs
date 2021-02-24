@@ -10,13 +10,7 @@ namespace NBitcoin.Crypto
 {
 	internal class ECKey
 	{
-		public ECPrivateKeyParameters PrivateKey
-		{
-			get
-			{
-				return _Key as ECPrivateKeyParameters;
-			}
-		}
+		public ECPrivateKeyParameters PrivateKey => _Key as ECPrivateKeyParameters;
 		readonly ECKeyParameters _Key;
 
 
@@ -45,13 +39,7 @@ namespace NBitcoin.Crypto
 
 
 
-		public static X9ECParameters Secp256k1
-		{
-			get
-			{
-				return _Secp256k1;
-			}
-		}
+		public static X9ECParameters Secp256k1 => _Secp256k1;
 
 		ECDomainParameters _DomainParameter;
 		public ECDomainParameters DomainParameter

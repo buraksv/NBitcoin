@@ -38,25 +38,13 @@ namespace NBitcoin.Protocol
 		}
 		public InventoryType Type
 		{
-			get
-			{
-				return (InventoryType)type;
-			}
-			set
-			{
-				type = (uint)value;
-			}
+			get => (InventoryType)type;
+			set => type = (uint)value;
 		}
 		public uint256 Hash
 		{
-			get
-			{
-				return hash;
-			}
-			set
-			{
-				hash = value;
-			}
+			get => hash;
+			set => hash = value;
 		}
 
 		#region IBitcoinSerializable Members

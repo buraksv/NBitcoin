@@ -20,22 +20,10 @@ namespace NBitcoin.Protocol
 	public class NodeServer : IDisposable
 	{
 		private readonly Network _Network;
-		public Network Network
-		{
-			get
-			{
-				return _Network;
-			}
-		}
+		public Network Network => _Network;
 
 		uint _Version;
-		public uint Version
-		{
-			get
-			{
-				return _Version;
-			}
-		}
+		public uint Version => _Version;
 
 		/// <summary>
 		/// The parameters that will be cloned and applied for each node connecting to the NodeServer
@@ -101,25 +89,13 @@ namespace NBitcoin.Protocol
 		private IPEndPoint _LocalEndpoint;
 		public IPEndPoint LocalEndpoint
 		{
-			get
-			{
-				return _LocalEndpoint;
-			}
-			set
-			{
-				_LocalEndpoint = Utils.EnsureIPv6(value);
-			}
+			get => _LocalEndpoint;
+			set => _LocalEndpoint = Utils.EnsureIPv6(value);
 		}
 
 		Socket socket;
 
-		public bool IsListening
-		{
-			get
-			{
-				return socket != null;
-			}
-		}
+		public bool IsListening => socket != null;
 
 		public void Listen(int maxIncoming = 8)
 		{
@@ -238,25 +214,13 @@ namespace NBitcoin.Protocol
 		internal readonly MessageProducer<object> _InternalMessageProducer = new MessageProducer<object>();
 
 		MessageProducer<IncomingMessage> _AllMessages = new MessageProducer<IncomingMessage>();
-		public MessageProducer<IncomingMessage> AllMessages
-		{
-			get
-			{
-				return _AllMessages;
-			}
-		}
+		public MessageProducer<IncomingMessage> AllMessages => _AllMessages;
 
 		volatile IPEndPoint _ExternalEndpoint;
 		public IPEndPoint ExternalEndpoint
 		{
-			get
-			{
-				return _ExternalEndpoint;
-			}
-			set
-			{
-				_ExternalEndpoint = Utils.EnsureIPv6(value);
-			}
+			get => _ExternalEndpoint;
+			set => _ExternalEndpoint = Utils.EnsureIPv6(value);
 		}
 
 
@@ -352,13 +316,7 @@ namespace NBitcoin.Protocol
 		}
 
 		private readonly NodesCollection _ConnectedNodes = new NodesCollection();
-		public NodesCollection ConnectedNodes
-		{
-			get
-			{
-				return _ConnectedNodes;
-			}
-		}
+		public NodesCollection ConnectedNodes => _ConnectedNodes;
 
 
 		List<IDisposable> _Resources = new List<IDisposable>();
@@ -435,10 +393,7 @@ namespace NBitcoin.Protocol
 				}
 				return _Nonce;
 			}
-			set
-			{
-				_Nonce = value;
-			}
+			set => _Nonce = value;
 		}
 
 

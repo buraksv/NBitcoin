@@ -99,13 +99,7 @@ namespace NBitcoin.BouncyCastle.Asn1.X9
 			}
 		}
 
-		public ECCurve Curve
-		{
-			get
-			{
-				return curve;
-			}
-		}
+		public ECCurve Curve => curve;
 
 		public byte[] GetSeed()
 		{

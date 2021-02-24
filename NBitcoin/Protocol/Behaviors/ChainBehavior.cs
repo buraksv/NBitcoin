@@ -42,13 +42,8 @@ namespace NBitcoin.Protocol.Behaviors
 			get; set;
 		}
 
-		public State SharedState
-		{
-			get
-			{
-				return _State;
-			}
-		}
+		public State SharedState => _State;
+
 		/// <summary>
 		/// Keep the chain in Sync (Default : true)
 		/// </summary>
@@ -69,10 +64,7 @@ namespace NBitcoin.Protocol.Behaviors
 		ConcurrentChain _Chain;
 		public ConcurrentChain Chain
 		{
-			get
-			{
-				return _Chain;
-			}
+			get => _Chain;
 			set
 			{
 				AssertNotAttached();
@@ -84,13 +76,7 @@ namespace NBitcoin.Protocol.Behaviors
 		/// <summary>
 		/// Using for test, this might not be reliable
 		/// </summary>
-		internal bool Synching
-		{
-			get
-			{
-				return _SynchingCount != 0;
-			}
-		}
+		internal bool Synching => _SynchingCount != 0;
 
 		Timer _Refresh;
 		protected override void AttachCore()
@@ -240,13 +226,7 @@ namespace NBitcoin.Protocol.Behaviors
 		ChainedBlock _PendingTip; //Might be different than Chain.Tip, in the rare event of large fork > 2000 blocks
 
 		private bool invalidHeaderReceived;
-		public bool InvalidHeaderReceived
-		{
-			get
-			{
-				return invalidHeaderReceived;
-			}
-		}
+		public bool InvalidHeaderReceived => invalidHeaderReceived;
 
 		void AttachedNode_StateChanged(Node node, NodeState oldState)
 		{

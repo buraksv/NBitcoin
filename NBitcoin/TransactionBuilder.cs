@@ -414,13 +414,7 @@ namespace NBitcoin
 			}
 
 			private readonly List<Key> _AdditionalKeys = new List<Key>();
-			public List<Key> AdditionalKeys
-			{
-				get
-				{
-					return _AdditionalKeys;
-				}
-			}
+			public List<Key> AdditionalKeys => _AdditionalKeys;
 
 			public SigHash SigHash
 			{
@@ -448,13 +442,8 @@ namespace NBitcoin
 			}
 
 			private List<ICoin> _ConsumedCoins = new List<ICoin>();
-			public List<ICoin> ConsumedCoins
-			{
-				get
-				{
-					return _ConsumedCoins;
-				}
-			}
+			public List<ICoin> ConsumedCoins => _ConsumedCoins;
+
 			public TransactionBuilder Builder
 			{
 				get;
@@ -2263,13 +2252,7 @@ namespace NBitcoin
 
 
 		private readonly List<BuilderExtension> _Extensions = new List<BuilderExtension>();
-		public List<BuilderExtension> Extensions
-		{
-			get
-			{
-				return _Extensions;
-			}
-		}
+		public List<BuilderExtension> Extensions => _Extensions;
 
 		private Transaction CombineSignaturesCore(Transaction signed1, Transaction signed2)
 		{
@@ -2344,22 +2327,10 @@ namespace NBitcoin
 		}
 
 		private readonly OutPoint _OutPoint;
-		public OutPoint OutPoint
-		{
-			get
-			{
-				return _OutPoint;
-			}
-		}
+		public OutPoint OutPoint => _OutPoint;
 
 		private readonly uint _InputIndex;
-		public uint InputIndex
-		{
-			get
-			{
-				return _InputIndex;
-			}
-		}
+		public uint InputIndex => _InputIndex;
 	}
 }
 #nullable disable

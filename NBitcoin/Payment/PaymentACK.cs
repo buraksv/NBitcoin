@@ -192,13 +192,7 @@ namespace NBitcoin.Payment
 		}
 
 		private readonly List<PaymentOutput> _RefundTo = new List<PaymentOutput>();
-		public List<PaymentOutput> RefundTo
-		{
-			get
-			{
-				return _RefundTo;
-			}
-		}
+		public List<PaymentOutput> RefundTo => _RefundTo;
 
 		private readonly List<Transaction> _Transactions = new List<Transaction>();
 		public readonly static string MediaType = "application/bitcoin-payment";
@@ -211,13 +205,7 @@ namespace NBitcoin.Payment
 		{
 			this.MerchantData = request.Details.MerchantData;
 		}
-		public List<Transaction> Transactions
-		{
-			get
-			{
-				return _Transactions;
-			}
-		}
+		public List<Transaction> Transactions => _Transactions;
 
 		public Uri ImplicitPaymentUrl
 		{

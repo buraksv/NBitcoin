@@ -19,14 +19,8 @@ namespace NBitcoin.Protocol
 		T _Object = new T();
 		public T Object
 		{
-			get
-			{
-				return _Object;
-			}
-			set
-			{
-				_Object = value;
-			}
+			get => _Object;
+			set => _Object = value;
 		}
 		public override void ReadWriteCore(BitcoinStream stream)
 		{

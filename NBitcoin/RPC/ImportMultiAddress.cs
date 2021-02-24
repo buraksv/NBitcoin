@@ -33,13 +33,7 @@ namespace NBitcoin.RPC
 			/// </summary>
 			///
 			[JsonIgnore]
-			public bool IsAddress
-			{
-				get
-				{
-					return this.Address != null && this.ScriptPubKey == null;
-				}
-			}
+			public bool IsAddress => this.Address != null && this.ScriptPubKey == null;
 		}
 
 		[JsonProperty("scriptPubKey", NullValueHandling = NullValueHandling.Ignore)]

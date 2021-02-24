@@ -17,13 +17,7 @@ namespace NBitcoin.OpenAsset
 		IColoredTransactionRepository _Inner;
 		#region IColoredTransactionRepository Members
 
-		public ITransactionRepository Transactions
-		{
-			get
-			{
-				return this;
-			}
-		}
+		public ITransactionRepository Transactions => this;
 
 		public Task<ColoredTransaction> GetAsync(uint256 txId)
 		{

@@ -12,13 +12,7 @@ namespace NBitcoin
 	public class QBitNinjaTransactionRepository : ITransactionRepository
 	{
 		private readonly Uri _BaseUri;
-		public Uri BaseUri
-		{
-			get
-			{
-				return _BaseUri;
-			}
-		}
+		public Uri BaseUri => _BaseUri;
 
 		/// <summary>
 		/// Use qbitninja public servers
@@ -34,13 +28,7 @@ namespace NBitcoin
 
 
 		private readonly Network _Network;
-		public Network Network
-		{
-			get
-			{
-				return _Network;
-			}
-		}
+		public Network Network => _Network;
 
 		public QBitNinjaTransactionRepository(Uri baseUri, Network network)
 			: this(baseUri?.AbsoluteUri, network)

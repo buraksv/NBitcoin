@@ -17,36 +17,18 @@ namespace NBitcoin
 		uint _TransactionCount;
 		public uint TransactionCount
 		{
-			get
-			{
-				return _TransactionCount;
-			}
-			set
-			{
-				_TransactionCount = value;
-			}
+			get => _TransactionCount;
+			set => _TransactionCount = value;
 		}
 
 		List<uint256> _Hashes = new List<uint256>();
-		public List<uint256> Hashes
-		{
-			get
-			{
-				return _Hashes;
-			}
-		}
+		public List<uint256> Hashes => _Hashes;
 
 		BitArray _Flags = new BitArray(0);
 		public BitArray Flags
 		{
-			get
-			{
-				return _Flags;
-			}
-			set
-			{
-				_Flags = value;
-			}
+			get => _Flags;
+			set => _Flags = value;
 		}
 
 		// serialization implementation

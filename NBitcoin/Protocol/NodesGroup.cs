@@ -77,14 +77,8 @@ namespace NBitcoin.Protocol
 		NodeConnectionParameters _ConnectionParameters;
 		public NodeConnectionParameters NodeConnectionParameters
 		{
-			get
-			{
-				return _ConnectionParameters;
-			}
-			set
-			{
-				_ConnectionParameters = value;
-			}
+			get => _ConnectionParameters;
+			set => _ConnectionParameters = value;
 		}
 
 		NodeRequirement _Requirements;
@@ -239,24 +233,12 @@ namespace NBitcoin.Protocol
 
 		public NodeRequirement Requirements
 		{
-			get
-			{
-				return _Requirements;
-			}
-			set
-			{
-				_Requirements = value;
-			}
+			get => _Requirements;
+			set => _Requirements = value;
 		}
 
 		internal NodesCollection _ConnectedNodes;
-		public NodesCollection ConnectedNodes
-		{
-			get
-			{
-				return _ConnectedNodes;
-			}
-		}
+		public NodesCollection ConnectedNodes => _ConnectedNodes;
 
 		/// <summary>
 		/// If false, the search process will do its best to connect to Node in different network group to prevent sybil attacks. (Default : false)

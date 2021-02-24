@@ -11,13 +11,7 @@ namespace NBitcoin
 		private readonly IHDKey hdKey;
 		private readonly ScriptPubKeyType type;
 
-		public IHDKey HDKey
-		{
-			get
-			{
-				return hdKey;
-			}
-		}
+		public IHDKey HDKey => hdKey;
 
 		public HDKeyScriptPubKey(IHDKey hdKey, ScriptPubKeyType type)
 		{
@@ -71,24 +65,12 @@ namespace NBitcoin
 		/// <summary>
 		/// Gets the depth of this extended key from the root key.
 		/// </summary>
-		public byte Depth
-		{
-			get
-			{
-				return nDepth;
-			}
-		}
+		public byte Depth => nDepth;
 
 		/// <summary>
 		/// Gets the child number of this key (in reference to the parent).
 		/// </summary>
-		public uint Child
-		{
-			get
-			{
-				return nChild;
-			}
-		}
+		public uint Child => nChild;
 
 		public byte[] ChainCode
 		{
@@ -237,13 +219,7 @@ namespace NBitcoin
 		/// <summary>
 		/// Get the private key of this extended key.
 		/// </summary>
-		public Key PrivateKey
-		{
-			get
-			{
-				return key;
-			}
-		}
+		public Key PrivateKey => key;
 
 		/// <summary>
 		/// Create the public key from this key.
@@ -272,13 +248,7 @@ namespace NBitcoin
 			return childKey.IsChildOf(this);
 		}
 
-		public HDFingerprint ParentFingerprint
-		{
-			get
-			{
-				return parentFingerprint;
-			}
-		}
+		public HDFingerprint ParentFingerprint => parentFingerprint;
 
 		/// <summary>
 		/// Derives a new extended key in the hierarchy as the given child number.
@@ -359,26 +329,14 @@ namespace NBitcoin
 		/// <summary>
 		/// Gets the script of the hash of the public key corresponding to the private key.
 		/// </summary>
-		public Script ScriptPubKey
-		{
-			get
-			{
-				return PrivateKey.PubKey.Hash.ScriptPubKey;
-			}
-		}
+		public Script ScriptPubKey => PrivateKey.PubKey.Hash.ScriptPubKey;
 
 		#endregion
 
 		/// <summary>
 		/// Gets whether or not this extended key is a hardened child.
 		/// </summary>
-		public bool IsHardened
-		{
-			get
-			{
-				return (nChild & 0x80000000u) != 0;
-			}
-		}
+		public bool IsHardened => (nChild & 0x80000000u) != 0;
 
 		/// <summary>
 		/// Recreates the private key of the parent from the private key of the child 

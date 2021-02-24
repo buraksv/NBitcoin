@@ -20,28 +20,11 @@ namespace NBitcoin
 		}
 
 		byte[] _AddressHash;
-		public byte[] AddressHash
-		{
-			get
-			{
-				return _AddressHash ?? (_AddressHash = vchData.SafeSubarray(1, 4));
-			}
-		}
-		public bool IsCompressed
-		{
-			get
-			{
-				return (vchData[0] & 0x20) != 0;
-			}
-		}
+		public byte[] AddressHash => _AddressHash ?? (_AddressHash = vchData.SafeSubarray(1, 4));
+
+		public bool IsCompressed => (vchData[0] & 0x20) != 0;
 		byte[] _OwnerEntropy;
-		public byte[] OwnerEntropy
-		{
-			get
-			{
-				return _OwnerEntropy ?? (_OwnerEntropy = vchData.SafeSubarray(5, 8));
-			}
-		}
+		public byte[] OwnerEntropy => _OwnerEntropy ?? (_OwnerEntropy = vchData.SafeSubarray(5, 8));
 		LotSequence _LotSequence;
 		public LotSequence LotSequence
 		{
@@ -59,29 +42,11 @@ namespace NBitcoin
 		}
 
 		byte[] _EncryptedPointB;
-		byte[] EncryptedPointB
-		{
-			get
-			{
-				return _EncryptedPointB ?? (_EncryptedPointB = vchData.SafeSubarray(13));
-			}
-		}
+		byte[] EncryptedPointB => _EncryptedPointB ?? (_EncryptedPointB = vchData.SafeSubarray(13));
 
-		public override Base58Type Type
-		{
-			get
-			{
-				return Base58Type.CONFIRMATION_CODE;
-			}
-		}
+		public override Base58Type Type => Base58Type.CONFIRMATION_CODE;
 
-		protected override bool IsValid
-		{
-			get
-			{
-				return vchData.Length == 1 + 4 + 8 + 33;
-			}
-		}
+		protected override bool IsValid => vchData.Length == 1 + 4 + 8 + 33;
 
 
 		public bool Check(string passphrase, BitcoinAddress expectedAddress)

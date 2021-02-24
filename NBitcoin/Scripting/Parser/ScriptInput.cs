@@ -22,7 +22,7 @@ namespace NBitcoin.Scripting.Parser
 			Memos = new Dictionary<object, object>();
 		}
 
-		public bool AtEnd { get { return Position == Source.Length; } }
+		public bool AtEnd => Position == Source.Length;
 		public ScriptToken GetCurrent() => Source[Position];
 
 		public IInput<ScriptToken> Advance()

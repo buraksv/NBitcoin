@@ -17,13 +17,7 @@ namespace NBitcoin
 		}
 
 		private readonly T _Coin;
-		public new T Coin
-		{
-			get
-			{
-				return _Coin;
-			}
-		}
+		public new T Coin => _Coin;
 	}
 
 	public class PSBTHDKeyMatch
@@ -44,55 +38,25 @@ namespace NBitcoin
 		}
 
 		private readonly PSBTCoin _Coin;
-		public PSBTCoin Coin
-		{
-			get
-			{
-				return _Coin;
-			}
-		}
+		public PSBTCoin Coin => _Coin;
 
 
 		private readonly PubKey _PubKey;
-		public PubKey PubKey
-		{
-			get
-			{
-				return _PubKey;
-			}
-		}
+		public PubKey PubKey => _PubKey;
 
 
 		private readonly KeyPath _AddressKeyPath;
 		/// <summary>
 		/// KeyPath relative to the accountKey to PubKey
 		/// </summary>
-		public KeyPath AddressKeyPath
-		{
-			get
-			{
-				return _AddressKeyPath;
-			}
-		}
+		public KeyPath AddressKeyPath => _AddressKeyPath;
 
 
 		private readonly IHDKey _AccountKey;
-		public IHDKey AccountKey
-		{
-			get
-			{
-				return _AccountKey;
-			}
-		}
+		public IHDKey AccountKey => _AccountKey;
 
 		private readonly RootedKeyPath _KeyPath;
-		public RootedKeyPath RootedKeyPath
-		{
-			get
-			{
-				return _KeyPath;
-			}
-		}
+		public RootedKeyPath RootedKeyPath => _KeyPath;
 	}
 
 	public class PSBTCoinList<T> : IReadOnlyList<T> where T : PSBTCoin

@@ -8,44 +8,17 @@ namespace NBitcoin.BouncyCastle.Utilities.IO
 		{
 			this.s = s;
 		}
-		public override bool CanRead
-		{
-			get
-			{
-				return s.CanRead;
-			}
-		}
-		public override bool CanSeek
-		{
-			get
-			{
-				return s.CanSeek;
-			}
-		}
-		public override bool CanWrite
-		{
-			get
-			{
-				return s.CanWrite;
-			}
-		}
-		public override long Length
-		{
-			get
-			{
-				return s.Length;
-			}
-		}
+		public override bool CanRead => s.CanRead;
+
+		public override bool CanSeek => s.CanSeek;
+
+		public override bool CanWrite => s.CanWrite;
+
+		public override long Length => s.Length;
 		public override long Position
 		{
-			get
-			{
-				return s.Position;
-			}
-			set
-			{
-				s.Position = value;
-			}
+			get => s.Position;
+			set => s.Position = value;
 		}
 #if NETSTANDARD1X
         protected override void Dispose(bool disposing)

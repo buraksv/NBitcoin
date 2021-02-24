@@ -90,21 +90,9 @@ namespace NBitcoin.BouncyCastle.Asn1.X9
 			this.parameters = new DerSequence(fieldIdParams);
 		}
 
-		public DerObjectIdentifier Identifier
-		{
-			get
-			{
-				return id;
-			}
-		}
+		public DerObjectIdentifier Identifier => id;
 
-		public Asn1Object Parameters
-		{
-			get
-			{
-				return parameters;
-			}
-		}
+		public Asn1Object Parameters => parameters;
 
 		/**
          * Produce a Der encoding of the following structure.

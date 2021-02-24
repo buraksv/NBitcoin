@@ -60,22 +60,13 @@ namespace NBitcoin.Protocol
 
 			public DateTimeOffset LastSuccess
 			{
-				get
-				{
-					return Utils.UnixTimeToDateTime((uint)nLastSuccess);
-				}
-				set
-				{
-					nLastSuccess = Utils.DateTimeToUnixTime(value);
-				}
+				get => Utils.UnixTimeToDateTime((uint)nLastSuccess);
+				set => nLastSuccess = Utils.DateTimeToUnixTime(value);
 			}
 
 			public IPAddress Source
 			{
-				get
-				{
-					return new IPAddress(source);
-				}
+				get => new IPAddress(source);
 				set
 				{
 					var ipBytes = value.GetAddressBytes();
@@ -103,14 +94,8 @@ namespace NBitcoin.Protocol
 			internal long nLastTry;
 			internal DateTimeOffset nTime
 			{
-				get
-				{
-					return Address.Time;
-				}
-				set
-				{
-					Address.Time = value;
-				}
+				get => Address.Time;
+				set => Address.Time = value;
 			}
 
 
@@ -124,36 +109,18 @@ namespace NBitcoin.Protocol
 				Source = addrSource;
 			}
 
-			public bool IsTerrible
-			{
-				get
-				{
-					return _IsTerrible(DateTimeOffset.UtcNow);
-				}
-			}
+			public bool IsTerrible => _IsTerrible(DateTimeOffset.UtcNow);
 
 			internal DateTimeOffset LastTry
 			{
-				get
-				{
-					return Utils.UnixTimeToDateTime((uint)nLastSuccess);
-				}
-				set
-				{
-					nLastTry = Utils.DateTimeToUnixTime(value);
-				}
+				get => Utils.UnixTimeToDateTime((uint)nLastSuccess);
+				set => nLastTry = Utils.DateTimeToUnixTime(value);
 			}
 
 			public NetworkAddress Address
 			{
-				get
-				{
-					return _Address;
-				}
-				set
-				{
-					_Address = value;
-				}
+				get => _Address;
+				set => _Address = value;
 			}
 
 			#endregion
@@ -231,13 +198,7 @@ namespace NBitcoin.Protocol
 					Address.Endpoint.Port == addr.Endpoint.Port;
 			}
 
-			internal double Chance
-			{
-				get
-				{
-					return GetChance(DateTimeOffset.UtcNow);
-				}
-			}
+			internal double Chance => GetChance(DateTimeOffset.UtcNow);
 
 			//! Calculate the relative chance this entry should be given when selecting nodes to connect to
 			internal double GetChance(DateTimeOffset nNow)
@@ -1153,13 +1114,7 @@ namespace NBitcoin.Protocol
 			return vAddr;
 		}
 
-		public int Count
-		{
-			get
-			{
-				return vRandom.Count;
-			}
-		}
+		public int Count => vRandom.Count;
 
 		internal void DiscoverPeers(Network network, NodeConnectionParameters parameters, int peerToFind)
 		{

@@ -64,13 +64,7 @@ namespace NBitcoin.Protocol.Behaviors
 		public event TransactionBroadcastedDelegate TransactionBroadcasted;
 		public event TransactionRejectedDelegate TransactionRejected;
 
-		public IEnumerable<Transaction> BroadcastingTransactions
-		{
-			get
-			{
-				return BroadcastedTransaction.Values;
-			}
-		}
+		public IEnumerable<Transaction> BroadcastingTransactions => BroadcastedTransaction.Values;
 
 		internal void OnBroadcastTransaction(Transaction transaction)
 		{
@@ -196,13 +190,7 @@ namespace NBitcoin.Protocol.Behaviors
 		}
 
 		private readonly BroadcastHub _BroadcastHub;
-		public BroadcastHub BroadcastHub
-		{
-			get
-			{
-				return _BroadcastHub;
-			}
-		}
+		public BroadcastHub BroadcastHub => _BroadcastHub;
 
 		TransactionBroadcast GetTransaction(uint256 hash, bool remove)
 		{
@@ -379,13 +367,7 @@ namespace NBitcoin.Protocol.Behaviors
 			return new BroadcastHubBehavior(_BroadcastHub);
 		}
 
-		public IEnumerable<TransactionBroadcast> Broadcasts
-		{
-			get
-			{
-				return _HashToTransaction.Values;
-			}
-		}
+		public IEnumerable<TransactionBroadcast> Broadcasts => _HashToTransaction.Values;
 	}
 }
 #endif

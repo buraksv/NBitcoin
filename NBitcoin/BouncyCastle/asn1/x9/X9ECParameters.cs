@@ -96,37 +96,13 @@ namespace NBitcoin.BouncyCastle.Asn1.X9
 			}
 		}
 
-		public ECCurve Curve
-		{
-			get
-			{
-				return curve;
-			}
-		}
+		public ECCurve Curve => curve;
 
-		public ECPoint G
-		{
-			get
-			{
-				return g.Point;
-			}
-		}
+		public ECPoint G => g.Point;
 
-		public BigInteger N
-		{
-			get
-			{
-				return n;
-			}
-		}
+		public BigInteger N => n;
 
-		public BigInteger H
-		{
-			get
-			{
-				return h;
-			}
-		}
+		public BigInteger H => h;
 
 		public byte[] GetSeed()
 		{
@@ -138,39 +114,21 @@ namespace NBitcoin.BouncyCastle.Asn1.X9
          *
          * @return the X9Curve for the curve in these parameters.
          */
-		public X9Curve CurveEntry
-		{
-			get
-			{
-				return new X9Curve(curve, seed);
-			}
-		}
+		public X9Curve CurveEntry => new X9Curve(curve, seed);
 
 		/**
          * Return the ASN.1 entry representing the FieldID.
          *
          * @return the X9FieldID for the FieldID in these parameters.
          */
-		public X9FieldID FieldIDEntry
-		{
-			get
-			{
-				return fieldID;
-			}
-		}
+		public X9FieldID FieldIDEntry => fieldID;
 
 		/**
          * Return the ASN.1 entry representing the base point G.
          *
          * @return the X9ECPoint for the base point in these parameters.
          */
-		public X9ECPoint BaseEntry
-		{
-			get
-			{
-				return g;
-			}
-		}
+		public X9ECPoint BaseEntry => g;
 
 		/**
          * Produce an object suitable for an Asn1OutputStream.

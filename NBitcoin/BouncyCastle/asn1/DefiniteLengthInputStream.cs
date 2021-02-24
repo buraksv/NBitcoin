@@ -30,13 +30,7 @@ namespace NBitcoin.BouncyCastle.Asn1
 			}
 		}
 
-		internal int Remaining
-		{
-			get
-			{
-				return _remaining;
-			}
-		}
+		internal int Remaining => _remaining;
 
 		public override int ReadByte()
 		{

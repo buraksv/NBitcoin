@@ -289,13 +289,7 @@ namespace NBitcoin
 
 		#region IDestination Members
 
-		public Script ScriptPubKey
-		{
-			get
-			{
-				return PubKey.Hash.ScriptPubKey;
-			}
-		}
+		public Script ScriptPubKey => PubKey.Hash.ScriptPubKey;
 
 		#endregion
 

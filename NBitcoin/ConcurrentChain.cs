@@ -382,21 +382,9 @@ namespace NBitcoin
 
 
 		volatile ChainedBlock _Tip;
-		public override ChainedBlock Tip
-		{
-			get
-			{
-				return _Tip;
-			}
-		}
+		public override ChainedBlock Tip => _Tip;
 
-		public override int Height
-		{
-			get
-			{
-				return Tip.Height;
-			}
-		}
+		public override int Height => Tip.Height;
 
 		#endregion
 

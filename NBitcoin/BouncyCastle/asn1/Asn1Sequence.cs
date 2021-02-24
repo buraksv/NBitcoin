@@ -106,13 +106,7 @@ namespace NBitcoin.BouncyCastle.Asn1
 			}
 		}
 
-		public virtual Asn1SequenceParser Parser
-		{
-			get
-			{
-				return new Asn1SequenceParserImpl(this);
-			}
-		}
+		public virtual Asn1SequenceParser Parser => new Asn1SequenceParserImpl(this);
 
 		/**
          * return the object at the sequence position indicated by index.
@@ -120,13 +114,7 @@ namespace NBitcoin.BouncyCastle.Asn1
          * @param index the sequence number (starting at zero) of the object
          * @return the object at the sequence position indicated by index.
          */
-		public virtual Asn1Encodable this[int index]
-		{
-			get
-			{
-				return (Asn1Encodable)seq[index];
-			}
-		}
+		public virtual Asn1Encodable this[int index] => (Asn1Encodable)seq[index];
 
 		[Obsolete("Use 'object[index]' syntax instead")]
 		public Asn1Encodable GetObjectAt(
@@ -136,21 +124,9 @@ namespace NBitcoin.BouncyCastle.Asn1
 		}
 
 		[Obsolete("Use 'Count' property instead")]
-		public int Size
-		{
-			get
-			{
-				return Count;
-			}
-		}
+		public int Size => Count;
 
-		public virtual int Count
-		{
-			get
-			{
-				return seq.Count;
-			}
-		}
+		public virtual int Count => seq.Count;
 
 		protected override int Asn1GetHashCode()
 		{

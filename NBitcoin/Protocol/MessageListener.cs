@@ -88,13 +88,7 @@ namespace NBitcoin.Protocol
 			})).Start();
 		}
 		BlockingCollection<T> _MessageQueue = new BlockingCollection<T>(new ConcurrentQueue<T>());
-		public BlockingCollection<T> MessageQueue
-		{
-			get
-			{
-				return _MessageQueue;
-			}
-		}
+		public BlockingCollection<T> MessageQueue => _MessageQueue;
 
 
 		#region MessageListener Members
@@ -124,13 +118,7 @@ namespace NBitcoin.Protocol
 	{
 
 		BlockingCollection<T> _MessageQueue = new BlockingCollection<T>(new ConcurrentQueue<T>());
-		public BlockingCollection<T> MessageQueue
-		{
-			get
-			{
-				return _MessageQueue;
-			}
-		}
+		public BlockingCollection<T> MessageQueue => _MessageQueue;
 
 		public virtual T ReceiveMessage(CancellationToken cancellationToken = default(CancellationToken))
 		{

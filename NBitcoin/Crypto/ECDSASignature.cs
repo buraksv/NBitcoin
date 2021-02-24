@@ -14,21 +14,10 @@ namespace NBitcoin.Crypto
 	public class ECDSASignature
 	{
 		private readonly BigInteger _R;
-		public BigInteger R
-		{
-			get
-			{
-				return _R;
-			}
-		}
+		public BigInteger R => _R;
 		private BigInteger _S;
-		public BigInteger S
-		{
-			get
-			{
-				return _S;
-			}
-		}
+		public BigInteger S => _S;
+
 		public ECDSASignature(BigInteger r, BigInteger s)
 		{
 			_R = r;
@@ -110,13 +99,7 @@ namespace NBitcoin.Crypto
 				return this;
 		}
 
-		public bool IsLowS
-		{
-			get
-			{
-				return this.S.CompareTo(ECKey.HALF_CURVE_ORDER) <= 0;
-			}
-		}
+		public bool IsLowS => this.S.CompareTo(ECKey.HALF_CURVE_ORDER) <= 0;
 
 		public bool IsLowR
 		{

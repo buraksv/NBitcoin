@@ -27,21 +27,9 @@
 			return new BigInteger[] { a, b };
 		}
 
-		public virtual ECPointMap PointMap
-		{
-			get
-			{
-				return m_pointMap;
-			}
-		}
+		public virtual ECPointMap PointMap => m_pointMap;
 
-		public virtual bool HasEfficientPointMap
-		{
-			get
-			{
-				return true;
-			}
-		}
+		public virtual bool HasEfficientPointMap => true;
 
 		protected virtual BigInteger CalculateB(BigInteger k, BigInteger g, int t)
 		{

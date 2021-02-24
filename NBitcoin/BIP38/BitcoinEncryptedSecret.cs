@@ -59,30 +59,12 @@ namespace NBitcoin
 		}
 
 		byte[] _FirstHalf;
-		public byte[] EncryptedHalf1
-		{
-			get
-			{
-				return _FirstHalf ?? (_FirstHalf = vchData.SafeSubarray(ValidLength - 32, 16));
-			}
-		}
+		public byte[] EncryptedHalf1 => _FirstHalf ?? (_FirstHalf = vchData.SafeSubarray(ValidLength - 32, 16));
 
 		private byte[] _Encrypted;
-		public byte[] Encrypted
-		{
-			get
-			{
-				return _Encrypted ?? (_Encrypted = EncryptedHalf1.Concat(EncryptedHalf2).ToArray());
-			}
-		}
+		public byte[] Encrypted => _Encrypted ?? (_Encrypted = EncryptedHalf1.Concat(EncryptedHalf2).ToArray());
 
-		public override Base58Type Type
-		{
-			get
-			{
-				return Base58Type.ENCRYPTED_SECRET_KEY_NO_EC;
-			}
-		}
+		public override Base58Type Type => Base58Type.ENCRYPTED_SECRET_KEY_NO_EC;
 
 		public override Key GetKey(string password)
 		{
@@ -129,13 +111,7 @@ namespace NBitcoin
 		}
 
 		byte[] _OwnerEntropy;
-		public byte[] OwnerEntropy
-		{
-			get
-			{
-				return _OwnerEntropy ?? (_OwnerEntropy = vchData.SafeSubarray(ValidLength - 32, 8));
-			}
-		}
+		public byte[] OwnerEntropy => _OwnerEntropy ?? (_OwnerEntropy = vchData.SafeSubarray(ValidLength - 32, 8));
 		LotSequence _LotSequence;
 		public LotSequence LotSequence
 		{
@@ -149,32 +125,13 @@ namespace NBitcoin
 		}
 
 		byte[] _EncryptedHalfHalf1;
-		public byte[] EncryptedHalfHalf1
-		{
-			get
-			{
-				return _EncryptedHalfHalf1 ?? (_EncryptedHalfHalf1 = vchData.SafeSubarray(ValidLength - 32 + 8, 8));
-			}
-		}
+		public byte[] EncryptedHalfHalf1 => _EncryptedHalfHalf1 ?? (_EncryptedHalfHalf1 = vchData.SafeSubarray(ValidLength - 32 + 8, 8));
 
 		byte[] _PartialEncrypted;
-		public byte[] PartialEncrypted
-		{
-			get
-			{
-				return _PartialEncrypted ?? (_PartialEncrypted = EncryptedHalfHalf1.Concat(new byte[8]).Concat(EncryptedHalf2).ToArray());
-			}
-		}
+		public byte[] PartialEncrypted => _PartialEncrypted ?? (_PartialEncrypted = EncryptedHalfHalf1.Concat(new byte[8]).Concat(EncryptedHalf2).ToArray());
 
 
-
-		public override Base58Type Type
-		{
-			get
-			{
-				return Base58Type.ENCRYPTED_SECRET_KEY_EC;
-			}
-		}
+		public override Base58Type Type => Base58Type.ENCRYPTED_SECRET_KEY_EC;
 
 		public override Key GetKey(string password)
 		{
@@ -270,40 +227,16 @@ namespace NBitcoin
 		}
 
 
-		public bool EcMultiply
-		{
-			get
-			{
-				return this is BitcoinEncryptedSecretEC;
-			}
-		}
-
+		public bool EcMultiply => this is BitcoinEncryptedSecretEC;
 
 
 		byte[] _AddressHash;
-		public byte[] AddressHash
-		{
-			get
-			{
-				return _AddressHash ?? (_AddressHash = vchData.SafeSubarray(1, 4));
-			}
-		}
-		public bool IsCompressed
-		{
-			get
-			{
-				return (vchData[0] & 0x20) != 0;
-			}
-		}
+		public byte[] AddressHash => _AddressHash ?? (_AddressHash = vchData.SafeSubarray(1, 4));
+
+		public bool IsCompressed => (vchData[0] & 0x20) != 0;
 
 		byte[] _LastHalf;
-		public byte[] EncryptedHalf2
-		{
-			get
-			{
-				return _LastHalf ?? (_LastHalf = vchData.Skip(ValidLength - 16).ToArray());
-			}
-		}
+		public byte[] EncryptedHalf2 => _LastHalf ?? (_LastHalf = vchData.Skip(ValidLength - 16).ToArray());
 		protected int ValidLength = (1 + 4 + 16 + 16);
 
 

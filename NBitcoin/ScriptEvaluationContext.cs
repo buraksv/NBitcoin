@@ -85,48 +85,18 @@ namespace NBitcoin
 
 
 		private readonly PrecomputedTransactionData _PrecomputedTransactionData;
-		public PrecomputedTransactionData PrecomputedTransactionData
-		{
-			get
-			{
-				return _PrecomputedTransactionData;
-			}
-		}
+		public PrecomputedTransactionData PrecomputedTransactionData => _PrecomputedTransactionData;
 
 		private readonly Transaction _Transaction;
-		public Transaction Transaction
-		{
-			get
-			{
-				return _Transaction;
-			}
-		}
+		public Transaction Transaction => _Transaction;
 
-		public TxIn Input
-		{
-			get
-			{
-				return Transaction.Inputs[_Index];
-			}
-		}
+		public TxIn Input => Transaction.Inputs[_Index];
 
 		private readonly int _Index;
-		public int Index
-		{
-			get
-			{
-				return _Index;
-			}
-		}
+		public int Index => _Index;
 
 		private readonly TxOut _SpentOutput;
-		public TxOut SpentOutput
-		{
-			get
-			{
-				return _SpentOutput;
-			}
-		}
+		public TxOut SpentOutput => _SpentOutput;
 	}
 
 	public class SignedHash
@@ -399,13 +369,7 @@ namespace NBitcoin
 
 		ContextStack<byte[]> _stack = new ContextStack<byte[]>();
 
-		public ContextStack<byte[]> Stack
-		{
-			get
-			{
-				return _stack;
-			}
-		}
+		public ContextStack<byte[]> Stack => _stack;
 
 		public ScriptEvaluationContext()
 		{
@@ -1910,13 +1874,7 @@ namespace NBitcoin
 		}
 
 		List<SignedHash> _SignedHashes = new List<SignedHash>();
-		public IEnumerable<SignedHash> SignedHashes
-		{
-			get
-			{
-				return _SignedHashes;
-			}
-		}
+		public IEnumerable<SignedHash> SignedHashes => _SignedHashes;
 
 
 		public bool CheckSig(TransactionSignature signature, PubKey pubKey, Script scriptPubKey, IndexedTxIn txIn)
@@ -2080,13 +2038,7 @@ namespace NBitcoin
 		/// <summary>
 		/// Gets the number of items in the stack.
 		/// </summary>
-		public int Count
-		{
-			get
-			{
-				return _position + 1;
-			}
-		}
+		public int Count => _position + 1;
 
 		/// <summary>
 		/// Pushes the specified item on the stack.
@@ -2251,13 +2203,7 @@ namespace NBitcoin
 				}
 			}
 
-			object IEnumerator.Current
-			{
-				get
-				{
-					return Current;
-				}
-			}
+			object IEnumerator.Current => Current;
 
 			public bool MoveNext()
 			{

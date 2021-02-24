@@ -36,13 +36,7 @@ namespace NBitcoin.BouncyCastle.Asn1.X9
 		{
 		}
 
-		public ECFieldElement Value
-		{
-			get
-			{
-				return f;
-			}
-		}
+		public ECFieldElement Value => f;
 
 		/**
          * Produce an object suitable for an Asn1OutputStream.

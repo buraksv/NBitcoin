@@ -18,14 +18,8 @@ namespace NBitcoin
 		List<uint256> vHave = new List<uint256>();
 		public List<uint256> Blocks
 		{
-			get
-			{
-				return vHave;
-			}
-			set
-			{
-				vHave = value;
-			}
+			get => vHave;
+			set => vHave = value;
 		}
 
 		#region IBitcoinSerializable Members

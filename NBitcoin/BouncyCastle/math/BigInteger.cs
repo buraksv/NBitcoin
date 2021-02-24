@@ -2987,13 +2987,7 @@ namespace NBitcoin.BouncyCastle.Math
 			return new BigInteger(this.sign, res, false);
 		}
 
-		public int SignValue
-		{
-			get
-			{
-				return sign;
-			}
-		}
+		public int SignValue => sign;
 
 		/**
          * returns x = x - y - we assume x is >= y

@@ -56,13 +56,7 @@ namespace NBitcoin.Policy
 		}
 
 		readonly static MinerTransactionPolicy _Instance = new MinerTransactionPolicy();
-		public static MinerTransactionPolicy Instance
-		{
-			get
-			{
-				return _Instance;
-			}
-		}
+		public static MinerTransactionPolicy Instance => _Instance;
 
 		#region ITransactionPolicy Members
 

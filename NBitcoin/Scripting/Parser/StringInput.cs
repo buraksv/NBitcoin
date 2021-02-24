@@ -20,7 +20,7 @@ namespace NBitcoin.Scripting.Parser
 			Memos = new Dictionary<object, object>();
 		}
 
-		public bool AtEnd { get { return Position == Source.Length; } }
+		public bool AtEnd => Position == Source.Length;
 		public char GetCurrent() => Source[Position];
 
 		public IInput<char> Advance()

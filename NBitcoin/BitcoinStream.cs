@@ -56,14 +56,8 @@ namespace NBitcoin
 		int _MaxArraySize = 1024 * 1024;
 		public int MaxArraySize
 		{
-			get
-			{
-				return _MaxArraySize;
-			}
-			set
-			{
-				_MaxArraySize = value;
-			}
+			get => _MaxArraySize;
+			set => _MaxArraySize = value;
 		}
 
 		//ReadWrite<T>(ref T data)
@@ -84,22 +78,11 @@ namespace NBitcoin
 		private readonly bool _IsNetworkStream;
 #endif
 		private readonly Stream _Inner;
-		public Stream Inner
-		{
-			get
-			{
-				return _Inner;
-			}
-		}
+		public Stream Inner => _Inner;
 
 		private readonly bool _Serializing;
-		public bool Serializing
-		{
-			get
-			{
-				return _Serializing;
-			}
-		}
+		public bool Serializing => _Serializing;
+
 		public BitcoinStream(Stream inner, bool serializing)
 		{
 			_Serializing = serializing;
@@ -156,10 +139,7 @@ namespace NBitcoin
 		/// </summary>
 		public ConsensusFactory ConsensusFactory
 		{
-			get
-			{
-				return _ConsensusFactory;
-			}
+			get => _ConsensusFactory;
 			set
 			{
 				if (value == null)
@@ -471,10 +451,7 @@ namespace NBitcoin
 		uint? _ProtocolVersion = null;
 		public uint? ProtocolVersion
 		{
-			get
-			{
-				return _ProtocolVersion;
-			}
+			get => _ProtocolVersion;
 			set
 			{
 				_ProtocolVersion = value;
@@ -502,14 +479,8 @@ namespace NBitcoin
 		TransactionOptions _TransactionSupportedOptions = TransactionOptions.All;
 		public TransactionOptions TransactionOptions
 		{
-			get
-			{
-				return _TransactionSupportedOptions;
-			}
-			set
-			{
-				_TransactionSupportedOptions = value;
-			}
+			get => _TransactionSupportedOptions;
+			set => _TransactionSupportedOptions = value;
 		}
 
 

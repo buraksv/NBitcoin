@@ -40,21 +40,9 @@ namespace NBitcoin.OpenAsset
 			}
 		}
 
-		protected override bool IsValid
-		{
-			get
-			{
-				return vchData.Length == 20;
-			}
-		}
+		protected override bool IsValid => vchData.Length == 20;
 
-		public override Base58Type Type
-		{
-			get
-			{
-				return Base58Type.ASSET_ID;
-			}
-		}
+		public override Base58Type Type => Base58Type.ASSET_ID;
 
 		public static implicit operator AssetId(BitcoinAssetId id)
 		{

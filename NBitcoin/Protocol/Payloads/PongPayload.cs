@@ -12,14 +12,8 @@ namespace NBitcoin.Protocol
 		private ulong _Nonce;
 		public ulong Nonce
 		{
-			get
-			{
-				return _Nonce;
-			}
-			set
-			{
-				_Nonce = value;
-			}
+			get => _Nonce;
+			set => _Nonce = value;
 		}
 
 		public override void ReadWriteCore(BitcoinStream stream)

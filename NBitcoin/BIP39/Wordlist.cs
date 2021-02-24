@@ -190,21 +190,9 @@ namespace NBitcoin
 		}
 
 		private readonly string _Name;
-		public string Name
-		{
-			get
-			{
-				return _Name;
-			}
-		}
+		public string Name => _Name;
 		private readonly char _Space;
-		public char Space
-		{
-			get
-			{
-				return _Space;
-			}
-		}
+		public char Space => _Space;
 
 		/// <summary>
 		/// Method to determine if word exists in word list, great for auto language detection
@@ -238,13 +226,7 @@ namespace NBitcoin
 		/// <summary>
 		/// The number of all the words in the wordlist
 		/// </summary>
-		public int WordCount
-		{
-			get
-			{
-				return _words.Length;
-			}
-		}
+		public int WordCount => _words.Length;
 
 
 		public static Task<Wordlist> AutoDetectAsync(string sentence)

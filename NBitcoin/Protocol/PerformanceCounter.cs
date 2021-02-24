@@ -16,47 +16,19 @@ namespace NBitcoin
 			_TotalReadenBytes = readen;
 		}
 		private readonly long _TotalWrittenBytes;
-		public long TotalWrittenBytes
-		{
-			get
-			{
-				return _TotalWrittenBytes;
-			}
-		}
+		public long TotalWrittenBytes => _TotalWrittenBytes;
 
 		long _TotalReadenBytes;
 		public long TotalReadenBytes
 		{
-			get
-			{
-				return _TotalReadenBytes;
-			}
-			set
-			{
-				_TotalReadenBytes = value;
-			}
+			get => _TotalReadenBytes;
+			set => _TotalReadenBytes = value;
 		}
-		public TimeSpan Elapsed
-		{
-			get
-			{
-				return Taken - Start;
-			}
-		}
-		public ulong ReadenBytesPerSecond
-		{
-			get
-			{
-				return (ulong)((double)TotalReadenBytes / Elapsed.TotalSeconds);
-			}
-		}
-		public ulong WrittenBytesPerSecond
-		{
-			get
-			{
-				return (ulong)((double)TotalWrittenBytes / Elapsed.TotalSeconds);
-			}
-		}
+		public TimeSpan Elapsed => Taken - Start;
+
+		public ulong ReadenBytesPerSecond => (ulong)((double)TotalReadenBytes / Elapsed.TotalSeconds);
+
+		public ulong WrittenBytesPerSecond => (ulong)((double)TotalWrittenBytes / Elapsed.TotalSeconds);
 
 		public static PerformanceSnapshot operator -(PerformanceSnapshot end, PerformanceSnapshot start)
 		{
@@ -107,13 +79,7 @@ namespace NBitcoin
 		}
 
 		long _WrittenBytes;
-		public long WrittenBytes
-		{
-			get
-			{
-				return _WrittenBytes;
-			}
-		}
+		public long WrittenBytes => _WrittenBytes;
 
 
 		public void AddWritten(long count)
@@ -126,13 +92,7 @@ namespace NBitcoin
 		}
 
 		long _ReadenBytes;
-		public long ReadenBytes
-		{
-			get
-			{
-				return _ReadenBytes;
-			}
-		}
+		public long ReadenBytes => _ReadenBytes;
 
 		public PerformanceSnapshot Snapshot()
 		{
@@ -148,20 +108,9 @@ namespace NBitcoin
 		}
 
 		DateTime _Start;
-		public DateTime Start
-		{
-			get
-			{
-				return _Start;
-			}
-		}
-		public TimeSpan Elapsed
-		{
-			get
-			{
-				return DateTime.UtcNow - Start;
-			}
-		}
+		public DateTime Start => _Start;
+
+		public TimeSpan Elapsed => DateTime.UtcNow - Start;
 
 		public override string ToString()
 		{

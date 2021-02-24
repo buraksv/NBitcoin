@@ -239,40 +239,16 @@ namespace NBitcoin.Tests
 	{
 		private readonly NodeBuilder _Builder;
 		private string _Folder;
-		public string Folder
-		{
-			get
-			{
-				return _Folder;
-			}
-		}
+		public string Folder => _Folder;
 
-		public IPEndPoint Endpoint
-		{
-			get
-			{
-				return new IPEndPoint(IPAddress.Parse("127.0.0.1"), ports[0]);
-			}
-		}
+		public IPEndPoint Endpoint => new IPEndPoint(IPAddress.Parse("127.0.0.1"), ports[0]);
 
-		public string Config
-		{
-			get
-			{
-				return _Config;
-			}
-		}
+		public string Config => _Config;
 
 		private readonly NodeConfigParameters _ConfigParameters = new NodeConfigParameters();
 		private string _Config;
 
-		public NodeConfigParameters ConfigParameters
-		{
-			get
-			{
-				return _ConfigParameters;
-			}
-		}
+		public NodeConfigParameters ConfigParameters => _ConfigParameters;
 
 		public CoreNode(string folder, NodeBuilder builder)
 		{
@@ -382,23 +358,12 @@ namespace NBitcoin.Tests
 		}
 #endif
 		private CoreNodeState _State;
-		public CoreNodeState State
-		{
-			get
-			{
-				return _State;
-			}
-		}
+		public CoreNodeState State => _State;
 
 		int[] ports;
 
-		public int ProtocolPort
-		{
-			get
-			{
-				return ports[0];
-			}
-		}
+		public int ProtocolPort => ports[0];
+
 		public void Start()
 		{
 			StartAsync().Wait();
@@ -410,21 +375,9 @@ namespace NBitcoin.Tests
 			return new RPCClient(GetRPCAuth(), RPCUri, Network);
 		}
 
-		public Uri RPCUri
-		{
-			get
-			{
-				return new Uri("http://127.0.0.1:" + ports[1].ToString() + "/");
-			}
-		}
+		public Uri RPCUri => new Uri("http://127.0.0.1:" + ports[1].ToString() + "/");
 
-		public IPEndPoint NodeEndpoint
-		{
-			get
-			{
-				return new IPEndPoint(IPAddress.Parse("127.0.0.1"), ports[0]);
-			}
-		}
+		public IPEndPoint NodeEndpoint => new IPEndPoint(IPAddress.Parse("127.0.0.1"), ports[0]);
 
 		public RestClient CreateRESTClient()
 		{
@@ -452,14 +405,8 @@ namespace NBitcoin.Tests
 		NodeDownloadData _NodeImplementation;
 		public NodeDownloadData NodeImplementation
 		{
-			get
-			{
-				return _NodeImplementation ?? this._Builder.NodeImplementation;
-			}
-			set
-			{
-				_NodeImplementation = value;
-			}
+			get => _NodeImplementation ?? this._Builder.NodeImplementation;
+			set => _NodeImplementation = value;
 		}
 
 		public async Task StartAsync()

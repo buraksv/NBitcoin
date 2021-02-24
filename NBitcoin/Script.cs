@@ -370,13 +370,7 @@ namespace NBitcoin
 	public class Script : IEquatable<Script>
 	{
 		static readonly Script _Empty = new Script();
-		public static Script Empty
-		{
-			get
-			{
-				return _Empty;
-			}
-		}
+		public static Script Empty => _Empty;
 
 		internal readonly byte[] _Script;
 		public Script()
@@ -452,13 +446,7 @@ namespace NBitcoin
 			}
 		}
 
-		public int Length
-		{
-			get
-			{
-				return _Script.Length;
-			}
-		}
+		public int Length => _Script.Length;
 
 		/// <summary>
 		/// Extract the ScriptCode delimited by the codeSeparatorIndex th OP_CODESEPARATOR.
@@ -542,26 +530,14 @@ namespace NBitcoin
 		/// <summary>
 		/// Get the P2SH scriptPubKey of this script
 		/// </summary>
-		public Script PaymentScript
-		{
-			get
-			{
-				return _PaymentScript ?? (_PaymentScript = PayToScriptHashTemplate.Instance.GenerateScriptPubKey(Hash));
-			}
-		}
+		public Script PaymentScript => _PaymentScript ?? (_PaymentScript = PayToScriptHashTemplate.Instance.GenerateScriptPubKey(Hash));
 
 
 		/// <summary>
 		/// True if the scriptPubKey is witness
 		/// </summary>
 		[Obsolete("Use IsScriptType instead")]
-		public bool IsWitness
-		{
-			get
-			{
-				return PayToWitTemplate.Instance.CheckScriptPubKey(this);
-			}
-		}
+		public bool IsWitness => PayToWitTemplate.Instance.CheckScriptPubKey(this);
 
 		public override string ToString()
 		{
@@ -663,21 +639,9 @@ namespace NBitcoin
 		}
 
 		ScriptId _Hash;
-		public ScriptId Hash
-		{
-			get
-			{
-				return _Hash ?? (_Hash = new ScriptId(this));
-			}
-		}
+		public ScriptId Hash => _Hash ?? (_Hash = new ScriptId(this));
 		WitScriptId _WitHash;
-		public WitScriptId WitHash
-		{
-			get
-			{
-				return _WitHash ?? (_WitHash = new WitScriptId(this));
-			}
-		}
+		public WitScriptId WitHash => _WitHash ?? (_WitHash = new WitScriptId(this));
 
 		public BitcoinScriptAddress GetScriptAddress(Network network)
 		{
@@ -685,13 +649,7 @@ namespace NBitcoin
 		}
 
 		[Obsolete("Use IsScriptType instead")]
-		public bool IsPayToScriptHash
-		{
-			get
-			{
-				return PayToScriptHashTemplate.Instance.CheckScriptPubKey(this);
-			}
-		}
+		public bool IsPayToScriptHash => PayToScriptHashTemplate.Instance.CheckScriptPubKey(this);
 
 		public BitcoinWitScriptAddress GetWitScriptAddress(Network network)
 		{
@@ -1021,13 +979,7 @@ namespace NBitcoin
 		}
 #endif
 
-		public bool IsUnspendable
-		{
-			get
-			{
-				return _Script.Length > 0 && _Script[0] == (byte)OpcodeType.OP_RETURN;
-			}
-		}
+		public bool IsUnspendable => _Script.Length > 0 && _Script[0] == (byte)OpcodeType.OP_RETURN;
 
 		public static bool IsNullOrEmpty(Script script)
 		{

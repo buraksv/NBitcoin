@@ -43,13 +43,7 @@ namespace NBitcoin.BouncyCastle.Crypto
 			bufOff = 0;
 		}
 
-		public override string AlgorithmName
-		{
-			get
-			{
-				return cipher.AlgorithmName;
-			}
-		}
+		public override string AlgorithmName => cipher.AlgorithmName;
 
 		/**
 		* initialise the cipher.

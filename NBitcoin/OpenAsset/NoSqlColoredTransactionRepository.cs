@@ -30,24 +30,12 @@ namespace NBitcoin.OpenAsset
 		}
 
 		private readonly NoSqlRepository _Repository;
-		public NoSqlRepository Repository
-		{
-			get
-			{
-				return _Repository;
-			}
-		}
+		public NoSqlRepository Repository => _Repository;
 
 		ITransactionRepository _Transactions;
 		#region IColoredTransactionRepository Members
 
-		public ITransactionRepository Transactions
-		{
-			get
-			{
-				return _Transactions;
-			}
-		}
+		public ITransactionRepository Transactions => _Transactions;
 
 		public Task<ColoredTransaction> GetAsync(uint256 txId)
 		{

@@ -10,21 +10,9 @@
 			this.characteristic = characteristic;
 		}
 
-		public virtual BigInteger Characteristic
-		{
-			get
-			{
-				return characteristic;
-			}
-		}
+		public virtual BigInteger Characteristic => characteristic;
 
-		public virtual int Dimension
-		{
-			get
-			{
-				return 1;
-			}
-		}
+		public virtual int Dimension => 1;
 
 		public override bool Equals(object obj)
 		{
